@@ -20,6 +20,11 @@ import useGovernanceToken from '../../hooks/useGovernanceToken'
 import { GOVERNANCE_TOKEN_INTERFACE } from '../../constants/abis/governanceToken'
 import { MouseoverTooltip } from '../Tooltip'
 import useBlockchain from '../../hooks/useBlockchain'
+import { useGovTokenContract } from 'hooks/useContract'
+import { useState } from 'react'
+import { calculateGasMargin } from 'utils'
+import { TransactionResponse } from '@ethersproject/providers'
+import { useTransactionAdder } from '../../state/transactions/hooks'
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -85,6 +90,44 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
       'Locked pending rewards - 95% of your claimable rewards will be locked until 00:00:00 December 25th, 2021 (UTC). They will thereafter gradually unlock until December 25th, 2022.',
     lockedBalance:
       'Locked balance - Your locked balance will remain locked until 00:00:00 December 25th, 2021 (UTC). Your locked tokens will thereafter gradually unlock until December 25th, 2022.'
+  }
+
+  const govtoken = useGovTokenContract()
+  const addTransaction = useTransactionAdder()
+
+  const [hash, setHash] = useState<string | undefined>()
+  const [failed, setFailed] = useState<boolean>(false)
+  const [attempting, setAttempting] = useState(false)
+
+  async function onClaimReward() {
+    if (govtoken) {
+      setAttempting(true)
+
+      const estimatedGas = await govtoken.estimateGas.unlock()
+
+      await govtoken
+        .unlock({
+          gasLimit: calculateGasMargin(estimatedGas)
+        })
+        .then((response: TransactionResponse) => {
+          console.log(response)
+          addTransaction(response, {
+            summary: `Claim LOCKED ${govToken?.symbol} rewards`
+          })
+          console.log(response)
+          setHash(response.hash)
+          console.log(hash)
+          console.log(failed)
+          console.log(attempting)
+        })
+        .catch((error: any) => {
+          setAttempting(false)
+          if (error?.code === -32603) {
+            setFailed(true)
+          }
+          console.log(error)
+        })
+    }
   }
 
   return (
@@ -166,6 +209,9 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
             <Break />
             <CardSection gap="sm">
               <AutoColumn gap="md">
+                <TYPE.white color="white">
+                  <h2 onClick={onClaimReward}>Claim Locked Tokens</h2>
+                </TYPE.white>
                 <RowBetween>
                   <TYPE.white color="white">
                     <MouseoverTooltip text={tooltips.lockedBalance}>Locked Balance:</MouseoverTooltip>
