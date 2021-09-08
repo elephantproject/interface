@@ -26,22 +26,16 @@ export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
 export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
 export const GOVERNANCE_TOKEN: { [chainId in ChainId]: Token } = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, ZERO_ONE_ADDRESS, 18, 'VIPER', 'Viper'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, ZERO_ONE_ADDRESS, 18, 'VIPER', 'Viper'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, ZERO_ONE_ADDRESS, 18, 'VIPER', 'Viper'),
-  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, ZERO_ONE_ADDRESS, 18, 'VIPER', 'Viper'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, ZERO_ONE_ADDRESS, 18, 'VIPER', 'Viper'),
-  [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, ZERO_ONE_ADDRESS, 18, 'COBRA', 'Cobra'),
-  [ChainId.BSC_TESTNET]: new Token(
-    ChainId.BSC_TESTNET,
-    '0xBa6605f2C72339beCD24dbaFf5B3604c330C1ce0',
-    18,
-    'COBRA',
-    'Cobra'
-  ),
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, ZERO_ONE_ADDRESS, 18, '', ''),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, ZERO_ONE_ADDRESS, 18, '', ''),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, ZERO_ONE_ADDRESS, 18, '', ''),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, ZERO_ONE_ADDRESS, 18, '', ''),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, ZERO_ONE_ADDRESS, 18, '', ''),
+  [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, ZERO_ONE_ADDRESS, 18, '', 'Elephant'),
+  [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, '0x0000000000000000000000000000000000000000', 18, '', ''),
   [ChainId.HARMONY_MAINNET]: new Token(
     ChainId.HARMONY_MAINNET,
-    '0x486eb781602587AAF8B39aCae74d30F609854884',
+    '0x15A3ae254262f650883fbc54bA97138a4cc1Db13',
     18,
     'ELEPHANT',
     'Elephant'
@@ -63,7 +57,7 @@ export const MASTER_BREEDER: { [chainId in ChainId]: string } = {
   [ChainId.KOVAN]: ZERO_ONE_ADDRESS,
   [ChainId.BSC_MAINNET]: ZERO_ONE_ADDRESS,
   [ChainId.BSC_TESTNET]: ZERO_ONE_ADDRESS,
-  [ChainId.HARMONY_MAINNET]: '0xa0faE6D5CAD549AfcFca3135A35413a070868dD7',
+  [ChainId.HARMONY_MAINNET]: '0x5689d00011eFAE99348bFbc945021925824eAb7F',
   [ChainId.HARMONY_TESTNET]: '0xb92cf62Aa5d64d651e124c3C87E3072DBA5dF66B'
 }
 
@@ -80,12 +74,12 @@ export const PIT_BREEDER: { [chainId in ChainId]: string } = {
 }
 
 export const PIT: { [chainId in ChainId]: Token } = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, ZERO_ONE_ADDRESS, 18, 'xVIPER', 'ViperPit'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, ZERO_ONE_ADDRESS, 18, 'xVIPER', 'ViperPit'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, ZERO_ONE_ADDRESS, 18, 'xVIPER', 'ViperPit'),
-  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, ZERO_ONE_ADDRESS, 18, 'xVIPER', 'ViperPit'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, ZERO_ONE_ADDRESS, 18, 'xVIPER', 'ViperPit'),
-  [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, ZERO_ONE_ADDRESS, 18, 'xCOBRA', 'CobraDen'),
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, ZERO_ONE_ADDRESS, 18, 'xElephant', 'ElephantPit'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, ZERO_ONE_ADDRESS, 18, 'xElephant', 'ElephantPit'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, ZERO_ONE_ADDRESS, 18, 'xElephant', 'ElephantPit'),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, ZERO_ONE_ADDRESS, 18, 'xElephant', 'ElephantPit'),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, ZERO_ONE_ADDRESS, 18, 'xElephant', 'ElephantPit'),
+  [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, ZERO_ONE_ADDRESS, 18, '', ''),
   [ChainId.BSC_TESTNET]: new Token(
     ChainId.BSC_TESTNET,
     '0x6F08B9914A4BDce7a2220D9f72BC2728Bc083A18',
@@ -115,8 +109,8 @@ export const PIT_SETTINGS: { [chainId in ChainId]: Record<string, string> } = {
   [ChainId.ROPSTEN]: { name: '', path: '' },
   [ChainId.GÖRLI]: { name: '', path: '' },
   [ChainId.KOVAN]: { name: '', path: '' },
-  [ChainId.BSC_MAINNET]: { name: 'CobraDen', path: '/cobraDen' },
-  [ChainId.BSC_TESTNET]: { name: 'CobraDen', path: '/cobraDen' },
+  [ChainId.BSC_MAINNET]: { name: '', path: '' },
+  [ChainId.BSC_TESTNET]: { name: '', path: '' },
   [ChainId.HARMONY_MAINNET]: { name: 'ElephantPit', path: '/elephantPit' },
   [ChainId.HARMONY_TESTNET]: { name: 'ElephantPit', path: '/elephantPit' }
 }
@@ -129,8 +123,8 @@ export const WEB_INTERFACES: { [chainId in ChainId]: string[] } = {
   [ChainId.KOVAN]: [''],
   [ChainId.BSC_MAINNET]: [''],
   [ChainId.BSC_TESTNET]: [''],
-  [ChainId.HARMONY_MAINNET]: [],
-  [ChainId.HARMONY_TESTNET]: []
+  [ChainId.HARMONY_MAINNET]: ['https://elephant-navy.vercel.app/#/swap'],
+  [ChainId.HARMONY_TESTNET]: ['https://elephant-navy.vercel.app/#/swap']
 }
 
 export { PRELOADED_PROPOSALS } from './proposals'
@@ -186,7 +180,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     getTokenWithDefault(ChainId.HARMONY_MAINNET, 'BUSD'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, 'bscBUSD'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, '1USDC'),
-    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'VIPER'),
+    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'ELEPHANT'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, '1ETH'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, 'LINK')
   ]
@@ -208,8 +202,8 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
   [ChainId.HARMONY_MAINNET]: [
     ...WETH_ONLY[ChainId.HARMONY_MAINNET],
-    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'BUSD'),
-    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'VIPER')
+    getTokenWithDefault(ChainId.HARMONY_MAINNET, '1USDC'),
+    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'ELEPHANT')
   ]
 }
 
@@ -222,7 +216,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     getTokenWithDefault(ChainId.HARMONY_MAINNET, 'BUSD'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, 'bscBUSD'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, '1USDC'),
-    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'VIPER'),
+    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'ELEPHANT'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, '1ETH'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, 'LINK')
   ]

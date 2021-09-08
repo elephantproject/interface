@@ -1,15 +1,15 @@
 import { Blockchain } from '@elephantdefi/sdk'
 import { BLOCKCHAIN } from '../connectors'
-import viperTokenLogo from '../assets/images/viper-token-logo.png'
-import cobraTokenLogo from '../assets/images/cobra-token-logo.png'
+import elephantTokenLogo from '../assets/images/viper-token-logo.png'
+import bscdump from '../assets/images/cobra-token-logo.png'
 
 export default function getTokenLogo(): string {
   switch (BLOCKCHAIN) {
     case Blockchain.BINANCE_SMART_CHAIN:
-      return cobraTokenLogo
+      return bscdump
     case Blockchain.HARMONY:
-      return viperTokenLogo
+      return bscdump
     default:
-      return viperTokenLogo
+      return elephantTokenLogo
   }
 }
