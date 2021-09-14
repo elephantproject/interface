@@ -31,7 +31,13 @@ export const GOVERNANCE_TOKEN: { [chainId in ChainId]: Token } = {
   [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, ZERO_ONE_ADDRESS, 18, '', ''),
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, ZERO_ONE_ADDRESS, 18, '', ''),
   [ChainId.KOVAN]: new Token(ChainId.KOVAN, ZERO_ONE_ADDRESS, 18, '', ''),
-  [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, ZERO_ONE_ADDRESS, 18, '', 'Elephant'),
+  [ChainId.BSC_MAINNET]: new Token(
+    ChainId.BSC_MAINNET,
+    ZERO_ONE_ADDRESS,
+    18,
+    '0x0000000000000000000000000000000000000000',
+    'Elephant'
+  ),
   [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, '0x0000000000000000000000000000000000000000', 18, '', ''),
   [ChainId.HARMONY_MAINNET]: new Token(
     ChainId.HARMONY_MAINNET,
@@ -80,13 +86,7 @@ export const PIT: { [chainId in ChainId]: Token } = {
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, ZERO_ONE_ADDRESS, 18, 'xElephant', 'ElephantPit'),
   [ChainId.KOVAN]: new Token(ChainId.KOVAN, ZERO_ONE_ADDRESS, 18, 'xElephant', 'ElephantPit'),
   [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, ZERO_ONE_ADDRESS, 18, '', ''),
-  [ChainId.BSC_TESTNET]: new Token(
-    ChainId.BSC_TESTNET,
-    '0x6F08B9914A4BDce7a2220D9f72BC2728Bc083A18',
-    18,
-    'xCOBRA',
-    'CobraDen'
-  ),
+  [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, '0x6F08B9914A4BDce7a2220D9f72BC2728Bc083A18', 18, '', ''),
   [ChainId.HARMONY_MAINNET]: new Token(
     ChainId.HARMONY_MAINNET,
     '0x0b56A283491A15bD03d265F84eE65b226ac04664',

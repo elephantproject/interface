@@ -5,12 +5,12 @@ export default function usePlatformName(): string {
   const blockchain = useBlockchain()
   switch (blockchain) {
     case Blockchain.BINANCE_SMART_CHAIN:
-      return 'Cobraswap'
+      return 'Null'
     case Blockchain.HARMONY:
       return 'Elephant Exchange'
     case Blockchain.ETHEREUM:
-      return 'Elephant'
+      return 'Elephant Exchange'
     default:
-      return 'Elephant'
+      return 'Elephant Exchange'
   }
 }
