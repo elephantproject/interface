@@ -1,6 +1,5 @@
 import { Blockchain } from '@elephantdefi/sdk'
 import { BLOCKCHAIN } from '../connectors'
-import elephantTokenLogo from '../assets/images/viper-token-logo.png'
 import bscdump from '../assets/images/elephant-token-logo.png'
 
 export default function getTokenLogo(): string {
@@ -10,6 +9,6 @@ export default function getTokenLogo(): string {
     case Blockchain.HARMONY:
       return bscdump
     default:
-      return elephantTokenLogo
+      return bscdump
   }
 }

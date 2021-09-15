@@ -24,16 +24,5 @@ export const STAKING_REWARDS_INFO: {
       active: true
     }
   ],
-  [ChainId.BSC_TESTNET]: [
-    {
-      pid: 0,
-      tokens: getPairTokensWithDefaults(ChainId.BSC_TESTNET, 'WBNB/BUSD'),
-      active: true
-    },
-    {
-      pid: 1,
-      tokens: getPairTokensWithDefaults(ChainId.BSC_TESTNET, 'WBNB/COBRA'),
-      active: true
-    }
-  ]
+  [ChainId.BSC_TESTNET]: []
 }
