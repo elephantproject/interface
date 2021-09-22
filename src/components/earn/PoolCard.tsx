@@ -15,9 +15,11 @@ import useBUSDPrice from '../../hooks/useBUSDPrice'
 //import useUSDCPrice from '../../utils/useUSDCPrice'
 //import { BIG_INT_SECONDS_IN_WEEK } from '../../constants'
 import useGovernanceToken from '../../hooks/useGovernanceToken'
+import './index.css'
 
 const StatContainer = styled.div`
   display: flex;
+  z-index: 1;
   justify-content: space-between;
   flex-direction: column;
   gap: 12px;
@@ -153,7 +155,7 @@ export default function PoolCard({ stakingInfo, isArchived }: { stakingInfo: Sta
         <>
           <Break />
           <StatContainerTop>
-            <RowBetween>
+            <RowBetween className="z">
               <TYPE.white> Your Unlocked Rewards </TYPE.white>
               <TYPE.white>
                 <span role="img" aria-label="wizard-icon" style={{ marginRight: '0.5rem' }}>

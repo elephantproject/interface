@@ -210,7 +210,7 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
             <CardSection gap="sm">
               <AutoColumn gap="md">
                 <TYPE.white color="white">
-                  <h2 onClick={onClaimReward}>Claim Locked Tokens</h2>
+                  <h2 onClick={onClaimReward}></h2>
                 </TYPE.white>
                 <RowBetween>
                   <TYPE.white color="white">
