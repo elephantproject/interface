@@ -90,6 +90,7 @@ const CustomCard = styled(DataCard)`
     ${({ theme }) => theme.customCardGradientEnd} 100%
   );
   overflow: hidden;
+  z-index: 1;
 `
 
 const DataRow = styled(RowBetween)`
@@ -194,7 +195,7 @@ export default function Pit({
             <CardSection>
               <CardBGImage desaturate />
               <CardNoise />
-              <AutoColumn gap="md">
+              <AutoColumn className="z" gap="md">
                 <RowBetween>
                   <TYPE.white fontWeight={600}>{pitSettings?.name} - DEX fee sharing</TYPE.white>
                 </RowBetween>
