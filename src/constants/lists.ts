@@ -2,6 +2,7 @@
 /**
  * @TODO add list from blockchain association
  */
+
 export const UNSUPPORTED_LIST_URLS: string[] = []
 
 /*const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
