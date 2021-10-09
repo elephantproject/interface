@@ -15,7 +15,7 @@ export const getTokenLogoURL = (address: string) =>
   `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
 
 export const getTokenFallbackLogoURL = (currency: Currency) =>
-  `https://d1xrz6ki9z98vb.cloudfront.net/venomswap/tokens/${currency.symbol}.png`
+  `https://elephantdefi.s3.us-west-1.amazonaws.com/${currency.symbol}.png`
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};

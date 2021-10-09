@@ -41,7 +41,7 @@ export const GOVERNANCE_TOKEN: { [chainId in ChainId]: Token } = {
   [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, '0x0000000000000000000000000000000000000000', 18, '', ''),
   [ChainId.HARMONY_MAINNET]: new Token(
     ChainId.HARMONY_MAINNET,
-    '0x43189D9AaD9F79e19D8881A8e3384691AD7F4993',
+    '0xe23069F8643262Ef155Af99aD1892713199144fA',
     18,
     'ELEPHANT',
     'Elephant'
@@ -63,7 +63,7 @@ export const MASTER_BREEDER: { [chainId in ChainId]: string } = {
   [ChainId.KOVAN]: ZERO_ONE_ADDRESS,
   [ChainId.BSC_MAINNET]: ZERO_ONE_ADDRESS,
   [ChainId.BSC_TESTNET]: ZERO_ONE_ADDRESS,
-  [ChainId.HARMONY_MAINNET]: '0x96716bff65cb6AFdf086f417cB92Ea60740d2349',
+  [ChainId.HARMONY_MAINNET]: '0x6a87F5e23b6E52BCb8d3F510880BCFbD472585a9',
   [ChainId.HARMONY_TESTNET]: '0xb92cf62Aa5d64d651e124c3C87E3072DBA5dF66B'
 }
 
@@ -75,7 +75,7 @@ export const PIT_BREEDER: { [chainId in ChainId]: string } = {
   [ChainId.KOVAN]: ZERO_ONE_ADDRESS,
   [ChainId.BSC_MAINNET]: ZERO_ONE_ADDRESS,
   [ChainId.BSC_TESTNET]: ZERO_ONE_ADDRESS,
-  [ChainId.HARMONY_MAINNET]: '0x33869246F62a0C971Ad167156A8400290b45bb4a',
+  [ChainId.HARMONY_MAINNET]: '0xb2B9A9cab1db6dd308623C87B17F91e5709037c0',
   [ChainId.HARMONY_TESTNET]: '0x7706B42b2c6030BA08d6Df8bD71E85C8c72e7bDb'
 }
 
@@ -89,7 +89,7 @@ export const PIT: { [chainId in ChainId]: Token } = {
   [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, '0x6F08B9914A4BDce7a2220D9f72BC2728Bc083A18', 18, '', ''),
   [ChainId.HARMONY_MAINNET]: new Token(
     ChainId.HARMONY_MAINNET,
-    '0x3C561B0cDFA5Fee25A594b18F370523274864080',
+    '0x07DA5A06aeb32e557452F2147d9927B985F0EcE1',
     18,
     'xElephant',
     'ElephantPit'
@@ -123,7 +123,7 @@ export const WEB_INTERFACES: { [chainId in ChainId]: string[] } = {
   [ChainId.KOVAN]: [''],
   [ChainId.BSC_MAINNET]: [''],
   [ChainId.BSC_TESTNET]: [''],
-  [ChainId.HARMONY_MAINNET]: ['https://elephant-navy.vercel.app/#/swap'],
+  [ChainId.HARMONY_MAINNET]: ['http://elephant.ac'],
   [ChainId.HARMONY_TESTNET]: ['https://elephant-navy.vercel.app/#/swap']
 }
 

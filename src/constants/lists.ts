@@ -18,7 +18,7 @@ const CMC_ALL_LIST = 'defi.cmc.eth'
 const CMC_STABLECOIN = 'stablecoin.cmc.eth'
 const KLEROS_LIST = 't2crtokens.eth'
 const GEMINI_LIST = 'https://www.gemini.com/uniswap/manifest.json'*/
-const ELEPHANT_DEFAULT_LIST = 'https://elephantdefi.s3.us-west-1.amazonaws.com/elephantdefi-default.tokenlist.json'
+const ELEPHANT_DEFAULT_LIST = 'https://pastebin.com/yHyGHbHd'
 const ELEPHANT_COMMUNITY_LIST = 'https://elephantdefi.s3.us-west-1.amazonaws.com/elephant-community.tokenlist.json'
 
 // lower index == higher priority for token import

@@ -2,7 +2,7 @@
   "name": "@elephantdefi/interface",
   "description": "Elephant Project Interface",
   "version": "1.0.2",
-  "homepage": ".",
+  "homepage": "./",
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.1.2",
@@ -10,7 +10,7 @@
     "@elephantdefi/core": "^ 1.0.2",
     "@elephantdefi/periphery": "^1.0.2",
     "@elephantdefi/sdk": "^1.0.2",
-    "@elephantdefi/sdk-extra": "^1.0.5",
+    "@elephantdefi/sdk-extra": "^1.0.4",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
@@ -130,7 +130,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@elephantdefi/default-token-list": "1.0.5",
+    "@elephantdefi/default-token-list": "1.0.6 ",
     "@walletconnect/web3-provider": "^1.5.0"
   }
 }

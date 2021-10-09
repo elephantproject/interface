@@ -180,13 +180,7 @@ export default function Pool() {
                 <ResponsiveButtonSecondary as={Link} padding="6px 8px" to={createPoolUrl}>
                   Create a pair
                 </ResponsiveButtonSecondary>
-                <ResponsiveButtonPrimary
-                  id="join-pool-button"
-                  as={Link}
-                  padding="6px 8px"
-                  borderRadius="12px"
-                  to={addLiquidityUrl}
-                >
+                <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to={addLiquidityUrl}>
                   <Text fontWeight={500} fontSize={16}>
                     Add Liquidity
                   </Text>
