@@ -1309,10 +1309,10 @@
     dotenv "^10.0.0"
     tslib "^2.3.0"
 
-"@elephantdefi/default-token-list@1.5.6", "@elephantdefi/default-token-list@^1.5.6":
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/default-token-list/-/default-token-list-1.5.6.tgz#5608ee5182358427ddd366c81cc9cba4e3e6eb10"
-  integrity sha512-Ys4UcdIxQRfDeFugpuxaYiEuScHQx9H2kbQn9Ejk7RMjt9h+MZXLhkZFK0GZHbwrQpD/ZyxW+dygzVdhjHL9Og==
+"@elephantdefi/default-token-list@1.5.9", "@elephantdefi/default-token-list@^1.5.9":
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/@elephantdefi/default-token-list/-/default-token-list-1.5.9.tgz#9496336b5dd29370ee396c61449c43e9c11e0ca7"
+  integrity sha512-GZpd+79mxmmhX0zl3YLl55mzW9qt0HO4ObqxaC22ELLITwCixUryO/bgVWi9nn75ofXRBGRiIfYkK7otGy0YiQ==
 
 "@elephantdefi/lib@0.0.1", "@elephantdefi/lib@^0.0.1":
   version "0.0.1"
@@ -1330,14 +1330,14 @@
     dotenv "^10.0.0"
     tslib "^2.3.0"
 
-"@elephantdefi/sdk-extra@^1.5.6":
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/sdk-extra/-/sdk-extra-1.5.6.tgz#167fae6c7b33897b4d97b085192308839199575a"
-  integrity sha512-coP7Mpq+iytR1axN4zJcEeNK/YBeC0b4ssAC5pEqpdxOxIbLlVha5U9tl7ohAo1vheqPJYUF2rISMRPhm75VzQ==
+"@elephantdefi/sdk-extra@^1.5.9":
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/@elephantdefi/sdk-extra/-/sdk-extra-1.5.9.tgz#579efb355482034d16fbe27f5fec9032ec8ee65d"
+  integrity sha512-QlQOfFMG5fvOQFQkpR/JDqXDJH0ln5JjvBvc/n9Q8NDQ8/KAOwYK+Jo+QaBSR1Cg3yt1a8zwuM0pLBA3OECNxw==
   dependencies:
     "@elephantdefi/community-token-list" "1.0.4"
-    "@elephantdefi/default-token-list" "^1.5.6"
-    "@elephantdefi/sdk" "^1.5.6"
+    "@elephantdefi/default-token-list" "^1.5.9"
+    "@elephantdefi/sdk" "^1.5.7"
     "@ethersproject/address" "^5.3.0"
     "@ethersproject/contracts" "^5.3.0"
     "@ethersproject/providers" "^5.3.0"
@@ -1345,10 +1345,10 @@
     "@types/lodash.random" "^3.2.6"
     lodash.random "^3.2.0"
 
-"@elephantdefi/sdk@^1.5.6":
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/sdk/-/sdk-1.5.6.tgz#b8f2ad860d794573bedbc5f40b0a99b19d8b7d29"
-  integrity sha512-cRMiAfdgcCoTiY3zdWd6DLLPMIBhpcCgKGSzPRI1ELf78IvgSdLoGl7RodNsfQzYyDemHDqf+dqv/ZExX/WlGg==
+"@elephantdefi/sdk@^1.5.7", "@elephantdefi/sdk@^1.5.8":
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/@elephantdefi/sdk/-/sdk-1.5.8.tgz#c8d0433f7492b90673ee6ca5a267a2eb7a76f78b"
+  integrity sha512-sY/flf0kSh53J0SAcPU2EJdvJG1/0fKuOHKEdaMdxMffprnkhFr+qHRGxfHFOodGadlPmKsNcZxTe+1lM4sQ3A==
   dependencies:
     "@elephantdefi/core" "1.5.6"
     big.js "^5.2.2"

@@ -1,7 +1,7 @@
 {
   "name": "@elephantdefi/interface",
   "description": "Elephant Project Interface",
-  "version": "1.0.2",
+  "version": "1.5.9",
   "homepage": "./",
   "private": true,
   "devDependencies": {
@@ -9,8 +9,8 @@
     "@elephantdefi/contracts": "^1.5.6",
     "@elephantdefi/core": "^ 1.5.6",
     "@elephantdefi/periphery": "^1.5.6",
-    "@elephantdefi/sdk": "^1.5.6",
-    "@elephantdefi/sdk-extra": "^1.5.6",
+    "@elephantdefi/sdk": "^1.5.8",
+    "@elephantdefi/sdk-extra": "^1.5.9",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
@@ -130,7 +130,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@elephantdefi/default-token-list": "1.5.6",
+    "@elephantdefi/default-token-list": "1.5.9",
     "@walletconnect/web3-provider": "^1.5.0"
   }
 }
