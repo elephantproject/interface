@@ -21,7 +21,7 @@ export const ROUTER_ADDRESSES: { [chainId in ChainId]: string } = {
   [ChainId.HARMONY_TESTNET]: '0xc540039dD671dE978E115814Bf14104AeaBdfb09'
 }
 
-export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
+export const GOVERNANCE_ADDRESS = ZERO_ONE_ADDRESS
 
 export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
@@ -31,13 +31,7 @@ export const GOVERNANCE_TOKEN: { [chainId in ChainId]: Token } = {
   [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, ZERO_ONE_ADDRESS, 18, '', ''),
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, ZERO_ONE_ADDRESS, 18, '', ''),
   [ChainId.KOVAN]: new Token(ChainId.KOVAN, ZERO_ONE_ADDRESS, 18, '', ''),
-  [ChainId.BSC_MAINNET]: new Token(
-    ChainId.BSC_MAINNET,
-    ZERO_ONE_ADDRESS,
-    18,
-    '0x0000000000000000000000000000000000000000',
-    'Elephant'
-  ),
+  [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, ZERO_ONE_ADDRESS, 18, ZERO_ONE_ADDRESS),
   [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, '0x0000000000000000000000000000000000000000', 18, '', ''),
   [ChainId.HARMONY_MAINNET]: new Token(
     ChainId.HARMONY_MAINNET,
