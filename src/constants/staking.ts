@@ -14,12 +14,12 @@ export const STAKING_REWARDS_INFO: {
     {
       pid: 0,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/1USDC'),
-      active: false
+      active: true
     },
     {
       pid: 1,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/ELEPHANT'),
-      active: false
+      active: true
     }
   ],
   [ChainId.HARMONY_TESTNET]: [
