@@ -24,26 +24,27 @@ export default function CombinedTVL({}) {
                   <b>Staking:</b> $
                   {TVLs.stakingPoolTVL.toSignificant(8, {
                     groupSeparator: ','
-                  })}
+                  }) * 1000000000000}
                   <br />
                 </>
               )}
               {TVLs.totalPitTVL?.greaterThan('0') && (
                 <>
-                  <b>{pitSettings?.name}:</b> ${TVLs.totalPitTVL.toSignificant(8, { groupSeparator: ',' })}
+                  <b>{pitSettings?.name}:</b> $
+                  {TVLs.totalPitTVL.toSignificant(8, { groupSeparator: ',' }) * 1000000000000}
                   <br />
                 </>
               )}
               {TVLs.totalCombinedTVL?.greaterThan('0') && (
                 <>
-                  <b>Total:</b> ${TVLs.totalCombinedTVL.toSignificant(8, { groupSeparator: ',' })}
+                  <b>Total:</b> ${TVLs.totalCombinedTVL.toSignificant(8, { groupSeparator: ',' }) * 1000000000000}
                 </>
               )}
             </>
           }
         >
           {TVLs.totalCombinedTVL?.greaterThan('0') && (
-            <>TVL: ${TVLs.totalCombinedTVL.toSignificant(8, { groupSeparator: ',' })}</>
+            <>TVL: ${TVLs.totalCombinedTVL.toSignificant(8, { groupSeparator: ',' }) * 1000000000000}</>
           )}
         </CustomMouseoverTooltip>
       )}

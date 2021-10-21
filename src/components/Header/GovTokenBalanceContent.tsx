@@ -20,11 +20,6 @@ import useGovernanceToken from '../../hooks/useGovernanceToken'
 import { GOVERNANCE_TOKEN_INTERFACE } from '../../constants/abis/governanceToken'
 import { MouseoverTooltip } from '../Tooltip'
 import useBlockchain from '../../hooks/useBlockchain'
-import { useGovTokenContract } from 'hooks/useContract'
-import { useState } from 'react'
-import { calculateGasMargin } from 'utils'
-import { TransactionResponse } from '@ethersproject/providers'
-import { useTransactionAdder } from '../../state/transactions/hooks'
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -81,53 +76,18 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
   const totalSupply: TokenAmount | undefined = useGovTokenSupply()
   const totalUnlockedSupply: TokenAmount | undefined = useGovTokenSupply('unlockedSupply')
   const govTokenPrice = useBUSDPrice(govToken)
+
+  console.log(govTokenPrice, 'hello')
+
   const circulatingMarketCap = govTokenPrice ? totalUnlockedSupply?.multiply(govTokenPrice.raw) : undefined
   const totalMarketCap = govTokenPrice ? totalSupply?.multiply(govTokenPrice.raw) : undefined
   const tooltips: Record<string, string> = {
     unlockedRewards:
       'Unlocked pending rewards - 5% of your claimable rewards will be directly accessible upon claiming.',
     lockedRewards:
-      'Locked pending rewards - 95% of your claimable rewards will be locked until 00:00:00 December 25th, 2021 (UTC). They will thereafter gradually unlock until December 25th, 2022.',
+      'Locked  - 95% of your claimable rewards will be locked until July 2022. They will thereafter gradually unlock until July 2023.',
     lockedBalance:
-      'Locked balance - Your locked balance will remain locked until 00:00:00 December 25th, 2021 (UTC). Your locked tokens will thereafter gradually unlock until December 25th, 2022.'
-  }
-
-  const govtoken = useGovTokenContract()
-  const addTransaction = useTransactionAdder()
-
-  const [hash, setHash] = useState<string | undefined>()
-  const [failed, setFailed] = useState<boolean>(false)
-  const [attempting, setAttempting] = useState(false)
-
-  async function onClaimReward() {
-    if (govtoken) {
-      setAttempting(true)
-
-      const estimatedGas = await govtoken.estimateGas.unlock()
-
-      await govtoken
-        .unlock({
-          gasLimit: calculateGasMargin(estimatedGas)
-        })
-        .then((response: TransactionResponse) => {
-          console.log(response)
-          addTransaction(response, {
-            summary: `Claim LOCKED ${govToken?.symbol} rewards`
-          })
-          console.log(response)
-          setHash(response.hash)
-          console.log(hash)
-          console.log(failed)
-          console.log(attempting)
-        })
-        .catch((error: any) => {
-          setAttempting(false)
-          if (error?.code === -32603) {
-            setFailed(true)
-          }
-          console.log(error)
-        })
-    }
+      'Locked balance - Your locked balance will remain locked until July 2022. Your locked tokens will thereafter gradually unlock until July 2023.'
   }
 
   return (
@@ -158,9 +118,9 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                     <MouseoverTooltip
                       text={
                         govTokenPrice && govTokenBalance && govTokenBalance.greaterThan('0')
-                          ? `USD: $${govTokenBalance
-                              .multiply(govTokenPrice?.raw)
-                              .toSignificant(6, { groupSeparator: ',' })}`
+                          ? `USD: $${Number(
+                              govTokenBalance.multiply(govTokenPrice?.raw).toSignificant(6, { groupSeparator: ',' })
+                            ) * 1000000000000}`
                           : ''
                       }
                     >
@@ -209,9 +169,6 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
             <Break />
             <CardSection gap="sm">
               <AutoColumn gap="md">
-                <TYPE.white color="white">
-                  <h2 onClick={onClaimReward}></h2>
-                </TYPE.white>
                 <RowBetween>
                   <TYPE.white color="white">
                     <MouseoverTooltip text={tooltips.lockedBalance}>Locked Balance:</MouseoverTooltip>
@@ -220,9 +177,9 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                     <MouseoverTooltip
                       text={
                         govTokenPrice && govTokenLockedBalance && govTokenLockedBalance.greaterThan('0')
-                          ? `USD: $${govTokenLockedBalance
-                              .multiply(govTokenPrice?.raw)
-                              .toSignificant(6, { groupSeparator: ',' })}`
+                          ? `USD: $${Number(
+                              govTokenLockedBalance.multiply(govTokenPrice).toSignificant(6, { groupSeparator: ',' })
+                            ) * 1000000000000}`
                           : ''
                       }
                     >
@@ -236,9 +193,11 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                     <MouseoverTooltip
                       text={
                         govTokenPrice && govTokenTotalBalance && govTokenTotalBalance.greaterThan('0')
-                          ? `USD: $${govTokenTotalBalance
-                              .multiply(govTokenPrice?.raw)
-                              .toSignificant(6, { groupSeparator: ',' })}`
+                          ? `USD: $${Number(
+                              govTokenTotalBalance
+                                .multiply(govTokenPrice?.raw)
+                                .toSignificant(6, { groupSeparator: ',' })
+                            ) * 1000000000000}`
                           : ''
                       }
                     >
@@ -275,13 +234,20 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                 {circulatingMarketCap && (
                   <RowBetween>
                     <TYPE.white color="white">{govToken?.symbol} circ. market cap:</TYPE.white>
-                    <TYPE.white color="white">${circulatingMarketCap?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
+                    <TYPE.white color="white">
+                      ${Number(circulatingMarketCap?.toFixed(12, { groupSeparator: ',' })) * 1000000000000}
+                    </TYPE.white>
                   </RowBetween>
                 )}
+
+                {console.log(circulatingMarketCap)}
+
                 {totalMarketCap && (
                   <RowBetween>
                     <TYPE.white color="white">{govToken?.symbol} total market cap:</TYPE.white>
-                    <TYPE.white color="white">${totalMarketCap?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
+                    <TYPE.white color="white">
+                      ${Number(totalMarketCap?.toFixed(12, { groupSeparator: ',' })) * 1000000000000}
+                    </TYPE.white>
                   </RowBetween>
                 )}
               </AutoColumn>
