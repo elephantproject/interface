@@ -160,6 +160,11 @@ const UNIWrapper = styled.span`
   }
 `
 
+const Marginleft = styled.span`
+  margin-left: 20rem;
+  display: flex;
+`
+
 const HideSmall = styled.span`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     display: none;
@@ -384,9 +389,9 @@ export default function Header() {
           </StyledNavLink>
 
           <StyledNavLink id={`stake-nav-link`} to={'/casino'}>
-            Casino
+            Casino (coming soon)
           </StyledNavLink>
-          <div className="text-4xl">Elephant Live Price ${govTokenPrice?.toFixed(4) ?? '-'}</div>
+          <Marginleft>Elephant Live Price ${govTokenPrice?.toFixed(4) ?? '-'}</Marginleft>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>

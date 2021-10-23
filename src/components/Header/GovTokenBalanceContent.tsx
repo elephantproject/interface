@@ -77,8 +77,6 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
   const totalUnlockedSupply: TokenAmount | undefined = useGovTokenSupply('unlockedSupply')
   const govTokenPrice = useBUSDPrice(govToken)
 
-  console.log(govTokenPrice, 'hello')
-
   const circulatingMarketCap = govTokenPrice ? totalUnlockedSupply?.multiply(govTokenPrice.raw) : undefined
   const totalMarketCap = govTokenPrice ? totalSupply?.multiply(govTokenPrice.raw) : undefined
   const tooltips: Record<string, string> = {
@@ -239,8 +237,6 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                     </TYPE.white>
                   </RowBetween>
                 )}
-
-                {console.log(circulatingMarketCap)}
 
                 {totalMarketCap && (
                   <RowBetween>
