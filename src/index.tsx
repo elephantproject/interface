@@ -4,6 +4,8 @@ import React, { StrictMode } from 'react'
 import { isMobile } from 'react-device-detect'
 import ReactDOM from 'react-dom'
 import ReactGA from 'react-ga'
+import './index.css'
+
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
 import Blocklist from './components/Blocklist'

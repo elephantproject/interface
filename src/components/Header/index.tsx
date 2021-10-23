@@ -4,6 +4,7 @@ import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
 import { useTranslation } from 'react-i18next'
+import useBUSDPrice from '../../hooks/useBUSDPrice'
 
 import styled from 'styled-components'
 
@@ -304,8 +305,10 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
 export default function Header() {
   const { account, chainId } = useActiveWeb3React()
   const { t } = useTranslation()
-
   const govToken = useGovernanceToken()
+
+  const govTokenPrice = useBUSDPrice(govToken)
+
   const pitSettings = chainId ? PIT_SETTINGS[chainId] : undefined
 
   let logoDark: string
@@ -379,6 +382,11 @@ export default function Header() {
           <StyledNavLink id={`stake-nav-link`} to={`${pitSettings?.path}`}>
             {pitSettings?.name}
           </StyledNavLink>
+
+          <StyledNavLink id={`stake-nav-link`} to={'/casino'}>
+            Casino
+          </StyledNavLink>
+          <div className="text-4xl">Elephant Live Price ${govTokenPrice?.toFixed(4) ?? '-'}</div>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>

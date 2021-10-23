@@ -5,12 +5,12 @@
   "homepage": "./",
   "private": true,
   "devDependencies": {
-    "@ethersproject/experimental": "^5.1.2",
     "@elephantdefi/contracts": "^1.5.6",
     "@elephantdefi/core": "^ 1.5.6",
     "@elephantdefi/periphery": "^1.5.6",
     "@elephantdefi/sdk": "^1.5.8",
     "@elephantdefi/sdk-extra": "^1.5.9",
+    "@ethersproject/experimental": "^5.1.2",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
@@ -44,6 +44,7 @@
     "@web3-react/walletconnect-connector": "^6.1.1",
     "@web3-react/walletlink-connector": "^6.0.9",
     "ajv": "^6.12.3",
+    "autoprefixer": "^9.8.8",
     "cids": "^1.1.6",
     "copy-to-clipboard": "^3.2.0",
     "cross-env": "^7.0.2",
@@ -65,6 +66,7 @@
     "multihashes": "^4.0.2",
     "node-vibrant": "^3.1.5",
     "polished": "^3.3.2",
+    "postcss": "^7.0.39",
     "prettier": "^1.17.0",
     "qs": "^6.9.4",
     "react": "^16.13.1",
@@ -88,6 +90,7 @@
     "serve": "^11.3.2",
     "start-server-and-test": "^1.11.0",
     "styled-components": "^4.2.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "typescript": "^3.8.3",
     "use-count-up": "^2.2.5",
     "wcag-contrast": "^3.0.0",
@@ -101,10 +104,10 @@
     "@walletconnect/web3-provider": "1.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdo",
     "start:service-worker": "yarn build && npx serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
     "lint": "eslint . --config ./.eslintrc.json --ext .js,.ts,.tsx",
@@ -130,6 +133,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@craco/craco": "^6.3.0",
     "@elephantdefi/default-token-list": "1.5.9",
     "@walletconnect/web3-provider": "^1.5.0"
   }

@@ -119,7 +119,7 @@ export default function Menu() {
             <MessageSquare size={14} />
             Discord
           </MenuItem>
-          <MenuItem id="link" href="https://discord.gg/ESJsrCguDH">
+          <MenuItem id="link" href="https://t.me/elephantdex">
             <Send size={14} />
             Telegram
           </MenuItem>
