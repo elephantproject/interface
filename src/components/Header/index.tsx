@@ -160,11 +160,6 @@ const UNIWrapper = styled.span`
   }
 `
 
-const Marginleft = styled.span`
-  margin-left: 20rem;
-  display: flex;
-`
-
 const HideSmall = styled.span`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     display: none;
@@ -227,6 +222,36 @@ const StyledNavLink = styled(NavLink).attrs({
   width: fit-content;
   margin: 0 12px;
   font-weight: 500;
+
+  &.${activeClassName} {
+    border-radius: 12px;
+    font-weight: 600;
+    color: ${({ theme }) => theme.text1};
+  }
+
+  :hover,
+  :focus {
+    color: ${({ theme }) => darken(0.1, theme.text1)};
+  }
+`
+
+const StyledNavLinkHideSmall = styled(NavLink).attrs({
+  activeClassName
+})`
+  ${({ theme }) => theme.flexRowNoWrap}
+  align-items: left;
+  border-radius: 3rem;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: ${({ theme }) => theme.text2};
+  font-size: 1rem;
+  width: fit-content;
+  margin: 0 12px;
+  font-weight: 500;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    display: none;
+  `};
 
   &.${activeClassName} {
     border-radius: 12px;
@@ -388,10 +413,10 @@ export default function Header() {
             {pitSettings?.name}
           </StyledNavLink>
 
-          <StyledNavLink id={`stake-nav-link`} to={'/casino'}>
+          <StyledNavLinkHideSmall id={`casino-nav-link`} to={'/casino'}>
             Casino (coming soon)
-          </StyledNavLink>
-          <Marginleft>Elephant Live Price ${govTokenPrice?.toFixed(4) ?? '-'}</Marginleft>
+          </StyledNavLinkHideSmall>
+          <HideSmall>${govTokenPrice?.toFixed(4) ?? '-'}</HideSmall>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>
