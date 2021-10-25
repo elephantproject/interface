@@ -4,7 +4,7 @@ import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
 import { useTranslation } from 'react-i18next'
-import useBUSDPrice from '../../hooks/useBUSDPrice'
+// import useBUSDPrice from '../../hooks/useBUSDPrice'
 
 import styled from 'styled-components'
 
@@ -160,10 +160,10 @@ const UNIWrapper = styled.span`
   }
 `
 
-const Marginleft = styled.span`
-  margin-left: 20rem;
-  display: flex;
-`
+// const Marginleft = styled.span`
+//   margin-left: 20rem;
+//   display: flex;
+// `
 
 const HideSmall = styled.span`
   ${({ theme }) => theme.mediaWidth.upToSmall`
@@ -312,7 +312,7 @@ export default function Header() {
   const { t } = useTranslation()
   const govToken = useGovernanceToken()
 
-  const govTokenPrice = useBUSDPrice(govToken)
+  // const govTokenPrice = useBUSDPrice(govToken)
 
   const pitSettings = chainId ? PIT_SETTINGS[chainId] : undefined
 
@@ -388,10 +388,10 @@ export default function Header() {
             {pitSettings?.name}
           </StyledNavLink>
 
-          <StyledNavLink id={`stake-nav-link`} to={'/casino'}>
+          {/* <StyledNavLink id={`stake-nav-link`} to={'/casino'}>
             Casino (coming soon)
-          </StyledNavLink>
-          <Marginleft>Elephant Live Price ${govTokenPrice?.toFixed(4) ?? '-'}</Marginleft>
+          </StyledNavLink> */}
+          {/* <Marginleft>Elephant Live Price ${govTokenPrice?.toFixed(4) ?? '-'}</Marginleft> */}
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>
