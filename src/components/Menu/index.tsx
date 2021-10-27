@@ -111,7 +111,7 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://info.viper.exchange">
+          <MenuItem id="link" href="https://elephantinfo.ac">
             <PieChart size={14} />
             Analytics
           </MenuItem>
@@ -119,7 +119,7 @@ export default function Menu() {
             <MessageSquare size={14} />
             Discord
           </MenuItem>
-          <MenuItem id="link" href="https://t.me/elephantdex">
+          <MenuItem id="link" href="https://t.me/elephantdexchat">
             <Send size={14} />
             Telegram
           </MenuItem>

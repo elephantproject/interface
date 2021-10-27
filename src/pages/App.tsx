@@ -19,6 +19,8 @@ import {
 } from './AddLiquidity/redirects'
 import Earn from './Earn'
 import '../index.css'
+import MobileHeader from '../components/Header/MobileHeader'
+// import Casino from '../pages/'
 
 import EarnArchived from './Earn/Archived'
 import Manage from './Earn/Manage'
@@ -89,6 +91,14 @@ export default function App() {
   const pitSettings = chainId ? PIT_SETTINGS[chainId] : undefined
   const platformName = usePlatformName()
 
+  const screenwidth = window.innerWidth
+  let ismobile
+  if (screenwidth < 777) {
+    ismobile = true
+  } else {
+    ismobile = false
+  }
+
   useEffect(() => {
     document.title = platformName
   }, [platformName])
@@ -98,9 +108,7 @@ export default function App() {
       <Route component={GoogleAnalyticsReporter} />
       <Route component={DarkModeQueryParamReader} />
       <AppWrapper>
-        <HeaderWrapper>
-          <Header />
-        </HeaderWrapper>
+        <HeaderWrapper>{ismobile ? <MobileHeader /> : <Header />}</HeaderWrapper>
         <BodyWrapper>
           <Popups />
           <Polling />
@@ -116,7 +124,7 @@ export default function App() {
               <Route exact strict path="/staking" component={Earn} />
               <Route exact strict path="/staking/archived" component={EarnArchived} />
               <Route exact strict path={pitSettings?.path} component={Pit} />
-              {/* <Route exact strict path={/casino} component={Casino} /> */}
+              <Route exact strict path="/casino" />
 
               {blockchain === Blockchain.ETHEREUM && <Route exact strict path="/vote" component={Vote} />}
               <Route exact strict path="/create" component={RedirectToAddLiquidity} />
