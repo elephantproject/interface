@@ -7,10 +7,10 @@ export default function usePlatformName(): string {
     case Blockchain.BINANCE_SMART_CHAIN:
       return 'Null'
     case Blockchain.HARMONY:
-      return 'Elephant Exchange'
+      return 'Elephant Dex - Harmony Liquidity Provider | elephant.ac'
     case Blockchain.ETHEREUM:
-      return 'Elephant Exchange'
+      return 'Elephant Dex - Harmony Liquidity Provider | elephant.ac'
     default:
-      return 'Elephant Exchange'
+      return 'Elephant Dex - Harmony Liquidity Provider | elephant.ac'
   }
 }

@@ -4,7 +4,7 @@ import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
 import { useTranslation } from 'react-i18next'
-import useBUSDPrice from '../../hooks/useBUSDPrice'
+// import useBUSDPrice from '../../hooks/useBUSDPrice'
 
 import styled from 'styled-components'
 
@@ -158,11 +158,6 @@ const UNIWrapper = styled.span`
   :active {
     opacity: 0.9;
   }
-`
-
-const Marginleft = styled.span`
-  margin-left: 20rem;
-  display: flex;
 `
 
 const HideSmall = styled.span`
@@ -337,8 +332,6 @@ export default function Header() {
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
   // const [isDark] = useDarkModeManager()
   const [darkMode, toggleDarkMode] = useDarkModeManager()
-
-  const govTokenPrice = useBUSDPrice(govToken)
 
   const toggleClaimModal = useToggleSelfClaimModal()
 

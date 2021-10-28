@@ -107,7 +107,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test --env=jsdo",
-    "start:service-worker": "yarn build && npx serve -s build",
+    "sw": "yarn build && npx serve -s build",
     "eject": "react-scripts eject",
     "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
     "lint": "eslint . --config ./.eslintrc.json --ext .js,.ts,.tsx",
