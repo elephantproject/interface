@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Send, Code, MessageSquare, PieChart, BookOpen } from 'react-feather'
+import { Send, Code, MessageSquare, PieChart, BookOpen, Twitter } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import { useActiveWeb3React } from '../../hooks'
@@ -130,6 +130,10 @@ export default function Menu() {
           <MenuItem id="link" href="https://medium.com/@elephantdex">
             <BookOpen size={14} />
             Medium
+          </MenuItem>
+          <MenuItem id="link" href="https://medium.com/@elephantdex">
+            <Twitter size={14} />
+            Twitter
           </MenuItem>
           {account && blockchain === Blockchain.ETHEREUM && (
             <ButtonPrimary onClick={openClaimModal} padding="8px 16px" width="100%" borderRadius="12px" mt="0.5rem">

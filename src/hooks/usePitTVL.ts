@@ -6,7 +6,7 @@ import usePitToken from './usePitToken'
 import { GOVERNANCE_TOKEN_INTERFACE } from '../constants/abis/governanceToken'
 import useGovernanceToken from 'hooks/useGovernanceToken'
 
-export default function usePitTVL(): Fraction | undefined {
+export default function usePit(): Fraction | undefined {
   const govToken = useGovernanceToken()
   const govTokenBusdPrice = useBUSDPrice(govToken)
   const pit = usePitToken()

@@ -175,9 +175,11 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                     <MouseoverTooltip
                       text={
                         govTokenPrice && govTokenLockedBalance && govTokenLockedBalance.greaterThan('0')
-                          ? `USD: $${Number(
-                              govTokenLockedBalance.multiply(govTokenPrice).toSignificant(6, { groupSeparator: ',' })
-                            ) * 1000000000000}`
+                          ? `USD: $${Math.round(
+                              Number(
+                                govTokenLockedBalance.multiply(govTokenPrice).toSignificant(6, { groupSeparator: ',' })
+                              ) * 1000000000000
+                            )}`
                           : ''
                       }
                     >
@@ -191,11 +193,13 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                     <MouseoverTooltip
                       text={
                         govTokenPrice && govTokenTotalBalance && govTokenTotalBalance.greaterThan('0')
-                          ? `USD: $${Number(
-                              govTokenTotalBalance
-                                .multiply(govTokenPrice?.raw)
-                                .toSignificant(6, { groupSeparator: ',' })
-                            ) * 1000000000000}`
+                          ? `USD: $${Math.round(
+                              Number(
+                                govTokenTotalBalance
+                                  .multiply(govTokenPrice?.raw)
+                                  .toSignificant(6, { groupSeparator: ',' })
+                              ) * 1000000000000
+                            )}`
                           : ''
                       }
                     >
@@ -233,7 +237,7 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                   <RowBetween>
                     <TYPE.white color="white">{govToken?.symbol} circ. market cap:</TYPE.white>
                     <TYPE.white color="white">
-                      ${Number(circulatingMarketCap?.toFixed(12, { groupSeparator: ',' })) * 1000000000000}
+                      ${Math.round(Number(circulatingMarketCap?.toFixed(12, { groupSeparator: ',' })) * 1000000000000)}
                     </TYPE.white>
                   </RowBetween>
                 )}
@@ -242,7 +246,7 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
                   <RowBetween>
                     <TYPE.white color="white">{govToken?.symbol} total market cap:</TYPE.white>
                     <TYPE.white color="white">
-                      ${Number(totalMarketCap?.toFixed(12, { groupSeparator: ',' })) * 1000000000000}
+                      ${Math.round(Number(totalMarketCap?.toFixed(12, { groupSeparator: ',' })) * 1000000000000)}
                     </TYPE.white>
                   </RowBetween>
                 )}

@@ -79,7 +79,6 @@ export default function ClaimModal({ isOpen, onDismiss }: ClaimModalProps) {
 
       try {
         const estimatedGas = await pitBreeder.estimateGas.convertMultiple(claimFrom, claimTo)
-
         await pitBreeder
           .convertMultiple(claimFrom, claimTo, {
             gasLimit: calculateGasMargin(estimatedGas)

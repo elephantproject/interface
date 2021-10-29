@@ -1,30 +1,24 @@
 # Elephant Interface
 
-[![Lint](https://github.com/Uniswap/uniswap-interface/workflows/Lint/badge.svg)](https://github.com/Uniswap/uniswap-interface/actions?query=workflow%3ALint)
-[![Tests](https://github.com/Uniswap/uniswap-interface/workflows/Tests/badge.svg)](https://github.com/Uniswap/uniswap-interface/actions?query=workflow%3ATests)
-[![Styled With Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 
-An open source interface for Uniswap -- a protocol for decentralized exchange of Ethereum tokens.
 
-- Website: [uniswap.org](https://uniswap.org/)
-- Interface: [app.uniswap.org](https://app.uniswap.org)
-- Docs: [uniswap.org/docs/](https://uniswap.org/docs/)
-- Twitter: [@UniswapProtocol](https://twitter.com/UniswapProtocol)
-- Reddit: [/r/Uniswap](https://www.reddit.com/r/Uniswap/)
-- Email: [contact@uniswap.org](mailto:contact@uniswap.org)
-- Discord: [Uniswap](https://discord.gg/ESJsrCguDH)
-- Whitepaper: [Link](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)
+An open source interface for Elephant Dex -- a protocol for decentralized exchange of Harmony HRC20 tokens.
 
-## Accessing the Elephant Interface
+- Website: [elephant.ac](https://elephant.ac)
+- Interface: [elephant.ac](https://elephant.ac)
+- Twitter: [@elephant_dex](https://twitter.com/elephant_dex)
+- Email: [admin@elephant.ac](mailto:contact@uniswap.org)
+- Discord: [Elephant](https://discord.gg/ESJsrCguDH)
+- Whitepaper: [Link](https://medium.com/@elephantdex?p=e86bfee371e7)
 
-To access the Elephant Interface, use an IPFS gateway link from the
-[latest release](https://github.com/Uniswap/uniswap-interface/releases/latest), 
-or visit [app.uniswap.org](https://app.uniswap.org).
+## Accessing a Local Elephant Interface
+
+To access the Elephant Interface follow the instructions below
 
 ## Listing a token
 
 Please see the
-[@elephantdefi/default-token-list](https://github.com/uniswap/default-token-list) 
+[@elephantdefi/default-token-list](https://github.com/elephantproject/default-token-list) 
 repository.
 
 ## Development

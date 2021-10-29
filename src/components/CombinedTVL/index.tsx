@@ -22,29 +22,37 @@ export default function CombinedTVL({}) {
               {TVLs.stakingPoolTVL?.greaterThan('0') && (
                 <>
                   <b>Staking:</b> $
-                  {TVLs.stakingPoolTVL.toSignificant(8, {
-                    groupSeparator: ','
-                  }) * 1000000000000}
+                  {Math.round(
+                    Number(
+                      TVLs.stakingPoolTVL.toSignificant(12, {
+                        groupSeparator: ','
+                      }) * 1000000000000
+                    )
+                  )}
                   <br />
                 </>
               )}
               {TVLs.totalPitTVL?.greaterThan('0') && (
                 <>
                   <b>{pitSettings?.name}:</b> $
-                  {TVLs.totalPitTVL.toSignificant(8, { groupSeparator: ',' }) * 1000000000000}
+                  {Math.round(Number(TVLs.totalPitTVL.toSignificant(12, { groupSeparator: ',' }) * 1000000000000))}
                   <br />
                 </>
               )}
               {TVLs.totalCombinedTVL?.greaterThan('0') && (
                 <>
-                  <b>Total:</b> ${TVLs.totalCombinedTVL.toSignificant(8, { groupSeparator: ',' }) * 1000000000000}
+                  <b>Total:</b> $
+                  {Math.round(Number(TVLs.totalCombinedTVL.toSignificant(12, { groupSeparator: ',' }) * 1000000000000))}
                 </>
               )}
             </>
           }
         >
           {TVLs.totalCombinedTVL?.greaterThan('0') && (
-            <>TVL: ${TVLs.totalCombinedTVL.toSignificant(8, { groupSeparator: ',' }) * 1000000000000}</>
+            <>
+              TVL: $
+              {Math.round(Number(TVLs.totalCombinedTVL.toSignificant(12, { groupSeparator: ',' }) * 1000000000000))}
+            </>
           )}
         </CustomMouseoverTooltip>
       )}

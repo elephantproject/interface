@@ -10,7 +10,7 @@ export const PIT_POOLS: {
   [ChainId.HARMONY_MAINNET]: [
     {
       pid: 0,
-      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/USDC')
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/1USDC')
     },
     {
       pid: 1,
