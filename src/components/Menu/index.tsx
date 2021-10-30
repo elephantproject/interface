@@ -131,7 +131,7 @@ export default function Menu() {
             <BookOpen size={14} />
             Medium
           </MenuItem>
-          <MenuItem id="link" href="https://medium.com/@elephantdex">
+          <MenuItem id="link" href="https://twitter.com/elephant_dex">
             <Twitter size={14} />
             Twitter
           </MenuItem>
