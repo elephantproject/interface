@@ -480,9 +480,9 @@ export default function MobileHeader() {
           <StyledNavLink onClick={handleclose} id={`stake-nav-link`} to={`${pitSettings?.path}`}>
             {pitSettings?.name}
           </StyledNavLink>
-          <StyledNavLink onClick={handleclose} id={`stake-nav-link`} to={'/swap'}>
+          {/* <StyledNavLink onClick={handleclose} id={`stake-nav-link`} to={'/swap'}>
             Casino (coming soon)
-          </StyledNavLink>
+          </StyledNavLink> */}
           <div className="text-center container pt-12">
             <h2>🐘 Live Price 🐘</h2>
             <Price className="text-green-500">${govTokenPrice?.toFixed(4) ?? '-'}</Price>

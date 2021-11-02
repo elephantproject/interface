@@ -383,9 +383,9 @@ export default function Header() {
             {pitSettings?.name}
           </StyledNavLink>
 
-          <StyledNavLink id={`stake-nav-link`} to={'/swap'}>
+          {/* <StyledNavLink id={`stake-nav-link`} to={'/swap'}>
             Casino (coming soon)
-          </StyledNavLink>
+          </StyledNavLink> */}
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>

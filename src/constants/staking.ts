@@ -24,12 +24,12 @@ export const STAKING_REWARDS_INFO: {
     {
       pid: 2,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'xELEPHANT/ELEPHANT'),
-      active: false
+      active: true
     },
     {
       pid: 3,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/1ETH'),
-      active: false
+      active: true
     }
   ],
   [ChainId.HARMONY_TESTNET]: [
