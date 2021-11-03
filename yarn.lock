@@ -1319,10 +1319,10 @@
     dotenv "^10.0.0"
     tslib "^2.3.0"
 
-"@elephantdefi/default-token-list@1.6.0", "@elephantdefi/default-token-list@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/default-token-list/-/default-token-list-1.6.0.tgz#cbece89bfd7a53e5b16432e3d3922f394deebce8"
-  integrity sha512-PGyjJnzKzl+R3IPF2EdYRHtIkhqgOWbmr9wnnkbuAQVCS3nCrIp5qOBaLaEXXvageeNt69qezPxEfrWdNVtmgw==
+"@elephantdefi/default-token-list@1.7.1", "@elephantdefi/default-token-list@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@elephantdefi/default-token-list/-/default-token-list-1.7.1.tgz#28008ff5a7533928f53ed7d1bde36e94809b441d"
+  integrity sha512-OfCByxsY5bF3XR5hZd6civyjZ3wU9E3c2U7qKhpYKmGCknboJ463tphK0eN83s2MZnPrNe1kx+Z2A9zj6BaBXw==
 
 "@elephantdefi/lib@0.0.1", "@elephantdefi/lib@^0.0.1":
   version "0.0.1"
@@ -1340,13 +1340,13 @@
     dotenv "^10.0.0"
     tslib "^2.3.0"
 
-"@elephantdefi/sdk-extra@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/sdk-extra/-/sdk-extra-1.6.0.tgz#8c855cfe79e415df58521ed4fb4725239703c546"
-  integrity sha512-F/YvQoE9D407TSrcPVZ+sVRQL4/67awNNUgOnYI3DeVVPnDghhrdQaI8EEXc7zzRYYn+JZ04UU41JmBzK/xEIA==
+"@elephantdefi/sdk-extra@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@elephantdefi/sdk-extra/-/sdk-extra-1.7.1.tgz#6ad97a4aa4d7677016eba26b7e92ce1577f488ae"
+  integrity sha512-8+IJxr2/0KgFIznvpsnY3OS0PdyyjveUMHY4/7xZAt5Dfd/3Q+BtqX3daJJxSE9GiWz/B/ZTFnGEvlRzjA+ZJQ==
   dependencies:
     "@elephantdefi/community-token-list" "1.0.4"
-    "@elephantdefi/default-token-list" "^1.6.0"
+    "@elephantdefi/default-token-list" "^1.7.1"
     "@elephantdefi/sdk" "^1.5.7"
     "@ethersproject/address" "^5.3.0"
     "@ethersproject/contracts" "^5.3.0"
