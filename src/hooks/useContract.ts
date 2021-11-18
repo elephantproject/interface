@@ -28,6 +28,9 @@ import { getContract } from '../utils'
 import { useActiveWeb3React } from './index'
 import useGovernanceToken from './useGovernanceToken'
 
+import { DICE_ADDRESS } from '../constants'
+import { abi as DICE_ABI } from 'elephantdexcontracts/build/Dice.json'
+
 // returns null on errors
 function useContract(address: string | undefined, ABI: any, withSignerIfPossible = true): Contract | null {
   const { library, account } = useActiveWeb3React()
@@ -114,6 +117,10 @@ export function useMerkleDistributorContract(): Contract | null {
 
 export function useGovernanceContract(): Contract | null {
   return useContract(GOVERNANCE_ADDRESS, GOVERNANCE_ABI, true)
+}
+
+export function useDiceContract(): Contract | null {
+  return useContract(DICE_ADDRESS, DICE_ABI, true)
 }
 
 export function useUniContract(): Contract | null {

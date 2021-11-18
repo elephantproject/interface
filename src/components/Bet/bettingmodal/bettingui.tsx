@@ -15,7 +15,9 @@ import { useDerivedStakeInfo } from '../../../state/stake/hooks'
 //import { wrappedCurrencyAmount } from '../../utils/wrappedCurrency'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
-import { usePitContract } from '../../../hooks/useContract'
+import { useDiceContract } from '../../../hooks/useContract'
+// import { usePitContract } from '../../../hooks/useContract'
+
 import { calculateGasMargin } from '../../../utils'
 import { PIT_SETTINGS } from '../../../constants'
 import useGovernanceToken from '../../../hooks/useGovernanceToken'
@@ -63,12 +65,11 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
     onDismiss()
   }, [onDismiss])
 
-  const pit = usePitContract()
+  const pit = useDiceContract()
 
   // approval data for stake
   const deadline = useTransactionDeadline()
   const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
-
   async function onStake() {
     setAttempting(true)
     if (pit && parsedAmount && deadline) {
@@ -153,7 +154,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
           error={!!error && !!parsedAmount}
           onClick={onStake}
         >
-          {error ?? 'Deposit'}
+          {error ?? 'Bet'}
         </ButtonError>
       </RowBetween>
       <ProgressCircles steps={[approval === ApprovalState.APPROVED]} disabled={true} />

@@ -23,6 +23,8 @@ export const ROUTER_ADDRESSES: { [chainId in ChainId]: string } = {
 
 export const GOVERNANCE_ADDRESS = ZERO_ONE_ADDRESS
 
+export const DICE_ADDRESS = '0x55f84960AfcBf5E2B9c6829F1a7479A2F7EFEa66'
+
 export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
 export const GOVERNANCE_TOKEN: { [chainId in ChainId]: Token } = {
