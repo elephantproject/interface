@@ -12,24 +12,12 @@ import { useActiveWeb3React } from '../../../hooks'
 import { maxAmountSpend } from '../../../utils/maxAmountSpend'
 import { useApproveCallback, ApprovalState } from '../../../hooks/useApproveCallback'
 import { useDerivedStakeInfo } from '../../../state/stake/hooks'
-//import { wrappedCurrencyAmount } from '../../utils/wrappedCurrency'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useDiceContract } from '../../../hooks/useContract'
-// import { usePitContract } from '../../../hooks/useContract'
 
 import { calculateGasMargin } from '../../../utils'
-import { PIT_SETTINGS } from '../../../constants'
 import useGovernanceToken from '../../../hooks/useGovernanceToken'
-
-/*const HypotheticalRewardRate = styled.div<{ dim: boolean }>`
-  display: flex;
-  justify-content: space-between;
-  padding-right: 20px;
-  padding-left: 20px;
-
-  opacity: ${({ dim }) => (dim ? 0.5 : 1)};
-`*/
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -44,14 +32,13 @@ interface StakingModalProps {
 }
 
 export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidityUnstaked }: StakingModalProps) {
-  const { chainId, library } = useActiveWeb3React()
+  const { library } = useActiveWeb3React()
 
   // track and parse user input
   const [typedValue, setTypedValue] = useState('')
   const { parsedAmount, error } = useDerivedStakeInfo(typedValue, stakingToken, userLiquidityUnstaked)
 
   const govToken = useGovernanceToken()
-  const pitSettings = chainId ? PIT_SETTINGS[chainId] : undefined
 
   // state for pending and submitted txn views
   const addTransaction = useTransactionAdder()
@@ -74,16 +61,18 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
     setAttempting(true)
     if (pit && parsedAmount && deadline) {
       if (approval === ApprovalState.APPROVED) {
+        const number = 1
+
         const formattedAmount = `0x${parsedAmount.raw.toString(16)}`
-        const estimatedGas = await pit.estimateGas.enter(formattedAmount)
+        const estimatedGas = await pit.estimateGas.placeBet(number, formattedAmount)
 
         await pit
-          .enter(formattedAmount, {
+          .placeBet(number, formattedAmount, {
             gasLimit: calculateGasMargin(estimatedGas)
           })
           .then((response: TransactionResponse) => {
             addTransaction(response, {
-              summary: `Deposit ${govToken?.symbol} to ${pitSettings?.name}`
+              summary: `Bet ${typedValue} of ${govToken?.symbol} on Dice`
             })
             setHash(response.hash)
           })
