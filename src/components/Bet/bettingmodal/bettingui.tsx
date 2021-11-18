@@ -3,7 +3,7 @@ import useTransactionDeadline from '../../../hooks/useTransactionDeadline'
 import { AutoColumn } from '../../Column'
 import styled from 'styled-components'
 import { RowBetween } from '../../Row'
-import { TYPE, CloseIcon } from '../../../theme'
+import { TYPE } from '../../../theme'
 import { ButtonConfirmed, ButtonError } from '../../Button'
 import ProgressCircles from '../../ProgressSteps'
 import CurrencyInputPanel from '../../CurrencyInputPanel'
@@ -45,12 +45,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const [attempting, setAttempting] = useState<boolean>(false)
   const [hash, setHash] = useState<string | undefined>()
   const [failed, setFailed] = useState<boolean>(false)
-  const wrappedOnDismiss = useCallback(() => {
-    setHash(undefined)
-    setAttempting(false)
-    setFailed(false)
-    onDismiss()
-  }, [onDismiss])
 
   const pit = useDiceContract()
 
@@ -58,14 +52,12 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const deadline = useTransactionDeadline()
   const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
   async function onStake() {
+    const number = 1
     setAttempting(true)
     if (pit && parsedAmount && deadline) {
       if (approval === ApprovalState.APPROVED) {
-        const number = 1
-
         const formattedAmount = `0x${parsedAmount.raw.toString(16)}`
         const estimatedGas = await pit.estimateGas.placeBet(number, formattedAmount)
-
         await pit
           .placeBet(number, formattedAmount, {
             gasLimit: calculateGasMargin(estimatedGas)
@@ -114,8 +106,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
     <ContentWrapper gap="lg">
       {console.log(attempting, hash, failed)}
       <RowBetween>
-        <TYPE.mediumHeader>Deposit</TYPE.mediumHeader>
-        <CloseIcon onClick={wrappedOnDismiss} />
+        <TYPE.mediumHeader>Amount To Bet</TYPE.mediumHeader>
       </RowBetween>
       <CurrencyInputPanel
         value={typedValue}
@@ -138,14 +129,52 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
         >
           Approve
         </ButtonConfirmed>
+      </RowBetween>
+      <div className="grid grid-cols-6">
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={onStake}
+          onClick={() => onStake()}
         >
-          {error ?? 'Bet'}
+          {error ?? '1'}
         </ButtonError>
-      </RowBetween>
+        <ButtonError
+          disabled={!!error || approval !== ApprovalState.APPROVED}
+          error={!!error && !!parsedAmount}
+          onClick={() => onStake()}
+        >
+          {error ?? '2'}
+        </ButtonError>
+        <ButtonError
+          disabled={!!error || approval !== ApprovalState.APPROVED}
+          error={!!error && !!parsedAmount}
+          onClick={() => onStake()}
+        >
+          {error ?? '3'}
+        </ButtonError>
+        <ButtonError
+          disabled={!!error || approval !== ApprovalState.APPROVED}
+          error={!!error && !!parsedAmount}
+          onClick={() => onStake()}
+        >
+          {error ?? '4'}
+        </ButtonError>
+        <ButtonError
+          disabled={!!error || approval !== ApprovalState.APPROVED}
+          error={!!error && !!parsedAmount}
+          onClick={() => onStake()}
+        >
+          {error ?? '5'}
+        </ButtonError>
+        <ButtonError
+          disabled={!!error || approval !== ApprovalState.APPROVED}
+          error={!!error && !!parsedAmount}
+          onClick={() => onStake()}
+        >
+          {error ?? '6'}
+        </ButtonError>
+      </div>
+
       <ProgressCircles steps={[approval === ApprovalState.APPROVED]} disabled={true} />
     </ContentWrapper>
   )
