@@ -7,7 +7,7 @@ import {
   TradeOptionsDeadline,
   TradeType,
   DEFAULT_CURRENCIES
-} from '@elephantdefi/sdk'
+} from 'elephantdexsdk'
 import { getTradeVersion } from '../data/V1'
 import { Version } from '../hooks/useToggledVersion'
 

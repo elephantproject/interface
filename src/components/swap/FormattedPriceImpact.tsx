@@ -1,4 +1,4 @@
-import { Percent } from '@elephantdefi/sdk'
+import { Percent } from 'elephantdexsdk'
 import React from 'react'
 import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'

@@ -1,6 +1,7 @@
 import { UNSUPPORTED_LIST_URLS } from './../../constants/lists'
-import DEFAULT_TOKEN_LIST from '@elephantdefi/default-token-list'
-import { ChainId, Token } from '@elephantdefi/sdk'
+import DEFAULT_TOKEN_LIST from 'elephantdexdefault-token-list'
+import BETTING_TOKEN_LIST from 'elephantdexbetting-token-list'
+import { ChainId, Token } from 'elephantdexsdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
@@ -165,6 +166,10 @@ export function useCombinedInactiveList(): TokenAddressMap {
 // used to hide warnings on import for default tokens
 export function useDefaultTokenList(): TokenAddressMap {
   return listToTokenMap(DEFAULT_TOKEN_LIST)
+}
+
+export function useBettingTokenList(): TokenAddressMap {
+  return listToTokenMap(BETTING_TOKEN_LIST)
 }
 
 // list of tokens not supported on interface, used to show warnings and prevent swaps and adds

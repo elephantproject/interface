@@ -1,4 +1,4 @@
-import { Currency } from '@elephantdefi/sdk'
+import { Currency } from 'elephantdexsdk'
 import React from 'react'
 import styled from 'styled-components'
 import CurrencyLogo from '../CurrencyLogo'

@@ -1,4 +1,4 @@
-import { TokenAmount, Blockchain } from '@elephantdefi/sdk'
+import { TokenAmount, Blockchain } from 'elephantdexsdk'
 import React from 'react'
 //import React, { useMemo } from 'react'
 import { X } from 'react-feather'

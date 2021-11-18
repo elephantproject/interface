@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Fraction } from '@elephantdefi/sdk'
+import { Fraction } from 'elephantdexsdk'
 
 import { utils } from 'ethers'
 import usePitToken from './usePitToken'

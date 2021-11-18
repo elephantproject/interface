@@ -1,5 +1,5 @@
-import { ChainId, Token, WETH } from '@elephantdefi/sdk'
-import { TOKENS } from '@elephantdefi/sdk-extra'
+import { ChainId, Token, WETH } from 'elephantdexsdk'
+import { TOKENS } from 'elephantdexsdk-extra'
 import { GOVERNANCE_TOKEN, ZERO_ONE_ADDRESS } from '../constants/index'
 
 export default function getTokenWithDefault(chainId: ChainId, symbol: string): Token {

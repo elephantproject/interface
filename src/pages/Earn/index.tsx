@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { JSBI } from '@elephantdefi/sdk'
-import { BLOCKCHAIN_SETTINGS } from '@elephantdefi/sdk-extra'
+import { JSBI } from 'elephantdexsdk'
+import { BLOCKCHAIN_SETTINGS } from 'elephantdexsdk-extra'
 import { AutoColumn } from '../../components/Column'
 import styled from 'styled-components'
 import { STAKING_REWARDS_INFO } from '../../constants/staking'

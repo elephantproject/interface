@@ -1,4 +1,4 @@
-import { Token, TokenAmount, Pair } from '@elephantdefi/sdk'
+import { Token, TokenAmount, Pair } from 'elephantdexsdk'
 import { BigNumber } from 'ethers'
 
 export default function getPair(

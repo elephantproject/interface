@@ -1,4 +1,4 @@
-import { Token } from '@elephantdefi/sdk'
+import { Token } from 'elephantdexsdk'
 import { GOVERNANCE_TOKEN } from '../constants'
 import { useActiveWeb3React } from './index'
 

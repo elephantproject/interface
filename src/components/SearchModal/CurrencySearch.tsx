@@ -1,4 +1,4 @@
-import { Currency, ETHER, HARMONY, BINANCE_COIN, Token } from '@elephantdefi/sdk'
+import { Currency, ETHER, HARMONY, BINANCE_COIN, Token } from 'elephantdexsdk'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactGA from 'react-ga'
 import { useTranslation } from 'react-i18next'

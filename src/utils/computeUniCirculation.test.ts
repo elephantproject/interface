@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount } from '@elephantdefi/sdk'
+import { ChainId, JSBI, Token, TokenAmount } from 'elephantdexsdk'
 import { BigNumber } from 'ethers'
 import { ZERO_ADDRESS } from '../constants'
 import { computeUniCirculation } from './computeUniCirculation'

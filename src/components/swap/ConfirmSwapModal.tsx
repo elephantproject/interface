@@ -1,4 +1,4 @@
-import { currencyEquals, Trade } from '@elephantdefi/sdk'
+import { currencyEquals, Trade } from 'elephantdexsdk'
 import React, { useCallback, useMemo } from 'react'
 import TransactionConfirmationModal, {
   ConfirmationModalContent,

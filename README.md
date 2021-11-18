@@ -18,7 +18,7 @@ To access the Elephant Interface follow the instructions below
 ## Listing a token
 
 Please see the
-[@elephantdefi/default-token-list](https://github.com/elephantproject/default-token-list) 
+[elephantdexdefault-token-list](https://github.com/elephantproject/default-token-list) 
 repository.
 
 ## Development

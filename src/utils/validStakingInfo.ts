@@ -1,4 +1,4 @@
-import { Token } from '@elephantdefi/sdk'
+import { Token } from 'elephantdexsdk'
 import { CallState } from '../state/multicall/hooks'
 
 export default function validStakingInfo(

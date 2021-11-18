@@ -12,7 +12,7 @@ import { ButtonPrimary } from '../Button'
 
 import useGovernanceToken from '../../hooks/useGovernanceToken'
 import useBlockchain from '../../hooks/useBlockchain'
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {

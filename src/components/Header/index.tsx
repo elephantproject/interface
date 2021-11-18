@@ -1,4 +1,4 @@
-import { ChainId, TokenAmount, Blockchain } from '@elephantdefi/sdk'
+import { ChainId, TokenAmount, Blockchain } from 'elephantdexsdk'
 import React, { useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
@@ -383,9 +383,9 @@ export default function Header() {
             {pitSettings?.name}
           </StyledNavLink>
 
-          {/* <StyledNavLink id={`stake-nav-link`} to={'/swap'}>
-            Casino (coming soon)
-          </StyledNavLink> */}
+          <StyledNavLink id={`stake-nav-link`} to={'/casino'}>
+            Casino
+          </StyledNavLink>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>

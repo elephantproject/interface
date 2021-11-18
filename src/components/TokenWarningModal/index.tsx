@@ -1,4 +1,4 @@
-import { Token } from '@elephantdefi/sdk'
+import { Token } from 'elephantdexsdk'
 import React, { useCallback } from 'react'
 import Modal from '../Modal'
 import { ImportToken } from 'components/SearchModal/ImportToken'

@@ -13,7 +13,7 @@ import { useProposalData, useUserVotesAsOfBlock, ProposalData, useUserDelegatee 
 import { DateTime } from 'luxon'
 import ReactMarkdown from 'react-markdown'
 import VoteModal from '../../components/vote/VoteModal'
-import { TokenAmount, JSBI } from '@elephantdefi/sdk'
+import { TokenAmount, JSBI } from 'elephantdexsdk'
 import { useActiveWeb3React } from '../../hooks'
 import { AVERAGE_BLOCK_TIME_IN_SECS, COMMON_CONTRACT_NAMES, ZERO_ADDRESS } from '../../constants'
 import { isAddress, getEtherscanLink } from '../../utils'

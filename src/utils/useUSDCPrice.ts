@@ -1,4 +1,4 @@
-import { ChainId, Currency, currencyEquals, JSBI, Price, WETH } from '@elephantdefi/sdk'
+import { ChainId, Currency, currencyEquals, JSBI, Price, WETH } from 'elephantdexsdk'
 import { useMemo } from 'react'
 import { USDC } from '../constants'
 import { PairState, usePairs } from '../data/Reserves'

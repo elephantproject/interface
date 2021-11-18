@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@elephantdefi/sdk'
+import { ChainId, Token } from 'elephantdexsdk'
 import getPairTokensWithDefaults from '../utils/getPairTokensWithDefaults'
 
 export interface StakingRewardsInfo {
@@ -29,6 +29,17 @@ export const STAKING_REWARDS_INFO: {
     {
       pid: 3,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/1ETH'),
+      active: true
+    },
+
+    {
+      pid: 4,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/1WBTC'),
+      active: true
+    },
+    {
+      pid: 5,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/bscADA'),
       active: true
     }
   ],

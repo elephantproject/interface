@@ -1,4 +1,4 @@
-import { JSBI, TokenAmount } from '@elephantdefi/sdk'
+import { JSBI, TokenAmount } from 'elephantdexsdk'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useMasterBreederContract } from './useContract'
 import useGovernanceToken from './useGovernanceToken'

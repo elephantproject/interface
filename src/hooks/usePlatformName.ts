@@ -1,4 +1,4 @@
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 import useBlockchain from './useBlockchain'
 
 export default function usePlatformName(): string {

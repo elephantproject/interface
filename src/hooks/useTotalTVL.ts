@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Fraction, JSBI } from '@elephantdefi/sdk'
+import { Fraction, JSBI } from 'elephantdexsdk'
 import { StakingInfo } from '../state/stake/hooks'
 
 export default function useTotalTVL(stakingInfos: StakingInfo[]): Fraction {

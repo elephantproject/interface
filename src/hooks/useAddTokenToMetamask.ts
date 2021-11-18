@@ -1,6 +1,6 @@
 import { getTokenFallbackLogoURL } from './../components/CurrencyLogo/index'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
-import { Currency, Token } from '@elephantdefi/sdk'
+import { Currency, Token } from 'elephantdexsdk'
 import { useCallback, useState } from 'react'
 import { useActiveWeb3React } from 'hooks'
 

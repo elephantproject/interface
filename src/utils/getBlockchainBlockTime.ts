@@ -1,4 +1,4 @@
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 
 // Returns the block time in seconds
 export default function getBlockchainBlockTime(blockchain: Blockchain): number {

@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@elephantdefi/sdk'
+import { ChainId, Currency } from 'elephantdexsdk'
 import React, { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import Modal from '../Modal'

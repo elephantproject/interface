@@ -1,4 +1,4 @@
-import { Blockchain, ChainId } from '@elephantdefi/sdk'
+import { Blockchain, ChainId } from 'elephantdexsdk'
 
 export default function getBlockchain(chainId: ChainId | undefined): Blockchain {
   switch (chainId) {

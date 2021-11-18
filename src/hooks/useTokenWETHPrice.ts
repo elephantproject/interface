@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Token, WETH, Price } from '@elephantdefi/sdk'
+import { Token, WETH, Price } from 'elephantdexsdk'
 import { useActiveWeb3React } from './index'
 import { usePair } from '../data/Reserves'
 

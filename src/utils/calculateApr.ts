@@ -1,4 +1,4 @@
-import { Price, Fraction, TokenAmount, JSBI } from '@elephantdefi/sdk'
+import { Price, Fraction, TokenAmount, JSBI } from 'elephantdexsdk'
 import { utils } from 'ethers'
 
 export default function calculateApr(

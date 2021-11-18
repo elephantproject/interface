@@ -1,4 +1,4 @@
-import { Currency, Percent, Price } from '@elephantdefi/sdk'
+import { Currency, Percent, Price } from 'elephantdexsdk'
 import React, { useContext } from 'react'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'

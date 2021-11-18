@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token, TokenAmount } from '@elephantdefi/sdk'
+import { Token, TokenAmount } from 'elephantdexsdk'
 import { useTokenContract, useGovTokenContract } from '../hooks/useContract'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import useGovernanceToken from '../hooks/useGovernanceToken'

@@ -1,4 +1,4 @@
-import { WETH, Token } from '@elephantdefi/sdk'
+import { WETH, Token } from 'elephantdexsdk'
 import { useActiveWeb3React } from './index'
 
 export default function useWeth(): Token | undefined {

@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Token, TokenAmount, WETH, DEFAULT_CURRENCIES } from '@elephantdefi/sdk'
+import { ChainId, Currency, CurrencyAmount, Token, TokenAmount, WETH, DEFAULT_CURRENCIES } from 'elephantdexsdk'
 
 import baseCurrencies from '../utils/baseCurrencies'
 

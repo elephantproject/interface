@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { AutoColumn } from '../../components/Column'
-import { JSBI } from '@elephantdefi/sdk'
+import { JSBI } from 'elephantdexsdk'
 import { TYPE } from '../../theme'
 import { useBlockNumber } from '../../state/application/hooks'
 import { useSingleCallResult } from '../../state/multicall/hooks'

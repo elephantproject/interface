@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, currencyEquals, Token } from '@elephantdefi/sdk'
+import { Currency, CurrencyAmount, currencyEquals, Token } from 'elephantdexsdk'
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
 import { FixedSizeList } from 'react-window'
 import { Text } from 'rebass'

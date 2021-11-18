@@ -1,4 +1,4 @@
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 import getBlockchain from '../utils/getBlockchain'
 import { useActiveWeb3React } from './index'
 

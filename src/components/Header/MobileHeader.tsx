@@ -1,4 +1,4 @@
-import { ChainId, TokenAmount, Blockchain } from '@elephantdefi/sdk'
+import { ChainId, TokenAmount, Blockchain } from 'elephantdexsdk'
 import React, { useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'

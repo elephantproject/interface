@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, Trade } from '@elephantdefi/sdk'
+import { CurrencyAmount, JSBI, Token, Trade } from 'elephantdexsdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
 import ReactGA from 'react-ga'
@@ -293,6 +293,7 @@ export default function Swap() {
 
   return (
     <>
+      <h1 className="px-8 p-12  text-center break-all">🐘 HRC20: 0xC30a7F9c216B945Ff8ACFB389e955A637eB0f478 </h1>
       <TokenWarningModal
         isOpen={importTokensNotInDefault.length > 0 && !dismissTokenWarning}
         tokens={importTokensNotInDefault}

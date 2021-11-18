@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@elephantdefi/sdk'
+import { ChainId, Token } from 'elephantdexsdk'
 import getPairTokensWithDefaults from '../utils/getPairTokensWithDefaults'
 
 export const PIT_POOLS: {
@@ -19,6 +19,14 @@ export const PIT_POOLS: {
     {
       pid: 3,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/1ETH')
+    },
+    {
+      pid: 4,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/1WBTC')
+    },
+    {
+      pid: 5,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/bscADA')
     }
   ],
   [ChainId.HARMONY_TESTNET]: [

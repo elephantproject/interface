@@ -1,6 +1,6 @@
-import { TokenAmount, Pair, Currency } from '@elephantdefi/sdk'
+import { TokenAmount, Pair, Currency } from 'elephantdexsdk'
 import { useMemo } from 'react'
-import { abi as IUniswapV2PairABI } from '@elephantdefi/core/build/IUniswapV2Pair.json'
+import { abi as IUniswapV2PairABI } from 'elephantdexcore/build/IUniswapV2Pair.json'
 import { Interface } from '@ethersproject/abi'
 import { useActiveWeb3React } from '../hooks'
 

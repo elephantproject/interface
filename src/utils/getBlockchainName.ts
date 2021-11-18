@@ -1,4 +1,4 @@
-import { ChainId } from '@elephantdefi/sdk'
+import { ChainId } from 'elephantdexsdk'
 
 export default function getBlockchainName(chainId: ChainId | undefined): string {
   switch (chainId) {

@@ -1292,82 +1292,6 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@elephantdefi/community-token-list@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/@elephantdefi/community-token-list/-/community-token-list-1.0.4.tgz"
-  integrity sha512-T+5EhoguKP3wwzyjAV9qJT2gtKnUlrDlogqjJ1bV2ZZ4C5biB+y1N1wfvM/NIjeTkjFoS5k4HksVdesyyArgPQ==
-
-"@elephantdefi/contracts@^1.5.6":
-  version "1.5.6"
-  resolved "https://registry.npmjs.org/@elephantdefi/contracts/-/contracts-1.5.6.tgz"
-  integrity sha512-ZDq6y9TadHX7781OZ1B2WGYk6DAWTJ0kw3gCVOPCG8+wyZsuOsqcJQTFpWhBhyuRp1CMXH7qliiXQl2D2Njuog==
-  dependencies:
-    "@elephantdefi/core" "^1.5.6"
-    "@elephantdefi/lib" "^0.0.1"
-    "@elephantdefi/periphery" "^1.5.6"
-    "@harmony-js/core" "^0.1.57"
-    "@openzeppelin/contracts" "^3.1.0"
-    dotenv "^10.0.0"
-    tslib "^2.3.0"
-
-"@elephantdefi/core@1.5.6", "@elephantdefi/core@^ 1.5.6", "@elephantdefi/core@^1.5.6":
-  version "1.5.6"
-  resolved "https://registry.npmjs.org/@elephantdefi/core/-/core-1.5.6.tgz"
-  integrity sha512-GOk37Mrn4+99//7X5sUF1/8gfvKyfZQC3GSgpCzV+j5T+tsaRhNfgV19zN+Ry8ISzPoddtCMyRyeYD/EdP7JRg==
-  dependencies:
-    "@harmony-js/core" "^0.1.57"
-    dotenv "^10.0.0"
-    tslib "^2.3.0"
-
-"@elephantdefi/default-token-list@1.7.1", "@elephantdefi/default-token-list@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/default-token-list/-/default-token-list-1.7.1.tgz#28008ff5a7533928f53ed7d1bde36e94809b441d"
-  integrity sha512-OfCByxsY5bF3XR5hZd6civyjZ3wU9E3c2U7qKhpYKmGCknboJ463tphK0eN83s2MZnPrNe1kx+Z2A9zj6BaBXw==
-
-"@elephantdefi/lib@0.0.1", "@elephantdefi/lib@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@elephantdefi/lib/-/lib-0.0.1.tgz"
-  integrity sha512-6jWvgyS6sQIDrMkvhszuppoKeEXXPPRGUN/MxVKAq0pcgMY7S0RIqaBepK6pN9vYyp4yjLWErwY+BqO7ORAM2w==
-
-"@elephantdefi/periphery@^1.5.6":
-  version "1.5.6"
-  resolved "https://registry.npmjs.org/@elephantdefi/periphery/-/periphery-1.5.6.tgz"
-  integrity sha512-NiE6ZXbPcg8529lM895ulggKzDu6WBJSZsbAJNSAbFGj+FRB+u5+GEspR8qIXzUxNBSilDjcVUZNUTxRWDVxtg==
-  dependencies:
-    "@elephantdefi/core" "1.5.6"
-    "@elephantdefi/lib" "0.0.1"
-    "@harmony-js/core" "^0.1.57"
-    dotenv "^10.0.0"
-    tslib "^2.3.0"
-
-"@elephantdefi/sdk-extra@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@elephantdefi/sdk-extra/-/sdk-extra-1.7.1.tgz#6ad97a4aa4d7677016eba26b7e92ce1577f488ae"
-  integrity sha512-8+IJxr2/0KgFIznvpsnY3OS0PdyyjveUMHY4/7xZAt5Dfd/3Q+BtqX3daJJxSE9GiWz/B/ZTFnGEvlRzjA+ZJQ==
-  dependencies:
-    "@elephantdefi/community-token-list" "1.0.4"
-    "@elephantdefi/default-token-list" "^1.7.1"
-    "@elephantdefi/sdk" "^1.5.7"
-    "@ethersproject/address" "^5.3.0"
-    "@ethersproject/contracts" "^5.3.0"
-    "@ethersproject/providers" "^5.3.0"
-    "@ethersproject/solidity" "^5.3.0"
-    "@types/lodash.random" "^3.2.6"
-    lodash.random "^3.2.0"
-
-"@elephantdefi/sdk@^1.5.7", "@elephantdefi/sdk@^1.5.8":
-  version "1.5.8"
-  resolved "https://registry.npmjs.org/@elephantdefi/sdk/-/sdk-1.5.8.tgz"
-  integrity sha512-sY/flf0kSh53J0SAcPU2EJdvJG1/0fKuOHKEdaMdxMffprnkhFr+qHRGxfHFOodGadlPmKsNcZxTe+1lM4sQ3A==
-  dependencies:
-    "@elephantdefi/core" "1.5.6"
-    big.js "^5.2.2"
-    decimal.js-light "^2.5.0"
-    jsbi "^3.1.5"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-    toformat "^2.0.0"
-
 "@emotion/cache@^10.0.27":
   version "10.0.29"
   resolved "https://registry.npmjs.org/@emotion/cache/-/cache-10.0.29.tgz"
@@ -7229,6 +7153,87 @@ elegant-spinner@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/elegant-spinner/-/elegant-spinner-1.0.1.tgz"
   integrity sha1-2wQ1IcldfjA/2PNFvtwzSc+wcp4=
+
+elephantdexbetting-token-list@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/elephantdexbetting-token-list/-/elephantdexbetting-token-list-2.1.0.tgz#a6cd0c55cb1a3169cd88070bb062b2baf79ebff1"
+  integrity sha512-rtQr6Ve+hDhYkAPFIGzp8ckS6IB6cht4eWSA87rG4qiqbxzPqcu2irh9zz2Mh0jQGLbKn3MCtTTIRr1NzsykRg==
+
+elephantdexcommunity-token-list@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/elephantdexcommunity-token-list/-/elephantdexcommunity-token-list-2.0.2.tgz#6f53b61287d9fcbec352bac0d638b2c84a9cf5a4"
+  integrity sha512-dscwGeR/780uq53T70LBlewEMlETLYliUY2UTfAXaqAYB3G3BrUFhLnfRzoT1jYaBUF0wa2e+LCRKkwLSR9xVg==
+
+elephantdexcontracts@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/elephantdexcontracts/-/elephantdexcontracts-2.0.2.tgz#d3659add4a4ef5ec627a5516f2ea7ac2a67bcbe6"
+  integrity sha512-4DHjwQw0rcEjlO1GJ/1LprVLp0+Qi0mD0LLsVeV8ep9hlDkFZ9Nj82Hnu4GB14j2c5SxvjTQwtMEIfIf7x6QQA==
+  dependencies:
+    "@harmony-js/core" "^0.1.57"
+    "@openzeppelin/contracts" "^3.1.0"
+    dotenv "^10.0.0"
+    elephantdexcore "^2.0.1"
+    elephantdexlib "^2.0.1"
+    elephantdexperiphery "^2.0.2"
+    tslib "^2.3.0"
+
+elephantdexcore@2.0.1, "elephantdexcore@^ 2.0.1", elephantdexcore@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/elephantdexcore/-/elephantdexcore-2.0.1.tgz#91fb8b649fb8d32a8471912253812596d4e2383a"
+  integrity sha512-FXoM7UeAid3H1jC6UrqrmbroAWdSY/5iIf7Wx+9S9cujJzi791RRGDSIOyT2yc6YWDR8m6xizXiftG0hCfyoIw==
+  dependencies:
+    "@harmony-js/core" "^0.1.57"
+    dotenv "^10.0.0"
+    tslib "^2.3.0"
+
+elephantdexdefault-token-list@2.0.2, elephantdexdefault-token-list@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/elephantdexdefault-token-list/-/elephantdexdefault-token-list-2.0.2.tgz#d909363323c3e767c11e33881e537afd313274c9"
+  integrity sha512-242Oxr8lJZpH7xb/CNSYe1eHyUYyYS9lXOdqQci5D5TXD1WQqAm2HrIFNuEmS+uIDwOMjO+S1QtKrGsWBtx6HQ==
+
+elephantdexlib@2.0.1, elephantdexlib@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/elephantdexlib/-/elephantdexlib-2.0.1.tgz#5eece4186198a6c4b8ed2132a038d81d9f561906"
+  integrity sha512-SkUxcLyt3WUMuGtKU9WHaN61WtXFQkum8mP/jEhgsY7dR1vTGctaXL/fl3eKn88yWtWVDhOc6jrWC/298UnHTg==
+
+elephantdexperiphery@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/elephantdexperiphery/-/elephantdexperiphery-2.0.2.tgz#0630de310fcdc82301820dcc7b34aba219e7ccaa"
+  integrity sha512-WPJztf92HhJvVMuJV/4YR59VQJMMUNz/fXwew7jZMWTPdneWa86JYvwWmhYVcSwnKkbgx5iorUEB52bSX9r1uQ==
+  dependencies:
+    "@harmony-js/core" "^0.1.57"
+    dotenv "^10.0.0"
+    elephantdexcore "2.0.1"
+    elephantdexlib "2.0.1"
+    tslib "^2.3.0"
+
+elephantdexsdk-extra@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/elephantdexsdk-extra/-/elephantdexsdk-extra-2.0.2.tgz#e9cdc56641fb8e0f7a5d6f89179c329bf9d587ed"
+  integrity sha512-WU27VnPliyPkTgEECId2C1gmeD73TEm1FsbmxUxw6KkyRdZ2vnkJWuot3G1r3EQv5zVXiIoIalnIeHxAjV1D8w==
+  dependencies:
+    "@ethersproject/address" "^5.3.0"
+    "@ethersproject/contracts" "^5.3.0"
+    "@ethersproject/providers" "^5.3.0"
+    "@ethersproject/solidity" "^5.3.0"
+    "@types/lodash.random" "^3.2.6"
+    elephantdexcommunity-token-list "2.0.2"
+    elephantdexdefault-token-list "^2.0.2"
+    elephantdexsdk "^2.0.2"
+    lodash.random "^3.2.0"
+
+elephantdexsdk@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/elephantdexsdk/-/elephantdexsdk-2.0.2.tgz#566fe30a4f88251372ffb0649fdf04d932fa0488"
+  integrity sha512-EoxO1V0o83W7ZCL70BSKbjcU/zrKVABd4VLiY1bV133DqENIoAAL3n08bOSmNyYM8LQDNRezNrSOC5Lck0s4WQ==
+  dependencies:
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    elephantdexcore "2.0.1"
+    jsbi "^3.1.5"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
 
 elliptic@6.5.4, elliptic@^6.4.0, elliptic@^6.4.1, elliptic@^6.5.2, elliptic@^6.5.3:
   version "6.5.4"

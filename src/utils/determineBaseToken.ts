@@ -1,4 +1,4 @@
-import { Token, DEFAULT_CURRENCIES } from '@elephantdefi/sdk'
+import { Token, DEFAULT_CURRENCIES } from 'elephantdexsdk'
 import { unwrappedToken } from './wrappedCurrency'
 
 export default function determineBaseToken(tokenData: Record<string, any>, tokens: [Token, Token]): Token | undefined {

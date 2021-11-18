@@ -1,5 +1,5 @@
-import { ChainId, JSBI } from '@elephantdefi/sdk'
-import { BLOCKCHAIN_SETTINGS } from '@elephantdefi/sdk-extra'
+import { ChainId, JSBI } from 'elephantdexsdk'
+import { BLOCKCHAIN_SETTINGS } from 'elephantdexsdk-extra'
 
 export default function getBlocksPerYear(chainId: ChainId | undefined): JSBI {
   const blockchainSettings = chainId ? BLOCKCHAIN_SETTINGS[chainId] : undefined

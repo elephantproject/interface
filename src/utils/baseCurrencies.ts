@@ -1,4 +1,4 @@
-import { ChainId, Currency, ETHER, HARMONY, BINANCE_COIN, WETH } from '@elephantdefi/sdk'
+import { ChainId, Currency, ETHER, HARMONY, BINANCE_COIN, WETH } from 'elephantdexsdk'
 import { NETWORK_CHAIN_ID } from '../connectors'
 
 export default function baseCurrencies(chainId: ChainId | undefined): Currency[] {

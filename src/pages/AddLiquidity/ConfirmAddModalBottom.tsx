@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@elephantdefi/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from 'elephantdexsdk'
 import React from 'react'
 import { Text } from 'rebass'
 import { ButtonPrimary } from '../../components/Button'

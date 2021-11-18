@@ -1,4 +1,4 @@
-import { TokenAmount, JSBI } from '@elephantdefi/sdk'
+import { TokenAmount, JSBI } from 'elephantdexsdk'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useEffect, useState } from 'react'
 import { useActiveWeb3React } from '../../hooks'

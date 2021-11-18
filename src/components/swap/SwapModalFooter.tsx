@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@elephantdefi/sdk'
+import { Trade, TradeType } from 'elephantdexsdk'
 import React, { useContext, useMemo, useState } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'

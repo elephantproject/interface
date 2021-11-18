@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { CallState } from '../state/multicall/hooks'
-import { JSBI } from '@elephantdefi/sdk'
+import { JSBI } from 'elephantdexsdk'
 
 export default function useEligiblePitPools(
   stakingPools: any,

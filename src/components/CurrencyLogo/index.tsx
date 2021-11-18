@@ -1,4 +1,4 @@
-import { Currency, Token, ETHER, HARMONY, BINANCE_COIN, DEFAULT_CURRENCIES, Blockchain } from '@elephantdefi/sdk'
+import { Currency, Token, ETHER, HARMONY, BINANCE_COIN, DEFAULT_CURRENCIES, Blockchain } from 'elephantdexsdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 

@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@elephantdefi/sdk'
+import { Token, TokenAmount } from 'elephantdexsdk'
 import { useMemo } from 'react'
 
 import { useTokenContract } from '../hooks/useContract'

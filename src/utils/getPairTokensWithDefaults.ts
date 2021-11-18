@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@elephantdefi/sdk'
+import { ChainId, Token } from 'elephantdexsdk'
 import getTokenWithDefault from './getTokenWithDefault'
 import { ZERO_ONE_ADDRESS } from '../constants/index'
 

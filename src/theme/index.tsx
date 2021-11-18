@@ -10,7 +10,7 @@ import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
 
 import useBlockchain from '../hooks/useBlockchain'
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 
 export * from './components'
 

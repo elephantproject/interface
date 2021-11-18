@@ -1,4 +1,4 @@
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 
 export default function getExplorerName(blockchain: Blockchain): string {
   switch (blockchain) {

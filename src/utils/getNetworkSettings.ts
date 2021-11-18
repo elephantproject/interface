@@ -1,5 +1,5 @@
-import { ChainId } from '@elephantdefi/sdk'
-import { BLOCKCHAIN_SETTINGS } from '@elephantdefi/sdk-extra'
+import { ChainId } from 'elephantdexsdk'
+import { BLOCKCHAIN_SETTINGS } from 'elephantdexsdk-extra'
 
 export default function getNetworkSettings(chainId: ChainId, rpcUrls?: string[]): Record<string, any> {
   const settings = BLOCKCHAIN_SETTINGS[chainId]

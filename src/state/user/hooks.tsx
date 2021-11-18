@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@elephantdefi/sdk'
+import { ChainId, Pair, Token } from 'elephantdexsdk'
 import flatMap from 'lodash.flatmap'
 import ReactGA from 'react-ga'
 import { useCallback, useMemo } from 'react'

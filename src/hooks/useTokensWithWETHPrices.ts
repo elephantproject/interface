@@ -1,4 +1,4 @@
-import { ChainId, WETH, Token, Blockchain } from '@elephantdefi/sdk'
+import { ChainId, WETH, Token, Blockchain } from 'elephantdexsdk'
 import { useMemo } from 'react'
 import useGovernanceToken from './useGovernanceToken'
 import useTokenWethPrice from './useTokenWETHPrice'

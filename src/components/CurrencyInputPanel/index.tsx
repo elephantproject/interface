@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair } from '@elephantdefi/sdk'
+import { Currency, CurrencyAmount, Pair } from 'elephantdexsdk'
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { darken } from 'polished'

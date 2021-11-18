@@ -2,7 +2,7 @@ import { useSingleCallResult, useSingleContractMultipleData } from '../state/mul
 import { useMasterBreederContract } from './useContract'
 import { useBlockNumber } from '../state/application/hooks'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Fraction, JSBI } from '@elephantdefi/sdk'
+import { Fraction, JSBI } from 'elephantdexsdk'
 import { Contract } from '@ethersproject/contracts'
 
 function calculateFee(devFeeStage: BigNumber, divisor: number, multiply = '100'): Fraction | undefined {

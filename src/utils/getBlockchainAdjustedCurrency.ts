@@ -1,4 +1,4 @@
-import { Blockchain, Currency, ETHER, BINANCE_COIN, HARMONY } from '@elephantdefi/sdk'
+import { Blockchain, Currency, ETHER, BINANCE_COIN, HARMONY } from 'elephantdexsdk'
 
 export default function getBlockchainAdjustedCurrency(
   blockchain: Blockchain,

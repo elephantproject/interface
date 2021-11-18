@@ -1,6 +1,11 @@
-import { TokenAddressMap, useDefaultTokenList, useUnsupportedTokenList } from './../state/lists/hooks'
+import {
+  TokenAddressMap,
+  useDefaultTokenList,
+  useBettingTokenList,
+  useUnsupportedTokenList
+} from './../state/lists/hooks'
 import { parseBytes32String } from '@ethersproject/strings'
-import { Currency, Token, currencyEquals } from '@elephantdefi/sdk'
+import { Currency, Token, currencyEquals } from 'elephantdexsdk'
 import { useMemo } from 'react'
 import { useCombinedActiveList, useCombinedInactiveList } from '../state/lists/hooks'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
@@ -51,6 +56,10 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
 export function useDefaultTokens(): { [address: string]: Token } {
   const defaultList = useDefaultTokenList()
   return useTokensFromMap(defaultList, false)
+}
+export function useBettingTokens(): { [address: string]: Token } {
+  const bettingList = useBettingTokenList()
+  return useTokensFromMap(bettingList, false)
 }
 
 export function useAllTokens(): { [address: string]: Token } {

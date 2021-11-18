@@ -1,4 +1,4 @@
-import { ChainId } from '@elephantdefi/sdk'
+import { ChainId } from 'elephantdexsdk'
 import { useMemo } from 'react'
 import { STAKING_REWARDS_INFO } from '../constants/staking'
 

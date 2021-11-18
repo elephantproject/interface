@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@elephantdefi/sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from 'elephantdexsdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

@@ -20,7 +20,9 @@ import {
 import Earn from './Earn'
 import '../index.css'
 import MobileHeader from '../components/Header/MobileHeader'
-// import Casino from '../pages/'
+
+import Casino from './Casino'
+import Dice from './Casino/dice'
 
 import EarnArchived from './Earn/Archived'
 import Manage from './Earn/Manage'
@@ -40,7 +42,7 @@ import { PIT_SETTINGS } from '../constants'
 import { useActiveWeb3React } from '../hooks'
 import usePlatformName from '../hooks/usePlatformName'
 
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 import useBlockchain from '../hooks/useBlockchain'
 
 const AppWrapper = styled.div`
@@ -124,7 +126,8 @@ export default function App() {
               <Route exact strict path="/staking" component={Earn} />
               <Route exact strict path="/staking/archived" component={EarnArchived} />
               <Route exact strict path={pitSettings?.path} component={Pit} />
-              <Route exact strict path="/casino" />
+              <Route exact strict path="/casino" component={Casino} />
+              <Route exact strict path="/casino/dice" component={Dice} />
 
               {blockchain === Blockchain.ETHEREUM && <Route exact strict path="/vote" component={Vote} />}
               <Route exact strict path="/create" component={RedirectToAddLiquidity} />

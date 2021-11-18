@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { TokenAmount, Fraction } from '@elephantdefi/sdk'
+import { TokenAmount, Fraction } from 'elephantdexsdk'
 import { useTokenBalance } from '../state/wallet/hooks'
 import useBUSDPrice from './useBUSDPrice'
 import usePitToken from './usePitToken'

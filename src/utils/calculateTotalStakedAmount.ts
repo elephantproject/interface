@@ -1,4 +1,4 @@
-import { Token, TokenAmount, Pair, JSBI } from '@elephantdefi/sdk'
+import { Token, TokenAmount, Pair, JSBI } from 'elephantdexsdk'
 
 export default function calculateTotalStakedAmount(
   baseToken: Token,

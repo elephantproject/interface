@@ -1,4 +1,4 @@
-import { Token, TokenAmount, Fraction, ChainId } from '@elephantdefi/sdk'
+import { Token, TokenAmount, Fraction, ChainId } from 'elephantdexsdk'
 import { wrappedCurrency } from './wrappedCurrency'
 import calculateTotalStakedAmount from './calculateTotalStakedAmount'
 import getPair from './getPair'

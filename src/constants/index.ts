@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId, JSBI, Percent, Token, WETH } from '@elephantdefi/sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from 'elephantdexsdk'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'

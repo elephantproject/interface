@@ -1,4 +1,4 @@
-import { Token } from '@elephantdefi/sdk'
+import { Token } from 'elephantdexsdk'
 import { PIT } from '../constants'
 import { useActiveWeb3React } from './index'
 

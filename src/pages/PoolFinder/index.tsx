@@ -1,4 +1,4 @@
-import { Currency, JSBI, TokenAmount } from '@elephantdefi/sdk'
+import { Currency, JSBI, TokenAmount } from 'elephantdexsdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
 import { Text } from 'rebass'

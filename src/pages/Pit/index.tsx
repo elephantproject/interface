@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { TokenAmount } from '@elephantdefi/sdk'
+import { TokenAmount } from 'elephantdexsdk'
 import { AutoColumn } from '../../components/Column'
 import styled from 'styled-components'
 

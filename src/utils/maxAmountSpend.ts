@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, DEFAULT_CURRENCIES } from '@elephantdefi/sdk'
+import { CurrencyAmount, JSBI, DEFAULT_CURRENCIES } from 'elephantdexsdk'
 import { MIN_ETH } from '../constants'
 
 /**

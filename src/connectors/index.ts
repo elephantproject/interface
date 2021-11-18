@@ -7,7 +7,7 @@ import { PortisConnector } from '@web3-react/portis-connector'
 import { FortmaticConnector } from './Fortmatic'
 import { NetworkConnector } from './NetworkConnector'
 
-import { Blockchain, Currency } from '@elephantdefi/sdk'
+import { Blockchain, Currency } from 'elephantdexsdk'
 
 import baseCurrencies from '../utils/baseCurrencies'
 import getBlockchain from '../utils/getBlockchain'

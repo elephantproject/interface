@@ -1,4 +1,4 @@
-import { Blockchain } from '@elephantdefi/sdk'
+import { Blockchain } from 'elephantdexsdk'
 import { BLOCKCHAIN } from '../connectors'
 import bscdump from '../assets/images/elephant-token-logo.png'
 

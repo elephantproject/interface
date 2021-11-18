@@ -1,4 +1,4 @@
-import { Currency, Token, DEFAULT_CURRENCIES } from '@elephantdefi/sdk'
+import { Currency, Token, DEFAULT_CURRENCIES } from 'elephantdexsdk'
 import { BASE_CURRENCY } from '../connectors'
 
 export function currencyId(currency: Currency): string {
