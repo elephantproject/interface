@@ -22,16 +22,16 @@ export default function Casino() {
   return (
     <div className="w-full">
       <h1 className="text-center mb-10">Elephant Casino</h1>
-      <div className="grid grid-cols-3 m-auto w-3/4 text-center bg-gray-100">
+      <div className="grid grid-cols-1 m-auto w-3/4 text-center ">
         <NavLink id={`stake-nav-link`} to={'/casino/dice'}>
           Play Dice
         </NavLink>
-        <NavLink id={`craps-nav-link`} to={'/'}>
+        {/* <NavLink id={`craps-nav-link`} to={'/'}>
           Play Craps
         </NavLink>
         <NavLink id={`blackjack-nav-link`} to={'/'}>
           Play Blackjack
-        </NavLink>
+        </NavLink> */}
       </div>
     </div>
   )

@@ -51,15 +51,14 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   // approval data for stake
   const deadline = useTransactionDeadline()
   const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
-  async function onStake() {
-    const number = 1
+  async function onStake(guess: any) {
     setAttempting(true)
     if (pit && parsedAmount && deadline) {
       if (approval === ApprovalState.APPROVED) {
         const formattedAmount = `0x${parsedAmount.raw.toString(16)}`
-        const estimatedGas = await pit.estimateGas.placeBet(number, formattedAmount)
+        const estimatedGas = await pit.estimateGas.placeBet(guess, formattedAmount)
         await pit
-          .placeBet(number, formattedAmount, {
+          .placeBet(guess, formattedAmount, {
             gasLimit: calculateGasMargin(estimatedGas)
           })
           .then((response: TransactionResponse) => {
@@ -134,42 +133,42 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={() => onStake()}
+          onClick={() => onStake(1)}
         >
           {error ?? '1'}
         </ButtonError>
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={() => onStake()}
+          onClick={() => onStake(2)}
         >
           {error ?? '2'}
         </ButtonError>
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={() => onStake()}
+          onClick={() => onStake(3)}
         >
           {error ?? '3'}
         </ButtonError>
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={() => onStake()}
+          onClick={() => onStake(4)}
         >
           {error ?? '4'}
         </ButtonError>
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={() => onStake()}
+          onClick={() => onStake(5)}
         >
           {error ?? '5'}
         </ButtonError>
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={() => onStake()}
+          onClick={() => onStake(6)}
         >
           {error ?? '6'}
         </ButtonError>

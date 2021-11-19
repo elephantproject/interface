@@ -3,7 +3,7 @@
   "description": "Elephant Dex Interface",
   "version": "2.6.0",
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=14.0.0"
   },
   "homepage": "./",
   "private": true,
