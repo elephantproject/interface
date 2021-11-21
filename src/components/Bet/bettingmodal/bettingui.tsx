@@ -6,7 +6,7 @@ import { RowBetween } from '../../Row'
 import { TYPE } from '../../../theme'
 import { ButtonConfirmed, ButtonError } from '../../Button'
 import ProgressCircles from '../../ProgressSteps'
-import CurrencyInputPanel from '../../CurrencyInputPanel'
+import BetInputPanel from 'components/CurrencyInputPanel/bettingui'
 import { TokenAmount, Token } from 'elephantdexsdk'
 import { useActiveWeb3React } from '../../../hooks'
 import { maxAmountSpend } from '../../../utils/maxAmountSpend'
@@ -18,6 +18,8 @@ import { useDiceContract } from '../../../hooks/useContract'
 
 import { calculateGasMargin } from '../../../utils'
 import useGovernanceToken from '../../../hooks/useGovernanceToken'
+
+import { useSingleCallResult } from 'state/multicall/hooks'
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -38,6 +40,8 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const [typedValue, setTypedValue] = useState('')
   const { parsedAmount, error } = useDerivedStakeInfo(typedValue, stakingToken, userLiquidityUnstaked)
 
+  // const [lastbetarray, setlastbetarray] = useState([] as any)
+
   const govToken = useGovernanceToken()
 
   // state for pending and submitted txn views
@@ -48,9 +52,26 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
   const pit = useDiceContract()
 
+  const lastrollinfo = useSingleCallResult(pit, 'lastnumberwin')?.result?.[0]._hex
+
+  const lastrolled = parseInt(lastrollinfo, 16)
+
+  const maxbetsinfo = useSingleCallResult(pit, 'maximumBets')?.result?.[0]._hex
+
+  const maxbets = parseInt(maxbetsinfo, 16)
+
+  const currentbetsinfo = useSingleCallResult(pit, 'numberOfBets')?.result?.[0]._hex
+
+  const currentbets = parseInt(currentbetsinfo, 16)
+
+  const bankbalanceinfo = useSingleCallResult(pit, 'contractbalance')?.result?.[0]._hex
+
+  const bankbalance = parseInt(bankbalanceinfo, 16) / 1000000000000000000
+
   // approval data for stake
   const deadline = useTransactionDeadline()
   const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
+
   async function onStake(guess: any) {
     setAttempting(true)
     if (pit && parsedAmount && deadline) {
@@ -66,6 +87,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
               summary: `Bet ${typedValue} of ${govToken?.symbol} on Dice`
             })
             setHash(response.hash)
+            // setlastbetarray((lastbetarray: any) => [...lastbetarray, guess])
           })
           .catch((error: any) => {
             setAttempting(false)
@@ -101,13 +123,28 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
     return approveCallback()
   }
 
+  // if (currentbets === 0 && lastbetarray.length !== 0) {
+  //   setlastbetarray([])
+  // }
+
   return (
     <ContentWrapper gap="lg">
+      <h1>
+        Contract Balance : {bankbalance} {govToken?.symbol}
+      </h1>
+      <h1> Round Starts At {maxbets} Bets</h1>
+
+      <h1> Current Bets : {currentbets} </h1>
+
+      <h1>Last Winning Number : {lastrolled}</h1>
+
+      {/* <h1>Your Bets : {lastbetarray}</h1> */}
+
       {console.log(attempting, hash, failed)}
       <RowBetween>
         <TYPE.mediumHeader>Amount To Bet</TYPE.mediumHeader>
       </RowBetween>
-      <CurrencyInputPanel
+      <BetInputPanel
         value={typedValue}
         onUserInput={onUserInput}
         onMax={handleMax}
@@ -115,7 +152,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
         currency={stakingToken}
         label={''}
         disableCurrencySelect={true}
-        customBalanceText={'Available to deposit: '}
+        customBalanceText={'Available to bet: '}
         id="stake-liquidity-token"
       />
 

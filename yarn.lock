@@ -2710,6 +2710,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/bn.js@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-5.1.0.tgz#32c5d271503a12653c62cf4d2b45e6eab8cebc68"
+  integrity sha512-QSSVYj7pYFN49kW77o2s9xTCwZ8F2xLbjLLSEVh8D2F4JUhZtPAGOFLTD+ffqksBx/u4cE/KImFjyhqCjn/LIA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz"
@@ -5074,6 +5081,11 @@ bmp-js@^0.1.0:
   resolved "https://registry.npmjs.org/bmp-js/-/bmp-js-0.1.0.tgz"
   integrity sha1-4Fpj95amwf8l9Hcex62twUjAcjM=
 
+bn.js@4.11.6:
+  version "4.11.6"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.6.tgz#53344adb14617a13f6e8dd2ce28905d1c0ba3215"
+  integrity sha1-UzRK2xRhehP26N0s4okF0cC6MhU=
+
 bn.js@4.11.8:
   version "4.11.8"
   resolved "https://registry.npmjs.org/bn.js/-/bn.js-4.11.8.tgz"
@@ -5084,7 +5096,7 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.10.0, bn.js@^4.11.0, bn.js@^4.11.1, bn.js@^
   resolved "https://registry.npmjs.org/bn.js/-/bn.js-4.12.0.tgz"
   integrity sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==
 
-bn.js@^5.0.0, bn.js@^5.1.1:
+bn.js@^5.0.0, bn.js@^5.1.1, bn.js@^5.1.2, bn.js@^5.2.0:
   version "5.2.0"
   resolved "https://registry.npmjs.org/bn.js/-/bn.js-5.2.0.tgz"
   integrity sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==
@@ -7878,6 +7890,13 @@ eth-tx-summary@^3.1.2:
     ethereumjs-vm "^2.6.0"
     through2 "^2.0.3"
 
+ethereum-bloom-filters@^1.0.6:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/ethereum-bloom-filters/-/ethereum-bloom-filters-1.0.10.tgz#3ca07f4aed698e75bd134584850260246a5fed8a"
+  integrity sha512-rxJ5OFN3RwjQxDcFP2Z5+Q9ho4eIdEmSc2ht0fCu8Se9nbXjZ7/031uXoUYJ87KHCOdVeiUuwSnoS7hmYAGVHA==
+  dependencies:
+    js-sha3 "^0.8.0"
+
 ethereum-common@0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/ethereum-common/-/ethereum-common-0.2.0.tgz"
@@ -8026,6 +8045,17 @@ ethereumjs-util@^6.0.0:
     ethjs-util "0.1.6"
     rlp "^2.2.3"
 
+ethereumjs-util@^7.1.0:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/ethereumjs-util/-/ethereumjs-util-7.1.3.tgz#b55d7b64dde3e3e45749e4c41288238edec32d23"
+  integrity sha512-y+82tEbyASO0K0X1/SRhbJJoAlfcvq8JbrG4a5cjrOks7HS/36efU/0j2flxCPOUM++HFahk33kr/ZxyC4vNuw==
+  dependencies:
+    "@types/bn.js" "^5.1.0"
+    bn.js "^5.1.2"
+    create-hash "^1.1.2"
+    ethereum-cryptography "^0.1.3"
+    rlp "^2.2.4"
+
 ethereumjs-vm@^2.1.0, ethereumjs-vm@^2.3.4, ethereumjs-vm@^2.6.0:
   version "2.6.0"
   resolved "https://registry.npmjs.org/ethereumjs-vm/-/ethereumjs-vm-2.6.0.tgz"
@@ -8078,6 +8108,14 @@ ethers@^5.1.3, ethers@^5.4.0:
     "@ethersproject/wallet" "5.4.0"
     "@ethersproject/web" "5.4.0"
     "@ethersproject/wordlists" "5.4.0"
+
+ethjs-unit@0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/ethjs-unit/-/ethjs-unit-0.1.6.tgz#c665921e476e87bce2a9d588a6fe0405b2c41699"
+  integrity sha1-xmWSHkduh7ziqdWIpv4EBbLEFpk=
+  dependencies:
+    bn.js "4.11.6"
+    number-to-bn "1.7.0"
 
 ethjs-util@0.1.6, ethjs-util@^0.1.3:
   version "0.1.6"
@@ -12101,6 +12139,14 @@ number-is-nan@^1.0.0:
   resolved "https://registry.npmjs.org/number-is-nan/-/number-is-nan-1.0.1.tgz"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+number-to-bn@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/number-to-bn/-/number-to-bn-1.7.0.tgz#bb3623592f7e5f9e0030b1977bd41a0c53fe1ea0"
+  integrity sha1-uzYjWS9+X54AMLGXe9QaDFP+HqA=
+  dependencies:
+    bn.js "4.11.6"
+    strip-hex-prefix "1.0.0"
+
 nwsapi@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/nwsapi/-/nwsapi-2.2.0.tgz"
@@ -14796,6 +14842,13 @@ rlp@^2.0.0, rlp@^2.2.3:
   dependencies:
     bn.js "^4.11.1"
 
+rlp@^2.2.4:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/rlp/-/rlp-2.2.7.tgz#33f31c4afac81124ac4b283e2bd4d9720b30beaf"
+  integrity sha512-d5gdPmgQ0Z+AklL2NVXr/IoSjNZFfTVvQWzL/AM2AOcSzYP2xjlb0AC8YyCLc41MSNf6P6QVtjgPdmVtzb+4lQ==
+  dependencies:
+    bn.js "^5.2.0"
+
 rollup-plugin-babel@^4.3.3:
   version "4.4.0"
   resolved "https://registry.npmjs.org/rollup-plugin-babel/-/rollup-plugin-babel-4.4.0.tgz"
@@ -16691,17 +16744,17 @@ use-callback-ref@^1.2.3, use-callback-ref@^1.2.5:
   resolved "https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.2.5.tgz"
   integrity sha512-gN3vgMISAgacF7sqsLPByqoePooY3n2emTH59Ur5d/M8eg4WTWu1xp8i8DHjohftIyEx0S08RiYxbffr4j8Peg==
 
-use-count-up@^2.2.5:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/use-count-up/-/use-count-up-2.3.1.tgz"
-  integrity sha512-nFXUiweeHDYovM0boDk0/CTa/VW7Gzh9G/l8NVNPleqmDJbDuDO3j8qSODTbyFQrKKHN7XJd2f9hy8FUgocIvw==
+use-count-up@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/use-count-up/-/use-count-up-3.0.1.tgz#315edf4e4be91ead94e6dd34444349d9b8c2c6c3"
+  integrity sha512-jlVsXJYje6jh+xwQaCEYrwHoB+nRyillNEmr21bhe9kw7tpRzyrSq9jQs9UOlo+8hCFkuOmjUihL3IjEK/piVg==
   dependencies:
-    use-elapsed-time "^2.1.6"
+    use-elapsed-time "3.0.2"
 
-use-elapsed-time@^2.1.6:
-  version "2.1.8"
-  resolved "https://registry.npmjs.org/use-elapsed-time/-/use-elapsed-time-2.1.8.tgz"
-  integrity sha512-lNLTDffKHdHWweQNvnch9tFI2eRP3tXccSLrwE7U6xrfyWFNEgNQZWWsGhQvtwKa0kJ6L+7E5wKbi3jg86opjg==
+use-elapsed-time@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/use-elapsed-time/-/use-elapsed-time-3.0.2.tgz#ef22bf520e60f9873fd102925a2d5cbc5d4faaf5"
+  integrity sha512-2EY9lJ5DWbAvT8wWiEp6Ztnl46DjXz2j78uhWbXaz/bg3OfpbgVucCAlcN8Bih6hTJfFTdVYX9L6ySMn5py/wQ==
 
 use-sidecar@^1.0.1, use-sidecar@^1.0.5:
   version "1.0.5"
@@ -16722,6 +16775,11 @@ utf-8-validate@^5.0.2:
   integrity sha512-+pnxRYsS/axEpkrrEpzYfNZGXp0IjC/9RIxwM5gntY4Koi8SHmUGSfxfWqxZdRxrtaoVstuOzUp/rbs3JSPELQ==
   dependencies:
     node-gyp-build "^4.2.0"
+
+utf8@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/utf8/-/utf8-3.0.0.tgz#f052eed1364d696e769ef058b183df88c87f69d1"
+  integrity sha512-E8VjFIQ/TyQgp+TZfS6l8yp/xWppSAHzidGiRrqe4bK4XP9pTRyKFgGJpO3SN7zdX4DeomTrwaseCHovfpFcqQ==
 
 utif@^2.0.1:
   version "2.0.1"
@@ -16989,6 +17047,19 @@ web3-provider-engine@16.0.1:
     ws "^5.1.1"
     xhr "^2.2.0"
     xtend "^4.0.1"
+
+web3-utils@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/web3-utils/-/web3-utils-1.6.1.tgz#befcb23922b00603ab56d8c5b4158468dc494aca"
+  integrity sha512-RidGKv5kOkcerI6jQqDFDoTllQQqV+rPhTzZHhmbqtFObbYpU93uc+yG1LHivRTQhA6llIx67iudc/vzisgO+w==
+  dependencies:
+    bn.js "^4.11.9"
+    ethereum-bloom-filters "^1.0.6"
+    ethereumjs-util "^7.1.0"
+    ethjs-unit "0.1.6"
+    number-to-bn "1.7.0"
+    randombytes "^2.1.0"
+    utf8 "3.0.0"
 
 webidl-conversions@^5.0.0:
   version "5.0.0"

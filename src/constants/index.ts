@@ -23,7 +23,7 @@ export const ROUTER_ADDRESSES: { [chainId in ChainId]: string } = {
 
 export const GOVERNANCE_ADDRESS = ZERO_ONE_ADDRESS
 
-export const DICE_ADDRESS = '0x4Bb7df6AD7338175f73c80147229246422b2f931'
+export const DICE_ADDRESS = '0x2B7d0D23c8D5dCD5A6286aD38b56ee45a230baB3'
 
 export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
@@ -121,6 +121,7 @@ export const WEB_INTERFACES: { [chainId in ChainId]: string[] } = {
   [ChainId.BSC_TESTNET]: [''],
   [ChainId.HARMONY_MAINNET]: ['http://elephant.ac'],
   [ChainId.HARMONY_TESTNET]: ['https://elephant-navy.vercel.app/#/swap']
+  // [ChainId.POLYGON]: [''],
 }
 
 export { PRELOADED_PROPOSALS } from './proposals'
@@ -209,8 +210,6 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
   [ChainId.HARMONY_MAINNET]: [
     ...WETH_ONLY[ChainId.HARMONY_MAINNET],
-    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'BUSD'),
-    getTokenWithDefault(ChainId.HARMONY_MAINNET, 'bscBUSD'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, '1USDC'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, 'ELEPHANT'),
     getTokenWithDefault(ChainId.HARMONY_MAINNET, '1ETH'),
@@ -308,7 +307,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
 export const NetworkContextName = 'NETWORK'
 
 // default allowed slippage, in bips
-export const INITIAL_ALLOWED_SLIPPAGE = 50
+export const INITIAL_ALLOWED_SLIPPAGE = 55
 // 20 minutes, denominated in seconds
 export const DEFAULT_DEADLINE_FROM_NOW = 60 * 20
 
