@@ -46,29 +46,23 @@ export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
 `
 
 export const StyledBalanceMaxMini = styled.button`
-  height: 22px;
-  width: 22px;
-  background-color: ${({ theme }) => theme.bg2};
-  border: none;
-  border-radius: 50%;
-  padding: 0.2rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin-left: 0.4rem;
-  cursor: pointer;
-  color: ${({ theme }) => theme.text2};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
+height: 28px;
+background-color: ${({ theme }) => theme.primary5};
+border: 5px solid ${({ theme }) => theme.primary5};
+border-radius: 0.9rem;
+font-size: 0.575rem;
 
-  :hover {
-    background-color: ${({ theme }) => theme.bg3};
-  }
-  :focus {
-    background-color: ${({ theme }) => theme.bg3};
-    outline: none;
-  }
+font-weight: 500;
+cursor: pointer;
+margin-right: 0.5rem;
+margin: 3px
+color: ${({ theme }) => theme.primaryText1};
+:hover {
+  box-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+}
+${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  margin-right: 0.5rem;
+`};
 `
 
 export const TruncatedText = styled(Text)`

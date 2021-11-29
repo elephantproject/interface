@@ -1,7 +1,7 @@
 {
   "name": "elephantdexinterface",
   "description": "Elephant Dex Interface",
-  "version": "2.6.0",
+  "version": "2.8.0",
   "engines": {
     "node": ">=14.0.0"
   },
@@ -140,6 +140,6 @@
     "@craco/craco": "^6.3.0",
     "@walletconnect/web3-provider": "^1.5.0",
     "elephantdexbetting-token-list": "^2.1.0",
-    "elephantdexdefault-token-list": "2.0.2"
+    "elephantdexdefault-token-list": "2.7.1"
   }
 }

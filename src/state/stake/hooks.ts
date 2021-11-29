@@ -27,7 +27,7 @@ export interface StakingInfo {
   pid: number
   // the tokens involved in this pair
   tokens: [Token, Token]
-  // baseToken used for TVL & APR calculations
+  // baseToken used for  & APR calculations
   baseToken: Token | undefined
   // the allocation point for the given pool
   allocPoint: JSBI

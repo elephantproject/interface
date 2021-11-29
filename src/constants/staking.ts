@@ -41,6 +41,16 @@ export const STAKING_REWARDS_INFO: {
       pid: 5,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/bscADA'),
       active: true
+    },
+    {
+      pid: 6,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1USDC/UST'),
+      active: false
+    },
+    {
+      pid: 7,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'SUSHI/ELEPHANT'),
+      active: false
     }
   ],
   [ChainId.HARMONY_TESTNET]: [

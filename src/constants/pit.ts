@@ -27,6 +27,14 @@ export const PIT_POOLS: {
     {
       pid: 5,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'WONE/bscADA')
+    },
+    {
+      pid: 6,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1USDC/UST')
+    },
+    {
+      pid: 7,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'SUSHI/ELEPHANT')
     }
   ],
   [ChainId.HARMONY_TESTNET]: [

@@ -7198,7 +7198,12 @@ elephantdexcore@2.0.1, "elephantdexcore@^ 2.0.1", elephantdexcore@^2.0.1:
     dotenv "^10.0.0"
     tslib "^2.3.0"
 
-elephantdexdefault-token-list@2.0.2, elephantdexdefault-token-list@^2.0.2:
+elephantdexdefault-token-list@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/elephantdexdefault-token-list/-/elephantdexdefault-token-list-2.7.1.tgz#930dcbe92622fe830e549c54729576b043026185"
+  integrity sha512-O2T1pydgpjN3j/wFxCqVNXAaB2SS9lp0YXgyuCOaqVHwwII/C4gTeWFuVTUZpSjd3HwjIMeNjCGuxlLDaaAbjA==
+
+elephantdexdefault-token-list@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/elephantdexdefault-token-list/-/elephantdexdefault-token-list-2.0.2.tgz#d909363323c3e767c11e33881e537afd313274c9"
   integrity sha512-242Oxr8lJZpH7xb/CNSYe1eHyUYyYS9lXOdqQci5D5TXD1WQqAm2HrIFNuEmS+uIDwOMjO+S1QtKrGsWBtx6HQ==

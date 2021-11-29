@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cardbg {
+  background: url('./assets/images/colorful-ethnic-elephant-prints.jpg');
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.same::after {
+  content: '<- Same as last roll';
+  font-size: xx-small;
+  animation: fadeIn 1s ease-in-out 3s forwards;
+ }
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.9;
+    }
+    1%{
+      opacity: 0.1;
+    }
+}
+.new::after {
+  content: '<- Rolling';
+  font-size: xx-small;
+  opacity: 50%;
+
+}
+
+.lastround::after {
+  content: '<- Last Round Winning Number';
+  font-size: xx-small;
+  color: black;
+  opacity: 50%;
+}
