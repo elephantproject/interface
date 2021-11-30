@@ -7198,15 +7198,10 @@ elephantdexcore@2.0.1, "elephantdexcore@^ 2.0.1", elephantdexcore@^2.0.1:
     dotenv "^10.0.0"
     tslib "^2.3.0"
 
-elephantdexdefault-token-list@2.7.1:
+elephantdexdefault-token-list@2.7.1, elephantdexdefault-token-list@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/elephantdexdefault-token-list/-/elephantdexdefault-token-list-2.7.1.tgz#930dcbe92622fe830e549c54729576b043026185"
   integrity sha512-O2T1pydgpjN3j/wFxCqVNXAaB2SS9lp0YXgyuCOaqVHwwII/C4gTeWFuVTUZpSjd3HwjIMeNjCGuxlLDaaAbjA==
-
-elephantdexdefault-token-list@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/elephantdexdefault-token-list/-/elephantdexdefault-token-list-2.0.2.tgz#d909363323c3e767c11e33881e537afd313274c9"
-  integrity sha512-242Oxr8lJZpH7xb/CNSYe1eHyUYyYS9lXOdqQci5D5TXD1WQqAm2HrIFNuEmS+uIDwOMjO+S1QtKrGsWBtx6HQ==
 
 elephantdexlib@2.0.1, elephantdexlib@^2.0.1:
   version "2.0.1"
@@ -7224,10 +7219,10 @@ elephantdexperiphery@^2.0.2:
     elephantdexlib "2.0.1"
     tslib "^2.3.0"
 
-elephantdexsdk-extra@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/elephantdexsdk-extra/-/elephantdexsdk-extra-2.0.2.tgz#e9cdc56641fb8e0f7a5d6f89179c329bf9d587ed"
-  integrity sha512-WU27VnPliyPkTgEECId2C1gmeD73TEm1FsbmxUxw6KkyRdZ2vnkJWuot3G1r3EQv5zVXiIoIalnIeHxAjV1D8w==
+elephantdexsdk-extra@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/elephantdexsdk-extra/-/elephantdexsdk-extra-2.7.1.tgz#96cd311ab2fd811d2b2d9e4e2d83e2163c04f00f"
+  integrity sha512-acrrq0TnoCTnSvc5hvtewDilPreNOTYsM1tgz1oYZvVkJKSq3zR1Jy2UtM6J+CT+Ck+gnZFZXtKPRVXGXOglUA==
   dependencies:
     "@ethersproject/address" "^5.3.0"
     "@ethersproject/contracts" "^5.3.0"
@@ -7235,7 +7230,7 @@ elephantdexsdk-extra@^2.0.2:
     "@ethersproject/solidity" "^5.3.0"
     "@types/lodash.random" "^3.2.6"
     elephantdexcommunity-token-list "2.0.2"
-    elephantdexdefault-token-list "^2.0.2"
+    elephantdexdefault-token-list "^2.7.1"
     elephantdexsdk "^2.0.2"
     lodash.random "^3.2.0"
 

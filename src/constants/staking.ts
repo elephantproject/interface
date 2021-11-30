@@ -44,13 +44,13 @@ export const STAKING_REWARDS_INFO: {
     },
     {
       pid: 6,
-      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1USDC/UST'),
-      active: false
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'UST/1USDC'),
+      active: true
     },
     {
       pid: 7,
-      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'SUSHI/ELEPHANT'),
-      active: false
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1SUSHI/ELEPHANT'),
+      active: true
     }
   ],
   [ChainId.HARMONY_TESTNET]: [

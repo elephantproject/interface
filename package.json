@@ -51,7 +51,7 @@
     "elephantdexcore": "^ 2.0.1",
     "elephantdexperiphery": "^2.0.2",
     "elephantdexsdk": "^2.0.2",
-    "elephantdexsdk-extra": "^2.0.2",
+    "elephantdexsdk-extra": "^2.7.1",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",

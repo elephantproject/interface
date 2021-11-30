@@ -8,8 +8,6 @@ export default function usePlatformName(): string {
   const govToken = useGovernanceToken()
   const govprice = useBUSDPrice(govToken)
 
-  console.log(govToken)
-
   const blockchain = useBlockchain()
   switch (blockchain) {
     case Blockchain.BINANCE_SMART_CHAIN:
