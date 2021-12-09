@@ -218,7 +218,7 @@ export default function Pit({
                     Your x{govToken?.symbol} Balance
                     {govTokenPitTokenRatio && (
                       <TYPE.italic display="inline" marginLeft="0.25em">
-                        (1 x{govToken?.symbol} = {govTokenPitTokenRatio.toSignificant(4)} {govToken?.symbol})
+                        (1 x{govToken?.symbol} = {govTokenPitTokenRatio.toSignificant(5)} {govToken?.symbol})
                       </TYPE.italic>
                     )}
                   </TYPE.black>

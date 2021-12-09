@@ -215,7 +215,7 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
         <CardSection gap="sm">
           <AutoColumn gap="md">
             <RowBetween>
-              <TYPE.white color="white">{govToken?.symbol} ulation:</TYPE.white>
+              <TYPE.white color="white">{govToken?.symbol} circulation:</TYPE.white>
               <TYPE.white color="white">{totalUnlockedSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
             <RowBetween>

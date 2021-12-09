@@ -30,11 +30,11 @@ export const PIT_POOLS: {
     },
     {
       pid: 6,
-      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1USDC/UST')
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'UST/1USDC')
     },
     {
       pid: 7,
-      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'SUSHI/ELEPHANT')
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1SUSHI/ELEPHANT')
     }
   ],
   [ChainId.HARMONY_TESTNET]: [
