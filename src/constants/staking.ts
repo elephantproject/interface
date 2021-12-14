@@ -45,7 +45,7 @@ export const STAKING_REWARDS_INFO: {
     {
       pid: 6,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'UST/1USDC'),
-      active: false
+      active: true
     },
     {
       pid: 7,
