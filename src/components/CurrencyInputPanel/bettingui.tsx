@@ -194,7 +194,6 @@ export default function BetInputPanel({
                         : 'text-gray-500'
                     }
                   >
-                    {console.log(countUpValue, countUpValuePrevious)}
                     <CountUp
                       key={countUpValue}
                       isCounting

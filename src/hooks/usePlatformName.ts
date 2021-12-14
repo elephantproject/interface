@@ -13,7 +13,9 @@ export default function usePlatformName(): string {
     case Blockchain.BINANCE_SMART_CHAIN:
       return 'Please switch to the Harmony network'
     case Blockchain.HARMONY:
-      return '$' + govToken?.name + ' - $' + govprice?.toFixed(3) + ' Trade HRC20 Tokens On Elephant.ac'
+      return govprice
+        ? '$' + govToken?.name + ' - $' + govprice?.toFixed(3) + ' Trade HRC20 Tokens On Elephant.ac'
+        : 'Elephant Dex - Loading'
     case Blockchain.ETHEREUM:
       return 'Please switch to the Harmony network'
     default:

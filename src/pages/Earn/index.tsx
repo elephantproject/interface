@@ -125,7 +125,7 @@ export default function Earn() {
               )}
               {hasArchivedStakingPools && (
                 <RowBetween>
-                  <StyledInternalLink to={`/`}>
+                  <StyledInternalLink to={`/staking/archived`}>
                     <CustomButtonWhite padding="8px" borderRadius="8px">
                       Archived Pools
                     </CustomButtonWhite>
