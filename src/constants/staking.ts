@@ -51,6 +51,16 @@ export const STAKING_REWARDS_INFO: {
       pid: 7,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1SUSHI/ELEPHANT'),
       active: true
+    },
+    {
+      pid: 8,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1MATIC/ELEPHANT'),
+      active: true
+    },
+    {
+      pid: 9,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'LINK/ELEPHANT'),
+      active: true
     }
   ],
   [ChainId.HARMONY_TESTNET]: [

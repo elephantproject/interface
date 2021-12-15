@@ -8,6 +8,7 @@ import { useGovTokenSupply } from '../../data/TotalSupply'
 import { useActiveWeb3React } from '../../hooks'
 //import { useMerkleDistributorContract } from '../../hooks/useContract'
 //import useCurrentBlockTimestamp from '../../hooks/useCurrentBlockTimestamp'
+
 import { useTotalLockedGovTokensEarned, useTotalUnlockedGovTokensEarned } from '../../state/stake/hooks'
 import { useAggregateGovTokenBalance, useTokenBalance } from '../../state/wallet/hooks'
 import { StyledInternalLink, TYPE, UniTokenAnimated } from '../../theme'
@@ -59,6 +60,14 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
     'balanceOf',
     GOVERNANCE_TOKEN_INTERFACE
   )
+
+  const totalburned: TokenAmount | undefined = useTokenBalance(
+    '0x7bdef7bdef7bdef7bdef7bdef7bdef7bdef6e7ad',
+    govToken,
+    'balanceOf',
+    GOVERNANCE_TOKEN_INTERFACE
+  )
+
   const govTokenLockedBalance: TokenAmount | undefined = useTokenBalance(
     account ?? undefined,
     govToken,
@@ -218,6 +227,12 @@ export default function GovTokenBalanceContent({ setShowUniBalanceModal }: { set
               <TYPE.white color="white">{govToken?.symbol} circulation:</TYPE.white>
               <TYPE.white color="white">{totalUnlockedSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
+
+            <RowBetween>
+              <TYPE.white color="white">{govToken?.symbol} Total burned:</TYPE.white>
+              <TYPE.white color="white">{totalburned?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
+            </RowBetween>
+
             <RowBetween>
               <TYPE.white color="white">{govToken?.symbol} total supply:</TYPE.white>
               <TYPE.white color="white">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
