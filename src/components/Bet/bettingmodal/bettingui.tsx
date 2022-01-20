@@ -21,9 +21,7 @@ import useGovernanceToken from '../../../hooks/useGovernanceToken'
 
 import { useSingleCallResult } from 'state/multicall/hooks'
 
-import { CountUp } from 'use-count-up'
-
-import usePrevious from '../../../hooks/usePrevious'
+import Playermap from './Playermap'
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -57,14 +55,13 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const pit = useDiceContract()
 
   const lastrollinfo = useSingleCallResult(pit, 'lastnumberwin')?.result?.[0]._hex
+  const currentbetsinfo = useSingleCallResult(pit, 'numberOfBets')?.result?.[0]._hex
 
   const lastrolled = parseInt(lastrollinfo, 16)
 
   const maxbetsinfo = useSingleCallResult(pit, 'maximumBets')?.result?.[0]._hex
 
   const maxbets = parseInt(maxbetsinfo, 16)
-
-  const currentbetsinfo = useSingleCallResult(pit, 'numberOfBets')?.result?.[0]._hex
 
   const currentbets = parseInt(currentbetsinfo, 16)
 
@@ -79,8 +76,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
 
   async function onStake(guess: any) {
-    // if (bankbalance < typedValue
-
     setAttempting(true)
     if (pit && parsedAmount && deadline) {
       if (approval === ApprovalState.APPROVED) {
@@ -135,43 +130,23 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   //   setlastbetarray([])
   // }
 
-  const countUpValue = lastrolled ?? '0'
-  const countUpValuePrevious = usePrevious(countUpValue) ?? '0'
-
   return (
     <ContentWrapper gap="lg">
+      <div>
+        <Playermap bets={currentbets} />
+      </div>
       <div className="rounded-md leading-loose  cardbg font-mono p-12 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
-        <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 m-5 p-5">
+        <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 p-5">
           <h1>
             Contract Balance : {sig} {govToken?.symbol}
           </h1>
           <h1>
             {' '}
-            Roll After <div className="text-2xl text-bold">{maxbets} Bets </div>
+            Roll After : <div className="text-2xl text-bold">{maxbets} Bets </div>
           </h1>
-
           <h1> Current Bets : {currentbets} </h1>
-
           {/* <h1> Round Status: {currentbets != maxbets ? 'betting' : 'rolling'}</h1> */}
-
-          <div
-            className={
-              countUpValue > countUpValuePrevious
-                ? 'new text-black text-4xl'
-                : countUpValue < countUpValuePrevious
-                ? 'new text-black text-4xl'
-                : 'lastround text-blue-500 text-4xl'
-            }
-          >
-            <CountUp
-              key={countUpValue}
-              isCounting
-              start={Number(countUpValuePrevious)}
-              end={countUpValue}
-              duration={5}
-              easing="easeOutCubic"
-            />{' '}
-          </div>
+          <div className={' text-blue-500 font-extrabold text-4xl'}>{lastrolled} </div> ^ Last Number Rolled
         </div>
       </div>
 

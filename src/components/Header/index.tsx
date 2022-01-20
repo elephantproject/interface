@@ -386,6 +386,9 @@ export default function Header() {
           <StyledNavLink id={`stake-nav-link`} to={'/casino'}>
             Casino
           </StyledNavLink>
+          <StyledNavLink id={`stake-nav-link`} to={'/nft'}>
+            NFT
+          </StyledNavLink>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>

@@ -47,7 +47,19 @@ export const PIT_POOLS: {
     {
       pid: 11,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'VIPER/ELEPHANT')
+    },
+    {
+      pid: 12,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'JEWEL/ELEPHANT')
     }
+    // {
+    //   pid: 13,
+    //   tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1CRV/ELEPHANT')
+    // },
+    // {
+    //   pid: 14,
+    //   tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'stONE/ELEPHANT')
+    // }
   ],
   [ChainId.HARMONY_TESTNET]: [
     {

@@ -44,6 +44,7 @@ import usePlatformName from '../hooks/usePlatformName'
 
 import { Blockchain } from 'elephantdexsdk'
 import useBlockchain from '../hooks/useBlockchain'
+import NFT from './NFT'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -127,6 +128,8 @@ export default function App() {
               <Route exact strict path="/staking/archived" component={EarnArchived} />
               <Route exact strict path={pitSettings?.path} component={Pit} />
               <Route exact strict path="/casino" component={Casino} />
+              <Route exact strict path="/nft" component={NFT} />
+
               <Route exact strict path="/casino/dice" component={Dice} />
 
               {blockchain === Blockchain.ETHEREUM && <Route exact strict path="/vote" component={Vote} />}

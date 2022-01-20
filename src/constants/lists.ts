@@ -18,7 +18,7 @@ const CMC_ALL_LIST = 'defi.cmc.eth'
 const CMC_STABLECOIN = 'stablecoin.cmc.eth'
 const KLEROS_LIST = 't2crtokens.eth'
 const GEMINI_LIST = 'https://www.gemini.com/uniswap/manifest.json'*/
-const ELEPHANT_DEFAULT_LIST = 'https://pastebin.com/NStMQ5sK'
+const ELEPHANT_DEFAULT_LIST = 'https://pastebin.com/Qaie0ayz'
 const ELEPHANT_COMMUNITY_LIST =
   'https://github.com/elephantproject/default-token-list/blob/main/build/elephantdefi-default.tokenlist.json'
 

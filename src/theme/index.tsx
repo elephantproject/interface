@@ -62,7 +62,7 @@ export function defaultColors(darkMode: boolean): Colors {
 
     //primary colors
     primary1: darkMode ? '#2172E5' : '#ff007a',
-    primary2: darkMode ? '#3680E7' : '#FF8CC3',
+    primary2: darkMode ? '#3680E7' : '#00c09c',
     primary3: darkMode ? '#4D8FEA' : '#FF99C9',
     primary4: darkMode ? '#376bad70' : '#F6DDE8',
     primary5: darkMode ? '#153d6f70' : '#FDEAF1',
@@ -122,7 +122,7 @@ export function elephantColors(darkMode: boolean): Colors {
 
     //primary colors
     primary1: darkMode ? '#669999' : '#00c09c',
-    primary2: darkMode ? '#3680E7' : '#FF8CC3',
+    primary2: darkMode ? '#3680E7' : '#00c09c',
     primary3: darkMode ? '#4D8FEA' : '#FF99C9',
     primary4: darkMode ? '#376bad70' : '#F6DDE8',
     primary5: darkMode ? '#153d6f70' : '#e8f4e5',

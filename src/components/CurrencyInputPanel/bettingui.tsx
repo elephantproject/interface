@@ -187,10 +187,10 @@ export default function BetInputPanel({
                   {!hideBalance && !!currency && selectedCurrencyBalance ? customBalanceText ?? 'Balance: ' : ' -'}
                   <div
                     className={
-                      countUpValuePrevious > countUpValue
-                        ? 'text-red-500'
-                        : countUpValuePrevious < countUpValue
-                        ? 'text-green-800 font-extrabold'
+                      countUpValue > countUpValuePrevious
+                        ? 'text-green-500 font-extrabold'
+                        : countUpValue < countUpValuePrevious
+                        ? 'text-red-500 font-bold'
                         : 'text-gray-500'
                     }
                   >

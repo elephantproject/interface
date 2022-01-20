@@ -11,13 +11,13 @@ export default function usePlatformName(): string {
   const blockchain = useBlockchain()
   switch (blockchain) {
     case Blockchain.BINANCE_SMART_CHAIN:
-      return 'Please switch to the Harmony network'
+      return 'Elephant Dex - Harmony Defi & Casino | elephant.ac'
     case Blockchain.HARMONY:
       return govprice
         ? '$' + govToken?.name + ' - $' + govprice?.toFixed(3) + ' Trade HRC20 Tokens On Elephant.ac'
-        : 'Elephant Dex - Loading'
+        : 'Elephant Dex - Harmony Defi & Casino | elephant.ac'
     case Blockchain.ETHEREUM:
-      return 'Please switch to the Harmony network'
+      return 'Elephant Dex - Harmony Defi & Casino | elephant.ac'
     default:
       return 'Elephant Dex - Harmony Defi & Casino | elephant.ac'
   }

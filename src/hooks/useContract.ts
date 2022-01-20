@@ -31,6 +31,9 @@ import useGovernanceToken from './useGovernanceToken'
 import { DICE_ADDRESS } from '../constants'
 import { abi as DICE_ABI } from 'elephantdexcontracts/build/Dice.json'
 
+import { NFT1ADDRESS } from '../constants'
+import { abi as NFTABI } from 'elephantdexcontracts/build/ERC721PresetMinterPauserAutoId.json'
+
 // returns null on errors
 function useContract(address: string | undefined, ABI: any, withSignerIfPossible = true): Contract | null {
   const { library, account } = useActiveWeb3React()
@@ -158,4 +161,8 @@ export function useSocksController(): Contract | null {
     UNISOCKS_ABI,
     false
   )
+}
+
+export function useNFT1(): Contract | null {
+  return useContract(NFT1ADDRESS, NFTABI, true)
 }
