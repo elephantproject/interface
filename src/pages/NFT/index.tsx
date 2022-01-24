@@ -1,95 +1,112 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { TokenAmount } from 'elephantdexsdk'
 
-// import { useNFT1 } from 'hooks/useContract'
+import { RouteComponentProps } from 'react-router-dom'
 
-// import { useSingleCallResult } from 'state/multicall/hooks'
+import ClaimModal from '../../components/Pit/ClaimModal'
+import { useTokenBalance } from '../../state/wallet/hooks'
+import { useActiveWeb3React } from '../../hooks'
+// import { CountUp } from 'use-count-up'
 
-import axios from 'axios'
+// import usePrevious from '../../../hooks/usePrevious'
 
-// import styled from 'styled-components'
+import { GOVERNANCE_TOKEN_INTERFACE } from '../../constants/abis/governanceToken'
+import useGovernanceToken from 'hooks/useGovernanceToken'
+import NFT from './components/nft'
 
-// const StyledNavLink = styled(NavLink)`
-//   ${({ theme }) => theme.flexRowNoWrap}
-//   align-items: left;
-//   border-radius: 3rem;
-//   outline: none;
-//   cursor: pointer;
-//   text-decoration: none;
-//   color: ${({ theme }) => theme.text2};
-//   font-size: 1rem;
-//   width: fit-content;
-//   margin: 0 12px;
-//   font-weight: 500;
-// `
+import { useNFT1 } from 'hooks/useContract'
 
-export default function NFT() {
-  const [nft1, setnftdata] = useState({
-    image: '',
-    name: '',
-    id: '',
-    description: ''
-  })
+/*const PositionInfo = styled(AutoColumn)<{ dim: any }>`
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  opacity: ${({ dim }) => (dim ? 0.6 : 1)};
+`*/
 
-  // useEffect(() => {
-  //   async function fetchMyAPI() {
-  //     let jsondata = await useSingleCallResult(useNFT1(), 'baseURI')?.result?.[0]
-  //     await console.log(jsondata)
+/*const StyledDataCard = styled(DataCard)<{ bgColor?: any; showBackground?: any }>`
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #1e1a31 0%, #3d51a5 100%);
+  z-index: 2;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: ${({ theme, bgColor, showBackground }) =>
+    `radial-gradient(91.85% 100% at 1.84% 0%, ${bgColor} 0%,  ${showBackground ? theme.black : theme.bg5} 100%) `};
+`*/
 
-  //     let response = await fetch('api/data')
-  //     response = await response.json()
-  //     dataSet(response)
-  //   }
+/*const PoolData = styled(DataCard)`
+  background: none;
+  border: 1px solid ${({ theme }) => theme.bg4};
+  padding: 1rem;
+  z-index: 1;
+`*/
 
-  //   fetchMyAPI()
-  // }, [])
+/*const VoteCard = styled(DataCard)`
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
+  overflow: hidden;
+`*/
 
-  useEffect(() => {
-    async function fetchMyAPI() {
-      await axios
-        .get('https://gateway.pinata.cloud/ipfs/QmRbR8FubMtksCkLbWCiHUBwz9oTZyFvedMDmvTEHS5Mr8?preview=1')
-        .then(resp => {
-          console.log(resp.data)
-          setnftdata({
-            image: resp.data[0].image,
-            name: resp.data[0].name,
-            id: resp.data[0].id,
-            description: resp.data[0].description
-          })
-        })
-    }
+export default function Pit({
+  match: {
+    params: { currencyIdA, currencyIdB }
+  }
+}: RouteComponentProps<{ currencyIdA: string; currencyIdB: string }>) {
+  const { account } = useActiveWeb3React()
 
-    fetchMyAPI()
-  }, [])
+  const govToken = useGovernanceToken()
+  const govTokenBalance: TokenAmount | undefined = useTokenBalance(
+    account ?? undefined,
+    govToken,
+    'balanceOf',
+    GOVERNANCE_TOKEN_INTERFACE
+  )
+
+  const userLiquidityUnstaked = govTokenBalance
+
+  // toggle for staking modal and unstaking modal
+  const [showStakingModal, setShowStakingModal] = useState(false)
+  const [showClaimModal, setShowClaimModal] = useState(false)
+
+  //   const countUpAmount = pitBalance?.toFixed(6) ?? '0'
+  //   const countUpAmountPrevious = usePrevious(countUpAmount) ?? '0'
 
   return (
-    <div className="w-full">
-      <h1 className="text-center mb-10">Elephant NFT</h1>
-      <div className="grid grid-cols-1 m-auto w-3/4 text-center ">
-        {/*  */}
-        <div id="nftcard" className="bg-yellow-500 p-5 mx-5 rounded-xl max-w-xs ">
-          <a href="#" className="group block relative rounded-md overflow-hidden">
-            <div className="hidden group-hover:block absolute inset-0 bg-cyan/50"></div>
-            <img
-              src="/assets/icon-view.fffad88f.svg"
-              className="hidden group-hover:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            />
-            <img src={nft1.image} alt="Elephant NFT" className="" />
-          </a>
-          <a href="#" className="block text-white my-4 font-semibold text-lg hover:text-cyan">
-            {nft1.name} #{nft1.id}
-          </a>
-          <p className=" font-light">{nft1.description}</p>
-          <div className="flex justify-between items-center mt-4">
-            <div className="flex text-cyan space-x-2 m-auto">
-              <img src="https://nft-card-eosin.vercel.app/assets/icon-ethereum.76974d10.svg" />
-              <p>10000 Elephant</p>
-            </div>
-            <div className="flex items-center mx-auto text-soft-blue space-x-2 whitespace-nowrap"></div>
-          </div>
-        </div>
+    <div className="container lg:flex sm:grid sm:grid-cols-1">
+      {govToken && (
+        <>
+          <NFT
+            isOpen={showStakingModal}
+            onDismiss={() => setShowStakingModal(false)}
+            stakingToken={govToken}
+            userLiquidityUnstaked={userLiquidityUnstaked}
+            url={'https://gateway.pinata.cloud/ipfs/QmPxhNtDHLTygunNczmY5xYjFTXT5uBMw7KKA8S5Xjc3PT'}
+            price={'7500'}
+            nftid={0}
+            usenftfunction={useNFT1}
+          ></NFT>
 
-        {/*  */}
-      </div>
+          <NFT
+            isOpen={showStakingModal}
+            onDismiss={() => setShowStakingModal(false)}
+            stakingToken={govToken}
+            userLiquidityUnstaked={userLiquidityUnstaked}
+            url={'https://gateway.pinata.cloud/ipfs/QmPxhNtDHLTygunNczmY5xYjFTXT5uBMw7KKA8S5Xjc3PT'}
+            price={'7500'}
+            nftid={0}
+            usenftfunction={useNFT1}
+          ></NFT>
+
+          <NFT
+            isOpen={showStakingModal}
+            onDismiss={() => setShowStakingModal(false)}
+            stakingToken={govToken}
+            userLiquidityUnstaked={userLiquidityUnstaked}
+            url={'https://gateway.pinata.cloud/ipfs/QmPxhNtDHLTygunNczmY5xYjFTXT5uBMw7KKA8S5Xjc3PT'}
+            price={'7500'}
+            nftid={0}
+            usenftfunction={useNFT1}
+          ></NFT>
+
+          <ClaimModal isOpen={showClaimModal} onDismiss={() => setShowClaimModal(false)} />
+        </>
+      )}
     </div>
   )
 }

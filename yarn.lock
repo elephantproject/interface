@@ -7271,10 +7271,10 @@ elephantdexcommunity-token-list@2.0.2:
   resolved "https://registry.yarnpkg.com/elephantdexcommunity-token-list/-/elephantdexcommunity-token-list-2.0.2.tgz#6f53b61287d9fcbec352bac0d638b2c84a9cf5a4"
   integrity sha512-dscwGeR/780uq53T70LBlewEMlETLYliUY2UTfAXaqAYB3G3BrUFhLnfRzoT1jYaBUF0wa2e+LCRKkwLSR9xVg==
 
-elephantdexcontracts@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/elephantdexcontracts/-/elephantdexcontracts-3.0.0.tgz#1313b94f081872e7b283d79a7135f6451e466775"
-  integrity sha512-cj2SqU6K77R0pHoNOfLLxpMuw5wALqY+SMY61qJ/3ZcKkt3FET804IlQenQmEM7MLDZa+lygHv3Z/XV944hl6w==
+elephantdexcontracts@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/elephantdexcontracts/-/elephantdexcontracts-3.0.1.tgz#3d843e72b07d63cc04b8a32058cf6bff51e69a3c"
+  integrity sha512-nZuIud5TP0eqpiNZfVocIHqtc3IPAZYrFH6nSCrYLMcPwLqSO0WuER52BNDvnK91pjdf6Dlnyh7p4R0pNUTOnQ==
   dependencies:
     "@harmony-js/core" "^0.1.57"
     "@openzeppelin/contracts" "^3.1.0"
@@ -7302,6 +7302,19 @@ elephantdexlib@2.0.1, elephantdexlib@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/elephantdexlib/-/elephantdexlib-2.0.1.tgz#5eece4186198a6c4b8ed2132a038d81d9f561906"
   integrity sha512-SkUxcLyt3WUMuGtKU9WHaN61WtXFQkum8mP/jEhgsY7dR1vTGctaXL/fl3eKn88yWtWVDhOc6jrWC/298UnHTg==
+
+elephantdexnftcontracts@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/elephantdexnftcontracts/-/elephantdexnftcontracts-3.0.1.tgz#0af4763a3cde7bb254cc3273a36ab563ca3376c6"
+  integrity sha512-CHo7e0ashxsk5vF+ifvFpDZRRUVlU0DBGElRSZSMY0LHjIAP+m8sEdB08u08qlVXxbGU/+RZfqbWf/FvQo+FGA==
+  dependencies:
+    "@harmony-js/core" "^0.1.57"
+    "@openzeppelin/contracts" "^3.1.0"
+    dotenv "^10.0.0"
+    elephantdexcore "^2.0.1"
+    elephantdexlib "^2.0.1"
+    elephantdexperiphery "^2.0.2"
+    tslib "^2.3.0"
 
 elephantdexperiphery@^2.0.2:
   version "2.0.2"

@@ -1,7 +1,7 @@
 {
   "name": "elephantdexinterface",
   "description": "Elephant Dex Interface",
-  "version": "2.9.102",
+  "version": "3.0.1",
   "engines": {
     "node": ">=16.13.0"
   },
@@ -47,7 +47,8 @@
     "copy-to-clipboard": "^3.2.0",
     "cross-env": "^7.0.2",
     "cypress": "^4.11.0",
-    "elephantdexcontracts": "^3.0.0",
+    "elephantdexcontracts": "^3.0.1",
+    "elephantdexnftcontracts": "^3.0.1",
     "elephantdexcore": "^ 2.0.1",
     "elephantdexperiphery": "^2.0.2",
     "elephantdexsdk": "^2.0.2",

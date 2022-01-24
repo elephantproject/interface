@@ -9,7 +9,12 @@ import getTokenWithDefault from '../utils/getTokenWithDefault'
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 export const ZERO_ONE_ADDRESS = '0x0000000000000000000000000000000000000001'
 
-export const NFT1ADDRESS = '0xA57889Af7335ed2371C851911c4d68b79a49f49E'
+// this is a step in manual
+export const NFT1ADDRESS = '0x52A5651DbD9b81668CdC9d28a9140cAF356fFD8B'
+export const NFT2ADDRESS = '0x52A5651DbD9b81668CdC9d28a9140cAF356fFD8B'
+export const NFT3ADDRESS = '0x52A5651DbD9b81668CdC9d28a9140cAF356fFD8B'
+
+// change this later nftwise
 
 export const ROUTER_ADDRESSES: { [chainId in ChainId]: string } = {
   [ChainId.MAINNET]: ZERO_ONE_ADDRESS,

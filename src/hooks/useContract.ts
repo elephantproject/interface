@@ -32,7 +32,7 @@ import { DICE_ADDRESS } from '../constants'
 import { abi as DICE_ABI } from 'elephantdexcontracts/build/Dice.json'
 
 import { NFT1ADDRESS } from '../constants'
-import { abi as NFTABI } from 'elephantdexcontracts/build/ERC721PresetMinterPauserAutoId.json'
+import { abi as NFTABI } from 'elephantdexnftcontracts/build/NFTEXCHANGE.json'
 
 // returns null on errors
 function useContract(address: string | undefined, ABI: any, withSignerIfPossible = true): Contract | null {

@@ -1,26 +1,26 @@
 import React, { useState, useCallback } from 'react'
-import useTransactionDeadline from '../../../hooks/useTransactionDeadline'
-import { AutoColumn } from '../../Column'
+import useTransactionDeadline from '../../hooks/useTransactionDeadline'
+import { AutoColumn } from '../Column'
 import styled from 'styled-components'
-import { RowBetween } from '../../Row'
-import { TYPE } from '../../../theme'
-import { ButtonConfirmed, ButtonError } from '../../Button'
+import { RowBetween } from '../Row'
+import { TYPE } from '../../theme'
+import { ButtonConfirmed, ButtonError } from '../Button'
+import ProgressCircles from '../ProgressSteps'
 import BetInputPanel from 'components/CurrencyInputPanel/bettingui'
 import { TokenAmount, Token } from 'elephantdexsdk'
-import { useActiveWeb3React } from '../../../hooks'
-import { maxAmountSpend } from '../../../utils/maxAmountSpend'
-import { useApproveCallback, ApprovalState } from '../../../hooks/useApproveCallback'
-import { useDerivedStakeInfo } from '../../../state/stake/hooks'
+import { useActiveWeb3React } from '../../hooks'
+import { maxAmountSpend } from '../../utils/maxAmountSpend'
+import { useApproveCallback, ApprovalState } from '../../hooks/useApproveCallback'
+import { useDerivedStakeInfo } from '../../state/stake/hooks'
 import { TransactionResponse } from '@ethersproject/providers'
-import { useTransactionAdder } from '../../../state/transactions/hooks'
-import { useDiceContract } from '../../../hooks/useContract'
+import { useTransactionAdder } from '../../state/transactions/hooks'
+import { useDiceContract } from '../../hooks/useContract'
 
-import { calculateGasMargin } from '../../../utils'
-import useGovernanceToken from '../../../hooks/useGovernanceToken'
+import { calculateGasMargin } from '../../utils'
+import useGovernanceToken from '../../hooks/useGovernanceToken'
 
 import { useSingleCallResult } from 'state/multicall/hooks'
 
-import Playermap from './Playermap'
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -132,7 +132,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   return (
     <ContentWrapper gap="lg">
       <div>
-        <Playermap bets={currentbets} />
       </div>
       <div className="rounded-md leading-loose  cardbg font-mono p-12 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
         <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 p-5">
@@ -177,7 +176,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
           Approve
         </ButtonConfirmed>
       </RowBetween>
-      {console.log(parsedAmount)}
       <div className="grid grid-cols-6">
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
@@ -222,6 +220,8 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
           {error ?? '6'}
         </ButtonError>
       </div>
+
+      <ProgressCircles steps={[approval === ApprovalState.APPROVED]} disabled={true} />
     </ContentWrapper>
   )
 }
