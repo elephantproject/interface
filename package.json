@@ -3,7 +3,7 @@
   "description": "Elephant Dex Interface",
   "version": "3.0.1",
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=14.0.0"
   },
   "homepage": "./",
   "private": true,
@@ -48,7 +48,7 @@
     "cross-env": "^7.0.2",
     "cypress": "^4.11.0",
     "elephantdexcontracts": "^3.0.1",
-    "elephantdexnftcontracts": "^3.0.1",
+    "elephantdexnftcontracts": "^3.0.3",
     "elephantdexcore": "^ 2.0.1",
     "elephantdexperiphery": "^2.0.2",
     "elephantdexsdk": "^2.0.2",

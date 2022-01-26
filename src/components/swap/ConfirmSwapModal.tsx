@@ -105,14 +105,17 @@ export default function ConfirmSwapModal({
   )
 
   return (
-    <TransactionConfirmationModal
-      isOpen={isOpen}
-      onDismiss={onDismiss}
-      attemptingTxn={attemptingTxn}
-      hash={txHash}
-      content={confirmationContent}
-      pendingText={pendingText}
-      currencyToAdd={trade?.outputAmount.currency}
-    />
+    <>
+      <TransactionConfirmationModal
+        isOpen={isOpen}
+        onDismiss={onDismiss}
+        attemptingTxn={attemptingTxn}
+        hash={txHash}
+        content={confirmationContent}
+        pendingText={pendingText}
+        currencyToAdd={trade?.outputAmount.currency}
+      />
+      {console.log(trade?.outputAmount.currency)}
+    </>
   )
 }

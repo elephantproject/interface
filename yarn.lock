@@ -7303,10 +7303,10 @@ elephantdexlib@2.0.1, elephantdexlib@^2.0.1:
   resolved "https://registry.yarnpkg.com/elephantdexlib/-/elephantdexlib-2.0.1.tgz#5eece4186198a6c4b8ed2132a038d81d9f561906"
   integrity sha512-SkUxcLyt3WUMuGtKU9WHaN61WtXFQkum8mP/jEhgsY7dR1vTGctaXL/fl3eKn88yWtWVDhOc6jrWC/298UnHTg==
 
-elephantdexnftcontracts@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/elephantdexnftcontracts/-/elephantdexnftcontracts-3.0.1.tgz#0af4763a3cde7bb254cc3273a36ab563ca3376c6"
-  integrity sha512-CHo7e0ashxsk5vF+ifvFpDZRRUVlU0DBGElRSZSMY0LHjIAP+m8sEdB08u08qlVXxbGU/+RZfqbWf/FvQo+FGA==
+elephantdexnftcontracts@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/elephantdexnftcontracts/-/elephantdexnftcontracts-3.0.3.tgz#cbc489754762810cc3e895842f1704d352d0327f"
+  integrity sha512-XUjdah356AwhRYzQYItlR4IAJWV7mVnl+86eYLav2HkqIN6WXi8gdbI+YT07IYvE7XNUC9FXmyw8//7Kb98SxA==
   dependencies:
     "@harmony-js/core" "^0.1.57"
     "@openzeppelin/contracts" "^3.1.0"

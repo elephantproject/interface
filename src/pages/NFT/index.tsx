@@ -14,7 +14,7 @@ import { GOVERNANCE_TOKEN_INTERFACE } from '../../constants/abis/governanceToken
 import useGovernanceToken from 'hooks/useGovernanceToken'
 import NFT from './components/nft'
 
-import { useNFT1 } from 'hooks/useContract'
+import { useNFT1, useNFT2 } from 'hooks/useContract'
 
 /*const PositionInfo = styled(AutoColumn)<{ dim: any }>`
   position: relative;
@@ -77,31 +77,29 @@ export default function Pit({
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
             url={'https://gateway.pinata.cloud/ipfs/QmPxhNtDHLTygunNczmY5xYjFTXT5uBMw7KKA8S5Xjc3PT'}
-            price={'7500'}
+            price={'9000'}
             nftid={0}
             usenftfunction={useNFT1}
           ></NFT>
-
           <NFT
             isOpen={showStakingModal}
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'https://gateway.pinata.cloud/ipfs/QmPxhNtDHLTygunNczmY5xYjFTXT5uBMw7KKA8S5Xjc3PT'}
-            price={'7500'}
-            nftid={0}
-            usenftfunction={useNFT1}
+            url={'https://gateway.pinata.cloud/ipfs/QmZZisC7VNdP8mfTaCPZgbXHMnwq3KuqQPGTYjARxFziYr'}
+            price={'11000'}
+            nftid={143}
+            usenftfunction={useNFT2}
           ></NFT>
-
           <NFT
             isOpen={showStakingModal}
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'https://gateway.pinata.cloud/ipfs/QmPxhNtDHLTygunNczmY5xYjFTXT5uBMw7KKA8S5Xjc3PT'}
-            price={'7500'}
-            nftid={0}
-            usenftfunction={useNFT1}
+            url={'https://pastebin.com/CNJNx498'}
+            price={'11000'}
+            nftid={547}
+            usenftfunction={useNFT2}
           ></NFT>
 
           <ClaimModal isOpen={showClaimModal} onDismiss={() => setShowClaimModal(false)} />

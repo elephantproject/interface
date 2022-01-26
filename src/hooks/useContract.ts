@@ -32,6 +32,9 @@ import { DICE_ADDRESS } from '../constants'
 import { abi as DICE_ABI } from 'elephantdexcontracts/build/Dice.json'
 
 import { NFT1ADDRESS } from '../constants'
+import { NFT2ADDRESS } from '../constants'
+import { NFT3ADDRESS } from '../constants'
+
 import { abi as NFTABI } from 'elephantdexnftcontracts/build/NFTEXCHANGE.json'
 
 // returns null on errors
@@ -165,4 +168,12 @@ export function useSocksController(): Contract | null {
 
 export function useNFT1(): Contract | null {
   return useContract(NFT1ADDRESS, NFTABI, true)
+}
+
+export function useNFT2(): Contract | null {
+  return useContract(NFT2ADDRESS, NFTABI, true)
+}
+
+export function useNFT3(): Contract | null {
+  return useContract(NFT3ADDRESS, NFTABI, true)
 }
