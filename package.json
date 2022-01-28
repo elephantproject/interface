@@ -48,8 +48,8 @@
     "cross-env": "^7.0.2",
     "cypress": "^4.11.0",
     "elephantdexcontracts": "^3.0.1",
-    "elephantdexnftcontracts": "^3.0.3",
     "elephantdexcore": "^ 2.0.1",
+    "elephantdexnftcontracts": "^3.0.3",
     "elephantdexperiphery": "^2.0.2",
     "elephantdexsdk": "^2.0.2",
     "elephantdexsdk-extra": "^2.7.2",
@@ -142,6 +142,7 @@
     "@walletconnect/web3-provider": "^1.5.0",
     "axios": "^0.25.0",
     "elephantdexbetting-token-list": "^2.1.0",
-    "elephantdexdefault-token-list": "2.7.2"
+    "elephantdexdefault-token-list": "2.7.2",
+    "react-copy-to-clipboard": "^5.0.4"
   }
 }

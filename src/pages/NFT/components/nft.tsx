@@ -149,7 +149,7 @@ export default function NFT({
     }
   }
 
-  const a = useSingleCallResult(nft, '_nft')?.result?.[0]
+  const contractnumber = useSingleCallResult(nft, '_nft')?.result?.[0]
 
   const parsedAmount = tryParseAmount(price, stakingToken)
 
@@ -160,10 +160,10 @@ export default function NFT({
     <div className="w-full">
       <div className="grid grid-cols-1 m-auto w-3/4 text-center ">
         {/*  */}
-        <div id="nftcard" className="bg-yellow-500 p-5 mx-5 rounded-xl max-w-xs ">
+        <div id="nftcard" className="bg-yellow-500 p-5 rounded-xl max-w-xs ">
+          <h2 className="text-xs text-center mb-3">Contract Address {contractnumber}</h2>
           <a href={nft1.nfturl} className="group block relative rounded-md overflow-hidden">
-            <div className="hidden group-hover:block absolute inset-0 bg-cyan/50"></div>
-            <h2>{a}</h2>
+            <div className="hidden group-hover:block absolute inset-0"></div>
             <img src={nft1.image} alt="Elephant NFT" className="m-auto" />
           </a>
           <a href={nft1.nfturl} className="block text-left text-white my-4 font-semibold text-lg hover:text-cyan">

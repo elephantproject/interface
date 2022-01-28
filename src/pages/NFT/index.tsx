@@ -87,7 +87,7 @@ export default function Pit({
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
             url={'https://gateway.pinata.cloud/ipfs/QmZZisC7VNdP8mfTaCPZgbXHMnwq3KuqQPGTYjARxFziYr'}
-            price={'11000'}
+            price={'25000'}
             nftid={143}
             usenftfunction={useNFT2}
           ></NFT>
@@ -96,8 +96,8 @@ export default function Pit({
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'https://pastebin.com/CNJNx498'}
-            price={'11000'}
+            url={'https://gateway.pinata.cloud/ipfs/QmZZisC7VNdP8mfTaCPZgbXHMnwq3KuqQPGTYjARxFziYr'}
+            price={'25000'}
             nftid={547}
             usenftfunction={useNFT2}
           ></NFT>
