@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react'
 
 // import { useSingleCallResult } from 'state/multicall/hooks'
 
-import axios from 'axios'
-
 import { TransactionResponse } from '@ethersproject/providers'
 
 import { TokenAmount, Token } from 'elephantdexsdk'
@@ -23,6 +21,8 @@ import { tryParseAmount } from 'state/swap/hooks'
 
 import { calculateGasMargin } from '../../../utils'
 import { useSingleCallResult } from 'state/multicall/hooks'
+
+import { create } from 'ipfs-http-client'
 
 // import { useSingleCallResult } from '../../../state/multicall/hooks'
 
@@ -82,16 +82,28 @@ export default function NFT({
 
   const nft = usenftfunction()
 
+  const utf8decoder = new TextDecoder()
+
+  const ipfs = create({ port: 5001 })
+
   useEffect(() => {
     async function fetchMyAPI() {
-      await axios.get(url).then(resp => {
-        setnftdata({
-          image: resp.data[0].image,
-          name: resp.data[0].name,
-          id: resp.data[0].id,
-          description: resp.data[0].description,
-          nfturl: resp.data[0].external_url
-        })
+      const multihash = url
+
+      let test
+
+      for await (const chunk of ipfs.cat(multihash)) {
+        test = JSON.parse(utf8decoder.decode(chunk))
+      }
+
+      await console.log(test)
+
+      await setnftdata({
+        image: test.image,
+        name: test.name ? test.name : null,
+        id: test.id ? test.id : null,
+        description: test.description,
+        nfturl: test.external_url
       })
     }
 

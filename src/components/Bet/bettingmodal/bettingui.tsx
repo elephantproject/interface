@@ -20,7 +20,7 @@ import useGovernanceToken from '../../../hooks/useGovernanceToken'
 
 import { useSingleCallResult } from 'state/multicall/hooks'
 
-import Playermap from './Playermap'
+// import Playermap from './Playermap'
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -65,6 +65,8 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const currentbets = parseInt(currentbetsinfo, 16)
 
   const bankbalanceinfo = useSingleCallResult(pit, 'contractbalance')?.result?.[0]._hex
+
+  const minbetinfo = parseInt(useSingleCallResult(pit, 'minimumbet')?.result?.[0]._hex, 16) / 1000000000000000000
 
   const bankbalance = parseInt(bankbalanceinfo, 16) / 1000000000000000000
 
@@ -131,14 +133,13 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
   return (
     <ContentWrapper gap="lg">
-      <div>
-        <Playermap bets={currentbets} />
-      </div>
+      <div>{/* <Playermap bets={currentbets} /> */}</div>
       <div className="rounded-md leading-loose  cardbg font-mono p-12 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
         <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 p-5">
           <h1>
             Contract Balance : {sig} {govToken?.symbol}
           </h1>
+          <h1>Minimum Bet : {minbetinfo}</h1>
           <h1>
             {' '}
             Roll After : <div className="text-2xl text-bold">{maxbets} Bets </div>

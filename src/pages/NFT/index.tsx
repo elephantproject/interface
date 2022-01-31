@@ -14,7 +14,7 @@ import { GOVERNANCE_TOKEN_INTERFACE } from '../../constants/abis/governanceToken
 import useGovernanceToken from 'hooks/useGovernanceToken'
 import NFT from './components/nft'
 
-import { useNFT1, useNFT2 } from 'hooks/useContract'
+import { useNFT2 } from 'hooks/useContract'
 
 /*const PositionInfo = styled(AutoColumn)<{ dim: any }>`
   position: relative;
@@ -76,17 +76,7 @@ export default function Pit({
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'https://gateway.pinata.cloud/ipfs/QmPxhNtDHLTygunNczmY5xYjFTXT5uBMw7KKA8S5Xjc3PT'}
-            price={'9000'}
-            nftid={0}
-            usenftfunction={useNFT1}
-          ></NFT>
-          <NFT
-            isOpen={showStakingModal}
-            onDismiss={() => setShowStakingModal(false)}
-            stakingToken={govToken}
-            userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'https://gateway.pinata.cloud/ipfs/QmZZisC7VNdP8mfTaCPZgbXHMnwq3KuqQPGTYjARxFziYr'}
+            url={'QmcdTGLJzKoLG7mWz3krLZZTd9LnNJKfu2ERLYqhtv5sPd/143'}
             price={'25000'}
             nftid={143}
             usenftfunction={useNFT2}
@@ -96,7 +86,7 @@ export default function Pit({
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'https://gateway.pinata.cloud/ipfs/QmZZisC7VNdP8mfTaCPZgbXHMnwq3KuqQPGTYjARxFziYr'}
+            url={'QmcdTGLJzKoLG7mWz3krLZZTd9LnNJKfu2ERLYqhtv5sPd/547'}
             price={'25000'}
             nftid={547}
             usenftfunction={useNFT2}

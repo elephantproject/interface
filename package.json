@@ -1,9 +1,10 @@
 {
   "name": "elephantdexinterface",
   "description": "Elephant Dex Interface",
-  "version": "3.0.1",
+  "version": "3.1.0",
+  "proxy": "http://localhost:5001",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=14.15.0"
   },
   "homepage": "./",
   "private": true,
@@ -47,7 +48,7 @@
     "copy-to-clipboard": "^3.2.0",
     "cross-env": "^7.0.2",
     "cypress": "^4.11.0",
-    "elephantdexcontracts": "^3.0.1",
+    "elephantdexcontracts": "^3.1.0",
     "elephantdexcore": "^ 2.0.1",
     "elephantdexnftcontracts": "^3.0.3",
     "elephantdexperiphery": "^2.0.2",
@@ -143,6 +144,7 @@
     "axios": "^0.25.0",
     "elephantdexbetting-token-list": "^2.1.0",
     "elephantdexdefault-token-list": "2.7.2",
+    "ipfs-http-client": "^54.0.2",
     "react-copy-to-clipboard": "^5.0.4"
   }
 }
