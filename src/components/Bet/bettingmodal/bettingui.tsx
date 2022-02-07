@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import useTransactionDeadline from '../../../hooks/useTransactionDeadline'
 import { AutoColumn } from '../../Column'
 import styled from 'styled-components'
@@ -41,7 +41,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const [typedValue, setTypedValue] = useState('')
   const { parsedAmount, error } = useDerivedStakeInfo(typedValue, stakingToken, userLiquidityUnstaked)
 
-  // const [lastbetarray, setlastbetarray] = useState([] as any)
+  const [betarray, setbetarray] = useState([] as any)
 
   const govToken = useGovernanceToken()
 
@@ -67,11 +67,33 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
   const bankbalance = parseInt(bankbalanceinfo, 16) / 1000000000000000000
 
+  const number0 = parseInt(useSingleCallResult(pit, 'tenbets', ['0'])?.result?.[0]._hex)
+  const number1 = parseInt(useSingleCallResult(pit, 'tenbets', ['1'])?.result?.[0]._hex)
+  const number2 = parseInt(useSingleCallResult(pit, 'tenbets', ['2'])?.result?.[0]._hex)
+  const number3 = parseInt(useSingleCallResult(pit, 'tenbets', ['3'])?.result?.[0]._hex)
+  const number4 = parseInt(useSingleCallResult(pit, 'tenbets', ['4'])?.result?.[0]._hex)
+
   const sig = bankbalance.toFixed(2)
+
+  // const [personalbets, setbets] = useState([])
 
   // approval data for stake
   const deadline = useTransactionDeadline()
   const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
+
+  // function loop()
+  // {
+  //   for (let i = 0; i < 6; i++) {
+
+  //   }
+  // }
+
+  //   function localstoragecount()
+  //   {
+
+  // localStorage.setItem("1", "value")
+
+  //   }
 
   async function onStake(guess: any) {
     if (pit && parsedAmount && deadline) {
@@ -86,7 +108,9 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
             addTransaction(response, {
               summary: `Bet ${typedValue} of ${govToken?.symbol} on Dice`
             })
-            // setlastbetarray((lastbetarray: any) => [...lastbetarray, guess])
+
+            if (currentbets <= maxbets) setbetarray((betarray: any) => [...betarray, typedValue])
+            console.log(betarray)
           })
           .catch((error: any) => {
             console.log(error)
@@ -96,6 +120,15 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
       }
     }
   }
+
+  useEffect(() => {
+    if (currentbets === 0) {
+      setbetarray([])
+      console.log(betarray)
+    }
+
+    console.log(betarray, '- Has changed')
+  }, [currentbets]) // <-- here put the parameter to listen
 
   // wrapped onUserInput to clear signatures
   const onUserInput = useCallback((typedValue: string) => {
@@ -123,6 +156,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
   return (
     <ContentWrapper gap="lg">
+      {console.log(betarray)}
       <div>{/* <Playermap bets={currentbets} /> */}</div>
       <div className="rounded-md leading-loose  cardbg font-mono p-12 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
         <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 p-5">
@@ -137,6 +171,14 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
           <h1> Current Bets : {currentbets} </h1>
           {/* <h1> Round Status: {currentbets != maxbets ? 'betting' : 'rolling'}</h1> */}
           <div className={' text-blue-500 font-extrabold text-4xl'}>{lastrolled} </div> ^ Last Number Rolled
+        </div>
+        <div className="text-black flex flex-row">
+          <div className="w-6 bg-white text-center"> {number0}</div>
+          <div className="w-6 bg-white text-center">{number1}</div>
+          <div className="w-6 bg-white text-center">{number2}</div>
+          <div className="w-6 bg-white text-center">{number3}</div>
+          <div className="w-6 bg-blue-200 text-center"> {number4}</div>
+          {/* Last 5 Numbers */}
         </div>
       </div>
 
@@ -168,7 +210,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
           Approve
         </ButtonConfirmed>
       </RowBetween>
-      {console.log(parsedAmount)}
       <div className="grid grid-cols-6">
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}

@@ -29,9 +29,9 @@ export const ROUTER_ADDRESSES: { [chainId in ChainId]: string } = {
 }
 
 export const GOVERNANCE_ADDRESS = ZERO_ONE_ADDRESS
-
-export const DICE_ADDRESS = '0x1e7486ABF053702a60f54a5E998CeDAA8089BA9e'
-
+// Casino
+export const DICE_ADDRESS = '0xF75eFcA4e22bED84891fA768BBA0D6FcFf557eda'
+//
 export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
 export const GOVERNANCE_TOKEN: { [chainId in ChainId]: Token } = {

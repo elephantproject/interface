@@ -6813,10 +6813,10 @@ elephantdexcommunity-token-list@2.0.2:
   resolved "https://registry.yarnpkg.com/elephantdexcommunity-token-list/-/elephantdexcommunity-token-list-2.0.2.tgz#6f53b61287d9fcbec352bac0d638b2c84a9cf5a4"
   integrity sha512-dscwGeR/780uq53T70LBlewEMlETLYliUY2UTfAXaqAYB3G3BrUFhLnfRzoT1jYaBUF0wa2e+LCRKkwLSR9xVg==
 
-elephantdexcontracts@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/elephantdexcontracts/-/elephantdexcontracts-3.1.0.tgz#8233db3c89397d177068385a1c0382c89daa1a2f"
-  integrity sha512-TfolJSHT3Q2O6qeSV0PmRyJply6L8uHjYA9fjcNSkOsYLlz05iQIap/pY/OzvRnn166FcmNenHwm5KhIY02dAQ==
+elephantdexcontracts@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/elephantdexcontracts/-/elephantdexcontracts-3.1.1.tgz#667aafefd7c97233fc50ead0b8bee7b63eb7729f"
+  integrity sha512-xMEFdVecBJKKj0mV5v8M0yDjOks1KEMT+VlWrm9DXQPixbsCWDnlcVVRSnjf9bgamyX37X/RsbZveajnqx7DgQ==
   dependencies:
     "@harmony-js/core" "^0.1.57"
     "@openzeppelin/contracts" "^3.1.0"
