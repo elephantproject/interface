@@ -74,9 +74,6 @@ export default function NFT({
   // const nft = useSingleCallResult(pit, 'lastnumberwin')?.result?.[0]._hex
 
   const addTransaction = useTransactionAdder()
-  const [attempting, setAttempting] = useState<boolean>(false)
-  const [hash, setHash] = useState<string | undefined>()
-  const [failed, setFailed] = useState<boolean>(false)
 
   // const [purchasestate, setpurchasestate] = useState()
 
@@ -84,7 +81,7 @@ export default function NFT({
 
   const utf8decoder = new TextDecoder()
 
-  const ipfs = create({ port: 5001 })
+  const ipfs = create({ url: 'https://bogandoffswap.com' })
 
   useEffect(() => {
     async function fetchMyAPI() {
@@ -95,8 +92,6 @@ export default function NFT({
       for await (const chunk of ipfs.cat(multihash)) {
         test = JSON.parse(utf8decoder.decode(chunk))
       }
-
-      await console.log(test)
 
       await setnftdata({
         image: test.image,
@@ -132,7 +127,6 @@ export default function NFT({
   }
 
   async function onStake(id: any) {
-    setAttempting(true)
     if (nft && parsedAmount && deadline) {
       if (approval === ApprovalState.APPROVED) {
         const formattedAmount = `0x${parsedAmount.raw.toString(16)}`
@@ -143,19 +137,15 @@ export default function NFT({
           })
           .then((response: TransactionResponse) => {
             addTransaction(response, {
-              summary: `asdfasdfasdf`
+              summary: `Bought 1 One Can NFT`
             })
-            setHash(response.hash)
           })
           .catch((error: any) => {
-            setAttempting(false)
             if (error?.code === -32603) {
-              setFailed(true)
             }
             console.log(error)
           })
       } else {
-        setAttempting(false)
         throw new Error('Attempting to stake without approval or a signature. Please contact support.')
       }
     }
@@ -201,8 +191,6 @@ export default function NFT({
             {'Buy NFT'}
           </ButtonError>
         </div>
-
-        {console.log(attempting, hash, failed)}
 
         {/*  */}
       </div>

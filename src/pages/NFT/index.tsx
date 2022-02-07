@@ -69,6 +69,13 @@ export default function Pit({
 
   return (
     <div className="container lg:flex sm:grid sm:grid-cols-1">
+      <a
+        rel="noreferrer"
+        target="_blank"
+        href="https://metamask.zendesk.com/hc/en-us/articles/360058238591-NFT-tokens-in-your-MetaMask-wallet"
+      >
+        How to add an NFT To Metamask
+      </a>
       {govToken && (
         <>
           <NFT

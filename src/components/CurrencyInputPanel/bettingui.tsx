@@ -130,6 +130,7 @@ interface CurrencyInputPanelProps {
   showCommonBases?: boolean
   customBalanceText?: string
   overrideSelectedCurrencyBalance?: CurrencyAmount | null
+  minimumbet?: string
 }
 
 export default function BetInputPanel({
@@ -137,6 +138,7 @@ export default function BetInputPanel({
   onUserInput,
   onMax,
   showMaxButton,
+  minimumbet,
   label = 'Input',
   onCurrencySelect,
   currency,
@@ -212,6 +214,7 @@ export default function BetInputPanel({
           {!hideInput && (
             <>
               <NumericalInput
+                placeholder={minimumbet}
                 className="token-amount-input"
                 value={value}
                 onUserInput={val => {

@@ -47,9 +47,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
   // state for pending and submitted txn views
   const addTransaction = useTransactionAdder()
-  const [attempting, setAttempting] = useState<boolean>(false)
-  const [hash, setHash] = useState<string | undefined>()
-  const [failed, setFailed] = useState<boolean>(false)
 
   const pit = useDiceContract()
 
@@ -77,7 +74,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
   const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
 
   async function onStake(guess: any) {
-    setAttempting(true)
     if (pit && parsedAmount && deadline) {
       if (approval === ApprovalState.APPROVED) {
         const formattedAmount = `0x${parsedAmount.raw.toString(16)}`
@@ -90,18 +86,12 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
             addTransaction(response, {
               summary: `Bet ${typedValue} of ${govToken?.symbol} on Dice`
             })
-            setHash(response.hash)
             // setlastbetarray((lastbetarray: any) => [...lastbetarray, guess])
           })
           .catch((error: any) => {
-            setAttempting(false)
-            if (error?.code === -32603) {
-              setFailed(true)
-            }
             console.log(error)
           })
       } else {
-        setAttempting(false)
         throw new Error('Attempting to stake without approval or a signature. Please contact support.')
       }
     }
@@ -152,7 +142,6 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
       {/* <h1>Your Bets : {lastbetarray}</h1> */}
 
-      {console.log(attempting, hash, failed)}
       <RowBetween>
         <TYPE.mediumHeader>Amount To Bet</TYPE.mediumHeader>
       </RowBetween>
@@ -166,6 +155,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
         disableCurrencySelect={true}
         customBalanceText={'Available to bet: '}
         id="stake-liquidity-token"
+        minimumbet={minbetinfo.toString()}
       />
 
       <RowBetween>
