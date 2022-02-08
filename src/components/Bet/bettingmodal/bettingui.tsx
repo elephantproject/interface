@@ -105,11 +105,12 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
             gasLimit: calculateGasMargin(estimatedGas)
           })
           .then((response: TransactionResponse) => {
+            console.log(response)
             addTransaction(response, {
               summary: `Bet ${typedValue} of ${govToken?.symbol} on Dice`
             })
 
-            if (currentbets <= maxbets) setbetarray((betarray: any) => [...betarray, typedValue])
+            setbetarray((betarray: any) => [...betarray, typedValue])
             console.log(betarray)
           })
           .catch((error: any) => {
@@ -158,7 +159,7 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
     <ContentWrapper gap="lg">
       {console.log(betarray)}
       <div>{/* <Playermap bets={currentbets} /> */}</div>
-      <div className="rounded-md leading-loose  cardbg font-mono p-12 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
+      <div className="rounded-md leading-loose  cardbg font-mono p-11 mt-10 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
         <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 p-5">
           <h1>
             Contract Balance : {sig} {govToken?.symbol}
