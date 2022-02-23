@@ -188,7 +188,7 @@ export default function NFT({
           </ButtonConfirmed>
 
           <ButtonError disabled={approval !== ApprovalState.APPROVED} error={!approval} onClick={() => onStake(nftid)}>
-            {'Buy NFT'}
+            {'Buy Now'}
           </ButtonError>
         </div>
 

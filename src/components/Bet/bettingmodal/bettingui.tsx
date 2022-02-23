@@ -3,7 +3,6 @@ import useTransactionDeadline from '../../../hooks/useTransactionDeadline'
 import { AutoColumn } from '../../Column'
 import styled from 'styled-components'
 import { RowBetween } from '../../Row'
-import { TYPE } from '../../../theme'
 import { ButtonConfirmed, ButtonError } from '../../Button'
 import BetInputPanel from 'components/CurrencyInputPanel/bettingui'
 import { TokenAmount, Token } from 'elephantdexsdk'
@@ -15,10 +14,16 @@ import { TransactionResponse } from '@ethersproject/providers'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 import { useDiceContract } from '../../../hooks/useContract'
 
+import useSound from 'use-sound'
+
+import winsfx from '../../../assets/bloop.mp3'
+
 import { calculateGasMargin } from '../../../utils'
 import useGovernanceToken from '../../../hooks/useGovernanceToken'
+import { useWeb3React } from '@web3-react/core'
 
 import { useSingleCallResult } from 'state/multicall/hooks'
+import BetCount from './betcount'
 
 // import Playermap from './Playermap'
 
@@ -36,12 +41,17 @@ interface StakingModalProps {
 
 export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidityUnstaked }: StakingModalProps) {
   const { library } = useActiveWeb3React()
+  const { account } = useWeb3React()
+
+  const addy = account?.toString()
+
+  const [play] = useSound(winsfx)
 
   // track and parse user input
   const [typedValue, setTypedValue] = useState('')
   const { parsedAmount, error } = useDerivedStakeInfo(typedValue, stakingToken, userLiquidityUnstaked)
 
-  const [betarray, setbetarray] = useState([] as any)
+  // const [betarray, setbetarray] = useState([] as any)
 
   const govToken = useGovernanceToken()
 
@@ -75,7 +85,9 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
   const sig = bankbalance.toFixed(2)
 
-  // const [personalbets, setbets] = useState([])
+  const betamountinfo = parseInt(useSingleCallResult(pit, '_bets', [addy])?.result?.[1]._hex) / 1000000000000000000
+
+  const betnumberinfo = parseInt(useSingleCallResult(pit, '_bets', [addy])?.result?.[2]._hex)
 
   // approval data for stake
   const deadline = useTransactionDeadline()
@@ -105,12 +117,10 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
             gasLimit: calculateGasMargin(estimatedGas)
           })
           .then((response: TransactionResponse) => {
+            console.log(response)
             addTransaction(response, {
               summary: `Bet ${typedValue} of ${govToken?.symbol} on Dice`
             })
-
-            if (currentbets <= maxbets) setbetarray((betarray: any) => [...betarray, typedValue])
-            console.log(betarray)
           })
           .catch((error: any) => {
             console.log(error)
@@ -121,13 +131,27 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
     }
   }
 
-  useEffect(() => {
-    if (currentbets === 0) {
-      setbetarray([])
-      console.log(betarray)
+  async function winfx() {
+    if (localStorage.getItem(lastrolled.toString())) {
+      await console.log('Win on ' + lastrolled)
+      await play({ forceSoundEnabled: true })
     }
 
-    console.log(betarray, '- Has changed')
+    await localStorage.clear()
+  }
+
+  useEffect(() => {
+    if (account && currentbets === 0) {
+      winfx()
+    } else if (localStorage.getItem(betnumberinfo.toString())) {
+      const add = localStorage.getItem(betnumberinfo.toString())
+
+      const samebet = Number(add) + betamountinfo
+
+      localStorage.setItem(betnumberinfo.toString(), samebet.toString())
+    } else {
+      localStorage.setItem(betnumberinfo.toString(), betamountinfo.toString())
+    }
   }, [currentbets]) // <-- here put the parameter to listen
 
   // wrapped onUserInput to clear signatures
@@ -156,9 +180,8 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
   return (
     <ContentWrapper gap="lg">
-      {console.log(betarray)}
       <div>{/* <Playermap bets={currentbets} /> */}</div>
-      <div className="rounded-md leading-loose  cardbg font-mono p-12 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
+      <div className="rounded-md leading-loose  cardbg font-mono p-11 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
         <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 p-5">
           <h1>
             Contract Balance : {sig} {govToken?.symbol}
@@ -184,9 +207,8 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
 
       {/* <h1>Your Bets : {lastbetarray}</h1> */}
 
-      <RowBetween>
-        <TYPE.mediumHeader>Amount To Bet</TYPE.mediumHeader>
-      </RowBetween>
+      <BetCount winningnumber={lastrolled} />
+
       <BetInputPanel
         value={typedValue}
         onUserInput={onUserInput}

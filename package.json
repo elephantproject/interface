@@ -48,7 +48,7 @@
     "copy-to-clipboard": "^3.2.0",
     "cross-env": "^7.0.2",
     "cypress": "^4.11.0",
-    "elephantdexcontracts": "^3.1.1",
+    "elephantdexcontracts": "^3.1.2",
     "elephantdexcore": "^ 2.0.1",
     "elephantdexnftcontracts": "^3.0.3",
     "elephantdexperiphery": "^2.0.2",
@@ -145,6 +145,7 @@
     "elephantdexbetting-token-list": "^2.1.0",
     "elephantdexdefault-token-list": "2.7.2",
     "ipfs-http-client": "^54.0.2",
-    "react-copy-to-clipboard": "^5.0.4"
+    "react-copy-to-clipboard": "^5.0.4",
+    "use-sound": "^4.0.1"
   }
 }

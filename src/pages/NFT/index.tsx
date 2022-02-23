@@ -14,7 +14,7 @@ import { GOVERNANCE_TOKEN_INTERFACE } from '../../constants/abis/governanceToken
 import useGovernanceToken from 'hooks/useGovernanceToken'
 import NFT from './components/nft'
 
-import { useNFT2 } from 'hooks/useContract'
+import { useNFT1 } from 'hooks/useContract'
 
 /*const PositionInfo = styled(AutoColumn)<{ dim: any }>`
   position: relative;
@@ -83,20 +83,10 @@ export default function Pit({
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
             userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'QmcdTGLJzKoLG7mWz3krLZZTd9LnNJKfu2ERLYqhtv5sPd/143'}
-            price={'25000'}
-            nftid={143}
-            usenftfunction={useNFT2}
-          ></NFT>
-          <NFT
-            isOpen={showStakingModal}
-            onDismiss={() => setShowStakingModal(false)}
-            stakingToken={govToken}
-            userLiquidityUnstaked={userLiquidityUnstaked}
-            url={'QmcdTGLJzKoLG7mWz3krLZZTd9LnNJKfu2ERLYqhtv5sPd/547'}
-            price={'25000'}
-            nftid={547}
-            usenftfunction={useNFT2}
+            url={'QmUK3sW829xi7uoR8n4qkYtB9Xm3pC9T2ZFTsFPsNDgwbW'}
+            price={'30000'}
+            nftid={0}
+            usenftfunction={useNFT1}
           ></NFT>
 
           <ClaimModal isOpen={showClaimModal} onDismiss={() => setShowClaimModal(false)} />

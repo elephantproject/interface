@@ -51,6 +51,10 @@ export const PIT_POOLS: {
     {
       pid: 12,
       tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'JEWEL/ELEPHANT')
+    },
+    {
+      pid: 13,
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'SONIC/ELEPHANT')
     }
     // {
     //   pid: 13,

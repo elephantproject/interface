@@ -79,13 +79,8 @@ export const STAKING_REWARDS_INFO: {
     },
     {
       pid: 13,
-      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, '1CRV/ELEPHANT'),
-      active: false
-    },
-    {
-      pid: 14,
-      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'stONE/ELEPHANT'),
-      active: false
+      tokens: getPairTokensWithDefaults(ChainId.HARMONY_MAINNET, 'SONIC/ELEPHANT'),
+      active: true
     }
   ],
   [ChainId.HARMONY_TESTNET]: [
