@@ -19,22 +19,52 @@ export default function BetCount({ winningnumber }: Numbers) {
     <div>
       Your Bets
       <div className="">
-        1:<div className={winningnumber === 1 ? 'text-green-500 inline' : 'inline'}> {one}</div>
+        <div className={winningnumber === 1 ? 'text-green-500 inline' : 'inline'}>
+          1:
+          {one ? (
+            <img className="w-10 p-2 inline" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png" />
+          ) : null}
+        </div>
       </div>
       <div className="">
-        2:<div className={winningnumber === 2 ? 'text-green-500 inline' : 'inline'}> {two}</div>
+        <div className={winningnumber === 2 ? 'text-green-500 inline' : 'inline'}>
+          2:
+          {two ? (
+            <img className="w-10 p-2 inline" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png" />
+          ) : null}
+        </div>
       </div>
       <div className="">
-        3:<div className={winningnumber === 3 ? 'text-green-500 inline' : 'inline'}> {three}</div>
+        <div className={winningnumber === 3 ? 'text-green-500 inline' : 'inline'}>
+          3:
+          {three ? (
+            <img className="w-10 p-2 inline" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png" />
+          ) : null}
+        </div>
       </div>
       <div className="">
-        4:<div className={winningnumber === 4 ? 'text-green-500 inline' : 'inline'}> {four}</div>
+        <div className={winningnumber === 4 ? 'text-green-500 inline' : 'inline'}>
+          4:
+          {four ? (
+            <img className="w-10 p-2 inline" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png" />
+          ) : null}
+        </div>
       </div>
       <div className="">
-        5:<div className={winningnumber === 5 ? 'text-green-500 inline' : 'inline'}> {five}</div>
+        <div className={winningnumber === 5 ? 'text-green-500 inline' : 'inline'}>
+          5:
+          {five ? (
+            <img className="w-10 p-2 inline" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png" />
+          ) : null}
+        </div>
       </div>
       <div className="">
-        6:<div className={winningnumber === 6 ? 'text-green-500 inline' : 'inline'}> {six}</div>
+        <div className={winningnumber === 6 ? 'text-green-500 inline' : 'inline'}>
+          6:
+          {six ? (
+            <img className="w-10 p-2 inline" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png" />
+          ) : null}
+        </div>
       </div>
     </div>
   )

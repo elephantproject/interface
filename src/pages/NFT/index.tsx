@@ -78,6 +78,7 @@ export default function Pit({
       </a>
       {govToken && (
         <>
+          <h1 className="text-xl block m-auto p-auto">No Nfts available right now... please check back later.</h1>
           <NFT
             isOpen={showStakingModal}
             onDismiss={() => setShowStakingModal(false)}
@@ -88,7 +89,6 @@ export default function Pit({
             nftid={0}
             usenftfunction={useNFT1}
           ></NFT>
-
           <ClaimModal isOpen={showClaimModal} onDismiss={() => setShowClaimModal(false)} />
         </>
       )}

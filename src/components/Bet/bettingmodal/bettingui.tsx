@@ -174,13 +174,8 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
     return approveCallback()
   }
 
-  // if (currentbets === 0 && lastbetarray.length !== 0) {
-  //   setlastbetarray([])
-  // }
-
   return (
     <ContentWrapper gap="lg">
-      <div>{/* <Playermap bets={currentbets} /> */}</div>
       <div className="rounded-md leading-loose  cardbg font-mono p-11 backdrop-filter backdrop-grayscale backdrop-blur-2xl">
         <div className="container text-red-800 rounded-lg bg-gray-100 opacity-80 p-5">
           <h1>
@@ -188,24 +183,22 @@ export default function BettingUI({ isOpen, onDismiss, stakingToken, userLiquidi
           </h1>
           <h1>Minimum Bet : {minbetinfo}</h1>
           <h1>
-            {' '}
             Roll After : <div className="text-2xl text-bold">{maxbets} Bets </div>
           </h1>
           <h1> Current Bets : {currentbets} </h1>
           {/* <h1> Round Status: {currentbets != maxbets ? 'betting' : 'rolling'}</h1> */}
-          <div className={' text-blue-500 font-extrabold text-4xl'}>{lastrolled} </div> ^ Last Number Rolled
+          <div className={' text-blue-500 font-extrabold text-4xl'}>{lastrolled} </div>
         </div>
-        <div className="text-black flex flex-row">
+        <div className="text-black flex flex-row divide-x">
           <div className="w-6 bg-white text-center"> {number0}</div>
           <div className="w-6 bg-white text-center">{number1}</div>
           <div className="w-6 bg-white text-center">{number2}</div>
           <div className="w-6 bg-white text-center">{number3}</div>
           <div className="w-6 bg-blue-200 text-center"> {number4}</div>
+          <div className="p-2 text-xs">Last Number Rolled</div>
           {/* Last 5 Numbers */}
         </div>
       </div>
-
-      {/* <h1>Your Bets : {lastbetarray}</h1> */}
 
       <BetCount winningnumber={lastrolled} />
 

@@ -137,7 +137,7 @@ export default function NFT({
           })
           .then((response: TransactionResponse) => {
             addTransaction(response, {
-              summary: `Bought 1 One Can NFT`
+              summary: `Bought 1 Elephant NFT`
             })
           })
           .catch((error: any) => {
@@ -159,7 +159,7 @@ export default function NFT({
   const [approval, approveCallback] = useApproveCallback(parsedAmount, nft?.address)
 
   return (
-    <div className="w-full">
+    <div className="w-full hidden">
       <div className="grid grid-cols-1 m-auto w-3/4 text-center ">
         {/*  */}
         <div id="nftcard" className="bg-yellow-500 p-5 rounded-xl max-w-xs ">
