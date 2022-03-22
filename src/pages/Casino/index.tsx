@@ -18,18 +18,42 @@ import { NavLink } from 'react-router-dom'
 //   font-weight: 500;
 // `
 
+export function GameCard() {
+  return (
+    <div
+      id="gamecard"
+      className=" filter p-12 inline-block rounded-3xl	 bg-yellow-50  opacity-75 hover:opacity-100 transform transition duration-500 hover:scale-110 ease-in-out overflow-hidden drop-shadow-xl "
+    >
+      <img className=" h-24 m-auto" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png"></img>
+      <h1 className="text-black ">Multiplayer Dice</h1>
+    </div>
+  )
+}
+
 export default function Casino() {
   return (
-    <div className="w-full">
-      <h1 className="text-center mb-10">Elephant Casino</h1>
-      <div className="grid grid-cols-1 m-auto w-3/4 text-center ">
+    <div className="w-full font-mono p-12">
+      <div className="grid grid-cols-3 m-auto w-3/4 text-center ">
+        <div id="gamecard" className="gamecard inline-block">
+          <NavLink id={`stake-nav-link`} to={'/casino/coinflip'}>
+            Coin Flip
+          </NavLink>
+        </div>
         <NavLink id={`stake-nav-link`} to={'/casino/dice'}>
-          Play Dice
+          <div
+            id="gamecard"
+            className=" filter p-12 inline-block rounded-3xl	 bg-yellow-50  opacity-75 hover:opacity-100 transform transition duration-500 hover:scale-110 ease-in-out overflow-hidden drop-shadow-xl "
+          >
+            <img className=" h-24 m-auto" src="https://elephant.ac/static/media/elephant-token-logo.f1dd854b.png"></img>
+            <h1 className="text-black ">Multiplayer Dice</h1>
+          </div>
         </NavLink>
 
-        <NavLink id={`stake-nav-link`} to={'/casino/coinflip'}>
-          CoinFlip
-        </NavLink>
+        <div id="gamecard" className="gamecard inline-block">
+          <NavLink id={`stake-nav-link`} to={'/casino/bait'}>
+            Coming Soon...
+          </NavLink>
+        </div>
         {/* <NavLink id={`craps-nav-link`} to={'/'}>
           Play Craps
         </NavLink>
