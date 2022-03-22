@@ -22,7 +22,9 @@ import '../index.css'
 import MobileHeader from '../components/Header/MobileHeader'
 
 import Casino from './Casino'
+
 import Dice from './Casino/dice'
+import CoinFlip from './Casino/coinflip'
 
 import EarnArchived from './Earn/Archived'
 import Manage from './Earn/Manage'
@@ -130,6 +132,7 @@ export default function App() {
               <Route exact strict path="/nft" component={NFT} />
 
               <Route exact strict path="/casino/dice" component={Dice} />
+              <Route exact strict path="/casino/coinflip" component={CoinFlip} />
 
               {blockchain === Blockchain.ETHEREUM && <Route exact strict path="/vote" component={Vote} />}
               <Route exact strict path="/create" component={RedirectToAddLiquidity} />

@@ -26,6 +26,10 @@ export default function Casino() {
         <NavLink id={`stake-nav-link`} to={'/casino/dice'}>
           Play Dice
         </NavLink>
+
+        <NavLink id={`stake-nav-link`} to={'/casino/coinflip'}>
+          CoinFlip
+        </NavLink>
         {/* <NavLink id={`craps-nav-link`} to={'/'}>
           Play Craps
         </NavLink>
