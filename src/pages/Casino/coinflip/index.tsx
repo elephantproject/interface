@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import { TokenAmount } from 'elephantdexsdk'
 import { AutoColumn } from '../../../components/Column'
 import styled from 'styled-components'
-
-import { RouteComponentProps } from 'react-router-dom'
-
-import BettingUI from '../../../components/Bet/bettingmodal/bettingui'
+import OffChain from '../../../components/Bet/bettingmodal/offchain'
 import ModifiedUnstakingModal from '../../../components/Pit/ModifiedUnstakingModal'
 import ClaimModal from '../../../components/Pit/ClaimModal'
 import { useTokenBalance } from '../../../state/wallet/hooks'
@@ -24,38 +21,7 @@ const PageWrapper = styled(AutoColumn)`
   width: 100%;
 `
 
-/*const PositionInfo = styled(AutoColumn)<{ dim: any }>`
-  position: relative;
-  max-width: 640px;
-  width: 100%;
-  opacity: ${({ dim }) => (dim ? 0.6 : 1)};
-`*/
-
-/*const StyledDataCard = styled(DataCard)<{ bgColor?: any; showBackground?: any }>`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #1e1a31 0%, #3d51a5 100%);
-  z-index: 2;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: ${({ theme, bgColor, showBackground }) =>
-    `radial-gradient(91.85% 100% at 1.84% 0%, ${bgColor} 0%,  ${showBackground ? theme.black : theme.bg5} 100%) `};
-`*/
-
-/*const PoolData = styled(DataCard)`
-  background: none;
-  border: 1px solid ${({ theme }) => theme.bg4};
-  padding: 1rem;
-  z-index: 1;
-`*/
-
-/*const VoteCard = styled(DataCard)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
-  overflow: hidden;
-`*/
-
-export default function Pit({
-  match: {
-    params: { currencyIdA, currencyIdB }
-  }
-}: RouteComponentProps<{ currencyIdA: string; currencyIdB: string }>) {
+export default function Coinflip({}) {
   const { account, chainId } = useActiveWeb3React()
 
   const govToken = useGovernanceToken()
@@ -84,7 +50,7 @@ export default function Pit({
     <PageWrapper gap="lg" justify="center">
       {govToken && (
         <>
-          <BettingUI
+          <OffChain
             isOpen={showStakingModal}
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
