@@ -10,7 +10,14 @@ import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build
 import { ChainId, WETH } from 'elephantdexsdk'
 import { abi as IUniswapV2PairABI } from 'elephantdexcore/build/IUniswapV2Pair.json'
 import { useMemo } from 'react'
-import { GOVERNANCE_ADDRESS, MERKLE_DISTRIBUTOR_ADDRESS, MASTER_BREEDER, PIT, PIT_BREEDER } from '../constants'
+import {
+  GOVERNANCE_ADDRESS,
+  MERKLE_DISTRIBUTOR_ADDRESS,
+  MASTER_BREEDER,
+  PIT,
+  PIT_BREEDER,
+  MASTERBANK
+} from '../constants'
 import {
   ARGENT_WALLET_DETECTOR_ABI,
   ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS
@@ -29,6 +36,9 @@ import { useActiveWeb3React } from './index'
 import useGovernanceToken from './useGovernanceToken'
 
 import { DICE_ADDRESS } from '../constants'
+
+import { abi as MB_ABI } from 'elephantdexcontracts/build/MasterBank.json'
+
 import { abi as DICE_ABI } from 'elephantdexcontracts/build/Dice.json'
 
 import { NFT1ADDRESS } from '../constants'
@@ -127,6 +137,10 @@ export function useGovernanceContract(): Contract | null {
 
 export function useDiceContract(): Contract | null {
   return useContract(DICE_ADDRESS, DICE_ABI, true)
+}
+
+export function useMasterBankContract(): Contract | null {
+  return useContract(MASTERBANK, MB_ABI, true)
 }
 
 export function useUniContract(): Contract | null {

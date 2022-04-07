@@ -14,9 +14,7 @@ import { TransactionResponse } from '@ethersproject/providers'
 import { useTransactionAdder } from '../../../state/transactions/hooks'
 
 import { calculateGasMargin } from '../../../utils'
-import { useDiceContract, useGovTokenContract } from '../../../hooks/useContract'
-
-import { useWeb3React } from '@web3-react/core'
+import { useMasterBankContract } from '../../../hooks/useContract'
 
 // import Playermap from './Playermap'
 
@@ -34,37 +32,37 @@ interface StakingModalProps {
 
 export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiquidityUnstaked }: StakingModalProps) {
   const { library } = useActiveWeb3React()
-  const { account } = useWeb3React()
 
   // track and parse user input
   const [typedValue, setTypedValue] = useState('')
   const { parsedAmount, error } = useDerivedStakeInfo(typedValue, stakingToken, userLiquidityUnstaked)
 
-  const govToken = useGovTokenContract()
-
   // state for pending and submitted txn views
   const addTransaction = useTransactionAdder()
 
-  const pit = useDiceContract()
+  const MB = useMasterBankContract()
 
   // approval data for stake
   const deadline = useTransactionDeadline()
-  const [approval, approveCallback] = useApproveCallback(parsedAmount, pit?.address)
+  const [approval, approveCallback] = useApproveCallback(parsedAmount, MB?.address)
 
-  async function onStake(burn: any) {
-    if (govToken && parsedAmount && deadline) {
+  async function onStake() {
+    if (MB && parsedAmount && deadline) {
       if (approval === ApprovalState.APPROVED) {
         const formattedAmount = `0x${parsedAmount.raw.toString(16)}`
-        const estimatedGas = await govToken.estimateGas.transferFrom(formattedAmount)
+        const estimatedGas = await MB.estimateGas.BuyGameTokens(formattedAmount)
 
-        await govToken
-          .transferFrom(formattedAmount, {
-            gasLimit: calculateGasMargin(estimatedGas)
-          })
+        await MB.BuyGameTokens(formattedAmount, {
+          gasLimit: calculateGasMargin(estimatedGas)
+        })
           .then((response: TransactionResponse) => {
+            MB.on('Bought', amount => {
+              console.log(parseInt(amount._hex) / 1000000000000000000)
+            })
+
             console.log(response)
             addTransaction(response, {
-              summary: `Bet ${typedValue} of ${govToken?.symbol} on Dice`
+              summary: `Buy ${typedValue} game tokens with Elephant`
             })
           })
           .catch((error: any) => {
@@ -91,7 +89,7 @@ export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiqui
   }, [maxAmountInput, onUserInput])
 
   async function onAttemptToApprove() {
-    if (!pit || !library || !deadline) throw new Error('missing dependencies')
+    if (!MB || !library || !deadline) throw new Error('missing dependencies')
     const liquidityAmount = parsedAmount
     if (!liquidityAmount) throw new Error('missing liquidity amount')
 
@@ -100,7 +98,6 @@ export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiqui
 
   return (
     <ContentWrapper gap="lg">
-      {console.log(account)}
       <BetInputPanel
         value={typedValue}
         onUserInput={onUserInput}
@@ -128,7 +125,7 @@ export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiqui
         <ButtonError
           disabled={!!error || approval !== ApprovalState.APPROVED}
           error={!!error && !!parsedAmount}
-          onClick={() => onStake(1)}
+          onClick={() => onStake()}
         >
           {error ?? 'Buy Game Tokens'}
         </ButtonError>
