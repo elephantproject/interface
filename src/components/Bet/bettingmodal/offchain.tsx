@@ -28,9 +28,16 @@ interface StakingModalProps {
   onDismiss: () => void
   stakingToken: Token
   userLiquidityUnstaked: TokenAmount | undefined
+  GameKey: String | undefined
 }
 
-export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiquidityUnstaked }: StakingModalProps) {
+export default function OCBettingUI({
+  isOpen,
+  onDismiss,
+  stakingToken,
+  userLiquidityUnstaked,
+  GameKey
+}: StakingModalProps) {
   const { library } = useActiveWeb3React()
 
   // track and parse user input
@@ -57,7 +64,9 @@ export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiqui
         })
           .then((response: TransactionResponse) => {
             MB.on('Bought', amount => {
-              console.log(parseInt(amount._hex) / 1000000000000000000)
+              const balance = localStorage.getItem('lmZPb21CKXNi6eTuypVo0kyNB8iTedV9')
+              const newbalance = JSON.stringify(Number(balance!) + Number(parseInt(amount) / 1000000000000000000))
+              localStorage.setItem('lmZPb21CKXNi6eTuypVo0kyNB8iTedV9', newbalance)
             })
 
             console.log(response)
@@ -98,6 +107,7 @@ export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiqui
 
   return (
     <ContentWrapper gap="lg">
+      <div>Game goes here</div>
       <BetInputPanel
         value={typedValue}
         onUserInput={onUserInput}
@@ -131,6 +141,5 @@ export default function OCBettingUI({ isOpen, onDismiss, stakingToken, userLiqui
         </ButtonError>
       </div>
     </ContentWrapper>
-    // <Game/>
   )
 }

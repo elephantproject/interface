@@ -51,6 +51,7 @@ export default function Coinflip({}) {
       {govToken && (
         <>
           <OffChain
+            GameKey={'lmZPb21CKXNi6eTuypVo0kyNB8iTedV9'}
             isOpen={showStakingModal}
             onDismiss={() => setShowStakingModal(false)}
             stakingToken={govToken}
