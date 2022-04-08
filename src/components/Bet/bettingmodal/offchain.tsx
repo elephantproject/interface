@@ -63,10 +63,19 @@ export default function OCBettingUI({
           gasLimit: calculateGasMargin(estimatedGas)
         })
           .then((response: TransactionResponse) => {
-            MB.on('Bought', amount => {
+            MB.once('Bought', amount => {
+              console.log(amount, 'bought')
               const balance = localStorage.getItem('lmZPb21CKXNi6eTuypVo0kyNB8iTedV9')
-              const newbalance = JSON.stringify(Number(balance!) + Number(parseInt(amount) / 1000000000000000000))
-              localStorage.setItem('lmZPb21CKXNi6eTuypVo0kyNB8iTedV9', newbalance)
+
+              if (balance) {
+                const newb = JSON.stringify(Number(balance) + Number(parseInt(amount) / 1000000000000000000))
+                localStorage.setItem('lmZPb21CKXNi6eTuypVo0kyNB8iTedV9', newb)
+              } else {
+                localStorage.setItem(
+                  'lmZPb21CKXNi6eTuypVo0kyNB8iTedV9',
+                  JSON.stringify(parseInt(amount) / 1000000000000000000)
+                )
+              }
             })
 
             console.log(response)
